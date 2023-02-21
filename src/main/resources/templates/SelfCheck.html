@@ -105,7 +105,7 @@
 </video>
 <form action="selfCheckResult" method="post">
     <!--임시 회원 아이디-->
-    <input type="hidden" name="memId" value="0ZO">
+    <input type="hidden" name="memId" th:value="${session.loginId}">
     <!--container가 모든 걸 감싸는 중. box는 페이지/ card는 형태/ content는 내용-->
     <div class="container">
         <div class="box">

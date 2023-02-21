@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>Titan | Multipurpose HTML5 Template</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+    <script src="/templates/header3.html"></script>
+    <style>
+    body{
+      background-image: url("img/바다사진.png");
+    }
+      .mineChar{
+        font : 100 10px/1 "Open Sans", sans-serif;
+        box-sizing: initial;
+        display: initial;
+        line-height: 0;
+        margin : 0px;
+        padding: 0px;
+        max-width: initial;
+      }
+
+      .mine{
+        font : 100 10px/1 "Open Sans", sans-serif;
+        line-height: 0;
+        margin : 0px;
+        padding: 0px;
+
+      }
+
+      #sea{
+        margin: 0;
+        padding: 0;
+        font-weight: 0;
+        font-size: 0px;
+        line-height: 0px;
+        box-sizing: initial;
+        /*background-image: url("/img/바다사진.png");*/
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color:white;
+        position: relative;
+        overflow: hidden;
+        left: 000px;
+        width: 1800px;
+        height: 1000px;
+        z-index: 0;
+      }
+      /* video{
+          left: 000px;
+          width: 1800px;
+          height: 1000px;
+          position: sticky;
+          float: left;
+      } */
+
+      .trash{
+        width: 10px;
+        height: 10px;
+        background-color: aqua;
+        position: absolute;
+      }
+
+      #ship{
+
+        position: relative;
+        rotate: 90deg;
+        background-color: antiquewhite;
+
+        width:150px;
+        height: 70px;
+
+        border-radius:  15px;
+      }
+
+      #net{
+        top: 30px;
+        rotate: 45deg;
+        color: transparent;
+        background-image: linear-gradient(to top left, #a36b6bf6 2% , transparent 10% , #a36b6bf6 15%, transparent 20%,#a36b6bf6 25%, transparent 30% );
+        box-sizing: inherit;
+        width: 150px;
+        height: 150px;
+
+
+
+
+        position: relative;
+      }
+      #net2{
+        left: 50px;
+        top:-70px;
+        rotate: 45deg;
+        color: transparent;
+        background-image:   linear-gradient(to top right, #a36b6bf6 2% , transparent 10% , #a36b6bf6 15%, transparent 20%,#a36b6bf6 25%, transparent 30% )
+
+      ;
+        box-sizing: inherit;
+        width: 150px;
+        height: 150px;
+
+        position: relative;
+      }
+      #net3{
+        left: -50px;
+        top: -220px;
+        color: transparent;
+        background-image:   linear-gradient(to bottom left, #a36b6bf6 2% , transparent 10% , #a36b6bf6 15%, transparent 20%,#a36b6bf6 25%, transparent 30% );
+        rotate: 45deg;
+        box-sizing: inherit;
+        width: 150px;
+        height: 150px;
+
+        position: relative;
+      }
+      #netMain{
+        top: -100px;
+        color: transparent;
+        background-image:   linear-gradient(90deg, #a36b6bf6 2% , transparent 10% , #a36b6bf6 15%, transparent 20%,#a36b6bf6 25%, transparent 30%, #a36b6bf6 30%, transparent 30%, #a36b6bf6 40%, transparent 40%, #a36b6bf6 50%, transparent 50% , #a36b6bf6 60%, transparent 60%, #a36b6bf6 70%, transparent 70%,#a36b6bf6 80%, transparent 80%,#a36b6bf6 90%, transparent 90%,#a36b6bf6 100%, transparent 100% )
+        ,linear-gradient(180deg, #a36b6bf6 2% , transparent 10% , #a36b6bf6 15%, transparent 20%,#a36b6bf6 25%, transparent 30%, #a36b6bf6 30%, transparent 30%, #a36b6bf6 40%, transparent 40%, #a36b6bf6 50%, transparent 50% , #a36b6bf6 60%, transparent 60%, #a36b6bf6 70%, transparent 70%,#a36b6bf6 80%, transparent 80%,#a36b6bf6 90%, transparent 90% ,#a36b6bf6 100%, transparent 100% )
+      ;
+        box-sizing: inherit;
+        border-radius: 15px;
+        width: 150px;
+        height: 150px;
+
+        position: relative;
+      }
+
+      #netT{
+        left:1500px;
+        top:570px;
+
+        position: absolute;
+        rotate: 0deg;
+
+
+      }
+      .scuba{
+        width: 10px;
+        height: 10px;
+
+      }
+      /* img{
+          box-shadow: 0 0 35px aqua;
+      }*/
+
+      .hr0{
+        border: 0px;
+        z-index: 99;
+        position: relative;
+        background-color: aqua;
+        box-shadow: 0 0 35px rgb(123, 255, 0);
+      }
+      .hr1{
+        width: 100%;
+        height: 5px;
+        left: 0%;
+        top: 42%;
+      }
+      .hr2{
+        width: 5px;
+        height: 100%;
+        left:66%;
+        top: -7.3%;
+      }
+      .hr3{
+        width: 5px;
+        height: 100%;
+        left: 33%;
+        top: -107.3%;
+      }
+
+      .span0{
+        font-family: initial;
+        font-style: initial;
+        font-variant: initial;
+        font-stretch: initial;
+        position: relative;
+        font-weight: bold;
+        color:aqua;
+        font-size: 80px;
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, /* Green glow */ 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+        left: 0px;
+        top:0px;
+        z-index: 200;
+      }
+
+
+    </style>
+
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+
+
+      <header data-th-include="./header.html"></header>
+
+
+        <section class="module-medium" id="demos">
+          <div class="container" style=" margin: 0px; padding: 0px; padding-left: 35px;">
+
+
+
+            <div id="sea">
+              <!-- 1800 X 1000 -->
+
+              <span class="mine span0" style="left:10%; top:9%;">Home</span>
+              <span class="mine span0" style="left:30.7%;top:9%;">About</span>
+              <span class="mine span0" style="left:46.7%; top:9%;">Diver Shop</span>
+              <span class="mine span0" style="left :-46.5%; top:59.5%;">Environment</span>
+              <span class="mine span0" style="left:38%; top:56%;">Community</span>
+              <span class="mine span0" style="left:53%; top:56%;">Event</span>
+              <hr class="mine hr0 hr1">
+              <hr class="mine hr0 hr2">
+              <hr class="mine hr0 hr3">
+            </div>
+
+          </div>
+        </section>
+        <footer data-th-include="./footer.html"></footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+    <script>
+
+      if(username== "" || username == null){
+        username = "";
+      }
+
+      let bLeft = $('#sea').offset().left;
+      let bTop = $('#sea').offset().top;
+      let bWidth= $('#sea').innerWidth();
+      let bHeight = $('#sea').outerHeight();
+
+
+      let charImg = "잠수정.png";
+      let randNumX = 0;
+      let randNumY = 0;
+
+
+
+      let ship = document.getElementById('netT');
+
+      let shipRadius = 75;   // 배를 원으로 둘럿을 때 반지름 (지름150px)
+
+      // 화면크기의 직사각형
+      let bigX1 = bLeft;
+      let bigX2 = bLeft+bWidth;
+      let bigY1 = bTop;
+      let bigY2 = bTop+bHeight;
+
+      // 내부의 지나가야하는 직사각형
+      let smallX1 = bigX1+300;
+      let smallX2 = bigX2-300;
+      let smallY1 = bigY1+300;
+      let smallY2 = bigY2-700;
+
+      // 원의 중심이 위치하는 직사각형    (반지름은 100~250)
+      let midX1 = bigX1 +200;
+      let midX2 = bigX2 -200;
+      let midY1 = bigY1 +200;
+      let midY2 = bigY2 -200;
+
+      //              quad 4
+      //         ┌──────────────┐
+      //         |              |
+      //         |     ┌──┐     |
+      //  quad3  |     |  |     |   quad 1
+      //         |     └──┘     |
+      //         |              |
+      //         └──────────────┘
+      //              quad 2
+
+      // quad 1 오른쪽면 가능 범위
+      let quad1Deg1 = Math.ceil(Math.atan((bigY2-smallY1)/(bigX2-smallX2))*180/Math.PI) +90;      // 135 ~
+      let quad1Deg2 = Math.ceil(Math.atan((smallY2- bigY1)/(bigX2-smallX2))*180/Math.PI) +180;    // ~ 218
+
+      let quad2Deg1 = Math.ceil(Math.atan((bigY2-smallY2)/(smallX2-bigX1))*180/Math.PI);          // 27 ~
+      let quad2Deg2 = 180- Math.ceil(Math.atan((bigY2-smallY2)/(bigX2-smallX1))*180/Math.PI);     // ~ 155
+
+      let quad3Deg1 = Math.ceil(Math.atan((bigY2-smallY2)/(bigY2-smallY1))*180/Math.PI);          // 0 ~ 34
+      let quad3Deg2 = 360- Math.ceil(Math.atan((smallY2-bigY1)/(smallX1-bigX1))*180/Math.PI) ;    // 318 ~ 360
+
+      let quad4Deg1 = Math.ceil(Math.atan((smallY1-bigY1)/(bigX2-smallX1))*180/Math.PI) +180;     // 198 ~
+      let quad4Deg2 = 360- Math.ceil(Math.atan((smallY1-bigY1)/(smallX2-bigX1))*180/Math.PI);     // ~ 341
+
+      let quad = 0;
+      let startX = 0;
+      let startY = 0;
+
+      let count = 0;
+      let shipArr = Array();
+
+      let realDeg = 0;
+      let deg = 0;
+      let rotDeg = 0;
+
+
+      websocket.onmessage = onMessage;
+
+      let userList = new Array();
+      let proList = new Array();
+      let cateList = new Array();
+      let makeBool = 3;
+      let makeCount = 0;
+
+      function onMessage(msg) {
+
+          console.log(msg.data);
+        if(msg.data.toString().substring(0,2) == "1:" || msg.data.toString().substring(0,2) == "2:" || msg.data.toString().substring(0,2) == "3:" ){
+
+          console.log("접속");
+
+          if(msg.data.toString().substring(0,2) == "1:"){
+            let msgStr = msg.data.toString().substring(3,msg.data.toString().length);
+            msgStr = msgStr.replaceAll(" ","");
+            userList = msgStr.split(",");
+            console.log(userList);
+          }else if(msg.data.toString().substring(0,2) == "2:"){
+            let msgStr = msg.data.toString().substring(3,msg.data.toString().length);
+            msgStr = msgStr.replaceAll(" ","");
+            proList = msgStr.split(",");
+            console.log(proList);
+          }else{
+            let msgStr = msg.data.toString().substring(3,msg.data.toString().length);
+            msgStr = msgStr.replaceAll(" ","");
+            cateList = msgStr.split(",");
+            console.log(cateList);
+          }
+          makeBool = 0;
+          makeCount = 5;
+
+        }else{
+          console.log("접속중");
+          let msgList = msg.data.split(",");
+          shipMake(msgList[0],msgList[1],msgList[2]);
+        }
+
+      }
+
+
+      let playSecond = 10;    // 1000 : 1초
+
+      setInterval(() => {
+
+        if(shipArr.length >= 1){
+
+          for(let i = 0; i < shipArr.length ; i++){
+
+            // [0]인덱스
+            // [1]각도
+            // [2]시작x위치 (현재x위치)
+            // [3]시작y위치 (현재y위치)
+            // [4]사분면 번호
+            // [5]랜덤 중심점x
+            // [6]랜덤 중심점y
+            // [7]랜덤반지름(100~250)
+            // [8]도착 포인트x
+            // [9]도착 포인트y
+            // [10]도는 방향(시계2, 반시계1)
+            // [11]도는지 여부('on'(도는중), 'off'(돌지않음), 'set'(돌고나서 위아래))
+            // [12]도는속도
+            // [13]도는 각도
+            // [14](1~6)구역 나누기
+            // [15]처음 생성후 (지정x = -1) 이동(0)인지 아닌지(1)
+            // [16]각 객체별 좌표구간 [bigX1,bigX2,bigY1,bigY2,midX1,midX2,midY1,midY2]
+            // [17]랜덤 스피드
+            // [18]유저 아이디
+            // [19]남은 시간
+            // [20]프로필 사진
+
+            if(shipArr[i][15]==1 || shipArr[i][15]==2){ // 구역이 정해졌을 때만
+
+              if (shipArr[i][14] == 1) {
+                shipArr[i][16][0] = bigX1;
+                shipArr[i][16][1] = bigX1 + bWidth/3;
+                shipArr[i][16][2] = bigY1;
+                shipArr[i][16][3] = bigY1 + bHeight/2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              } else if (shipArr[i][14] == 2) {
+                shipArr[i][16][0] = bigX1 + bWidth/3;
+                shipArr[i][16][1] = bigX1 + (bWidth/3)*2;
+                shipArr[i][16][2] = bigY1;
+                shipArr[i][16][3] = bigY1 + bHeight/2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              } else if (shipArr[i][14] == 3) {
+                shipArr[i][16][0] = bigX1 + (bWidth/3)*2;
+                shipArr[i][16][1] = bigX2;
+                shipArr[i][16][2] = bigY1;
+                shipArr[i][16][3] = bigY1 + bHeight/2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              } else if (shipArr[i][14] == 4) {
+                shipArr[i][16][0] = bigX1;
+                shipArr[i][16][1] = bigX1 + bWidth/3;
+                shipArr[i][16][2] = bigY1 + bHeight/2;
+                shipArr[i][16][3] = bigY2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              } else if (shipArr[i][14] == 5) {
+                shipArr[i][16][0] = bigX1 + bWidth/3;
+                shipArr[i][16][1] = bigX1 + (bWidth/3)*2;
+                shipArr[i][16][2] = bigY1 + bHeight/2;
+                shipArr[i][16][3] = bigY2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              } else {
+                shipArr[i][16][0] = bigX1 + (bWidth/3)*2;
+                shipArr[i][16][1] = bigX2;
+                shipArr[i][16][2] = bigY1 + bHeight/2;
+                shipArr[i][16][3] = bigY2;
+                shipArr[i][16][4] = shipArr[i][16][0] + 200;
+                shipArr[i][16][5] = shipArr[i][16][1] - 200;
+                shipArr[i][16][6] = shipArr[i][16][2] + 200;
+                shipArr[i][16][7] = shipArr[i][16][3] - 200;
+              }
+
+            }
+
+
+            // 도는중에 한바퀴 돈 후 시점 or 밖으로 나갔을 때
+            if(shipArr[i][11] == 'on' || shipArr[i][2] < shipArr[i][16][0] || shipArr[i][2] > shipArr[i][16][1] || shipArr[i][3] > shipArr[i][16][3] || shipArr[i][3] < shipArr[i][16][2] ){
+              if(shipArr[i][12] >= 2*Math.PI*shipArr[i][7] || shipArr[i][2] < shipArr[i][16][0] || shipArr[i][2] > shipArr[i][16][1] || shipArr[i][3] > shipArr[i][16][3] || shipArr[i][3] < shipArr[i][16][2]){
+                shipArr[i][11] ='off';
+
+
+                // 랜덤 원 중심
+                let midPointX = Math.floor(Math.random()*(shipArr[i][16][5]-shipArr[i][16][4]) + shipArr[i][16][4]);
+                let midPointY = Math.floor(Math.random()*(shipArr[i][16][7]-shipArr[i][16][6]) + shipArr[i][16][6]);
+
+                // 랜덤 각도, 랜덤 반지름
+                let ranDeg = Math.floor(Math.random() * 360);
+                let ranRadius = Math.floor(Math.random() * (75) + 50);
+
+                // 도착 포인트 (랜덤 원 둘레 지점)
+                let arrPointX = midPointX + ranRadius * Math.cos(ranDeg * Math.PI / 180);
+                let arrPointY = midPointY + ranRadius * Math.sin(ranDeg * Math.PI / 180);
+
+                // 원을 도는 방향 (시계2, 반시계1)
+                let vector1 = (arrPointX - shipArr[i][2]) * (-(midPointY - arrPointY)) + (arrPointY - shipArr[i][3]) * (midPointX - arrPointX);
+                let vector2 = Math.acos(vector1 / (Math.pow(Math.pow((arrPointX - shipArr[i][2]), 2) + Math.pow((arrPointY - shipArr[i][3]), 2), 1 / 2) * ranRadius)) * 180 / Math.PI;
+                let cirDir = 0;
+                if (vector2 >= -90 && vector2 < 90) {
+                  cirDir = 1;
+                } else {
+                  cirDir = 2;
+                }
+                // 1, 0     // 0도 벡터
+                let deg00 = -Math.acos((arrPointX - shipArr[i][2]) / (Math.pow(Math.pow((arrPointX - shipArr[i][2]), 2) + Math.pow((arrPointY - shipArr[i][3]), 2), 1 / 2))) * 180 / Math.PI;
+
+                if(arrPointX < shipArr[i][2] && arrPointY < shipArr[i][3]){
+                  deg00 = -deg00;
+                }else if(arrPointX > shipArr[i][2] && arrPointY < shipArr[i][3]){
+                  deg00 = -deg00;
+                }
+
+
+
+                if(shipArr[i][15]==0){  // 처음 안치
+                  shipArr[i][17] = Math.floor(Math.random()*5 +1);
+                  shipArr[i][13] = -deg00;
+                }else if(shipArr[i][15]==2){    // 구역이동완료
+                  shipArr[i][13] = -deg00;
+                  shipArr[i][17] = Math.floor(Math.random()*1 +1);
+                }else if(shipArr[i][15]==1){
+                  shipArr[i][13] = -deg00;
+                  shipArr[i][15] = 3; // 이동 방향 지정 완료
+                  shipArr[i][17] = Math.floor(Math.random()*2 +3);
+                }else if(shipArr[i][15]==3){
+                  // 이동방향 지정 후엔 방향바뀌지않음
+                }else{  // -1일때
+                  shipArr[i][17] = Math.floor(Math.random()*3 +1);
+                  shipArr[i][13] = -deg00;
+                }
+
+
+
+
+                shipArr[i][1] = deg00;
+                shipArr[i][5] = midPointX;
+                shipArr[i][6] = midPointY;
+                shipArr[i][7] = ranRadius;
+                shipArr[i][8] = arrPointX;
+                shipArr[i][9] = arrPointY;
+                shipArr[i][10] = cirDir;
+                shipArr[i][12] = 0;
+
+              }
+            }
+
+            // 지점 도착
+            if(shipArr[i][11] == 'off' && shipArr[i][2] >= shipArr[i][8]-30 && shipArr[i][2] <= shipArr[i][8]+30 && shipArr[i][3] >= shipArr[i][9]-30 && shipArr[i][3] <= shipArr[i][9]+30){
+              shipArr[i][11] = 'on';
+
+              if(shipArr[i][15] == 3){
+                shipArr[i][17] = Math.floor(Math.random()*2 +1);
+                shipArr[i][15]=2;
+                // 구역 이동완료
+              }
+              if(shipArr[i][15] == 0){
+                shipArr[i][15]=1;
+                // 이동 중
+              }
+
+            }
+
+            if(shipArr[i][11] == 'on'){ // 도는중
+              shipArr[i][17] = Math.floor(Math.random()*2 +1);
+
+              if(shipArr[i][10] == 1){    // 반시계
+                shipArr[i][2] += (shipArr[i][17]/shipArr[i][7])*(-(shipArr[i][6]-shipArr[i][3]));
+                shipArr[i][3] += (shipArr[i][17]/shipArr[i][7])*(shipArr[i][5]-shipArr[i][2]);
+
+                if(shipArr[i][5]-shipArr[i][2] <= 0){   // 내적으로 각도구하는 법은 모든 상황의 각도를 가져오지못함(조건식으로 해결)
+                  shipArr[i][13] = -Math.acos((-(shipArr[i][6]-shipArr[i][3])) / (Math.pow(Math.pow((-(shipArr[i][6]-shipArr[i][3])), 2) + Math.pow((shipArr[i][5]-shipArr[i][2]), 2), 1 / 2))) * (180 / Math.PI);
+                }else{
+                  shipArr[i][13] = Math.acos((-(shipArr[i][6]-shipArr[i][3])) / (Math.pow(Math.pow((-(shipArr[i][6]-shipArr[i][3])), 2) + Math.pow((shipArr[i][5]-shipArr[i][2]), 2), 1 / 2))) * (180 / Math.PI);
+                }
+
+
+
+              }else{    // 시계
+                shipArr[i][2] += (shipArr[i][17]/shipArr[i][7])*(shipArr[i][6]-shipArr[i][3]);
+                shipArr[i][3] += (shipArr[i][17]/shipArr[i][7])*(-(shipArr[i][5]-shipArr[i][2]));
+
+                if(-(shipArr[i][5]-shipArr[i][2]) <= 0){
+                  shipArr[i][13] = -Math.acos((shipArr[i][6]-shipArr[i][3]) / (Math.pow(Math.pow((shipArr[i][6]-shipArr[i][3]), 2) + Math.pow((-(shipArr[i][5]-shipArr[i][2])), 2), 1 / 2))) * (180 / Math.PI);
+                }else{
+                  shipArr[i][13] = Math.acos((shipArr[i][6]-shipArr[i][3]) / (Math.pow(Math.pow((shipArr[i][6]-shipArr[i][3]), 2) + Math.pow((-(shipArr[i][5]-shipArr[i][2])), 2), 1 / 2))) * (180 / Math.PI);
+                }
+
+
+              }
+              shipArr[i][12] += shipArr[i][17];
+
+            }else if(shipArr[i][11] == 'off'){  // 돌기전 지점 이동
+              shipArr[i][2] += shipArr[i][17]*Math.sin((shipArr[i][1]+90)*Math.PI/180);
+              shipArr[i][3] += shipArr[i][17]*Math.cos((shipArr[i][1]+90)*Math.PI/180);
+            }else{
+
+            }
+
+            $('#netT'+shipArr[i][0]).css('left', shipArr[i][2] + 'px');
+            $('#netT'+shipArr[i][0]).css('top', shipArr[i][3] + 'px');
+            $('#netT'+shipArr[i][0]).css('rotate', (shipArr[i][13]) + 'deg');
+
+          }
+        }
+
+
+      }, playSecond);
+
+      let makeNum1 = 0;
+      let makeNum2 = 9;
+
+      let setTime =2;
+
+      setInterval(function(e){
+        for(let i = 0; i < shipArr.length; i++){
+          shipArr[i][19]--;
+
+          if(shipArr[i][19] <= 290 && shipArr[i][19] >= 288 ){
+            $('#netI'+shipArr[i][0]).attr("src", "/profile/"+ shipArr[i][20]);
+          }
+
+          if(shipArr[i][19] <= 0){
+            $('#netT'+shipArr[i][0]).remove();
+            $('#netI'+shipArr[i][0]).remove();
+            shipArr.splice(i,1);
+          }
+        }
+        if(makeBool==0){
+          if(userList < 10){
+            for(let i = 0; i < userList.length; i++){
+
+                shipMake(userList[i],proList[i],cateList[i]);
+
+            }
+            makeBool=3;
+          }else if(makeNum2 > userList.length){
+            for(let i = makeNum1; i < userList.length; i++){
+
+                shipMake(userList[i],proList[i],cateList[i]);
+
+            }
+            makeNum1 =0;
+            makeNum2 =9;
+            makeBool=3;
+          }else{
+            for(let i = makeNum1; i < makeNum2; i++){
+
+                shipMake(userList[i],proList[i],cateList[i]);
+
+            }
+            makeBool=1;
+            makeCount=5;
+            makeNum1 += 10;
+            makeNum2 += 10;
+          }
+
+        }else if(makeBool==1){
+          if(makeCount<=0){
+            makeBool = 0;
+          }
+          makeCount--;
+        }else{
+        }
+
+        setTime--;
+        if(setTime==0){
+          websocket.send("_");
+        }
+
+
+      },1000);
+
+
+      function shipMake(userId, profile, cate){
+
+        var time = 300;
+
+
+        if(userId == null || userId == ""){
+
+        }else {
+
+          let idBool = true;
+          let idIndex = 0;
+
+          for(let i=0; i < shipArr.length ; i++){
+
+            if(shipArr[i][18] == userId){
+              idBool=false;
+              idIndex = i;
+              break;
+            }
+
+          }
+          if(!idBool){
+
+            shipArr[idIndex][14] = cate;
+            shipArr[idIndex][15] = 0;
+            shipArr[idIndex][19] = time;
+
+          }else{
+
+            deg = Math.floor(Math.random() * 360);
+            realDeg = deg;
+
+            if (deg > 155 && deg < 198) {
+              quad = 1;
+              startX = bigX2;
+              startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (bigX2 - smallX2) * (Math.tan(deg * Math.PI / 180))));
+            } else if (deg > 34 && deg < 135) {
+              quad = 2;
+              startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (bigY2 - smallY2) / (Math.tan(deg * Math.PI / 180))));
+              startY = bigY2;
+              deg -= 180;
+            } else if ((deg >= 0 && deg < 27) || (deg > 341 && deg <= 360)) {
+              quad = 3;
+              startX = bigX1;
+              startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (smallX1 - bigX1) * (-Math.tan(deg * Math.PI / 180))));
+
+            } else if (deg > 218 && deg < 318) {
+              quad = 4;
+              startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (smallY1 - bigY1) / (-Math.tan(deg * Math.PI / 180))));
+              startY = bigY1;
+              deg -= 180;
+            } else if (deg >= 27 && deg <= 34) {
+              // 3, 2
+              quad = Math.floor(Math.random() * 2 + 2);
+              if (quad == 2) {
+                startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (bigY2 - smallY2) / (Math.tan(deg * Math.PI / 180))));
+                startY = bigY2;
+                deg -= 180;
+              } else {  // 3
+                startX = bigX1;
+                startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (smallX1 - bigX1) * (-Math.tan(deg * Math.PI / 180))));
+              }
+            } else if (deg >= 135 && deg <= 155) {
+              // 1, 2
+              quad = Math.floor(Math.random() * 2 + 1);
+              if (quad == 1) {
+                startX = bigX2;
+                startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (bigX2 - smallX2) * (Math.tan(deg * Math.PI / 180))));
+              } else {  // 2
+                startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (bigY2 - smallY2) / (Math.tan(deg * Math.PI / 180))));
+                startY = bigY2;
+                deg -= 180;
+              }
+            } else if (deg >= 198 && deg <= 218) {
+              // 1, 4
+              quad = Math.floor(Math.random() * 2 + 1);
+              if (quad == 2) {  // 4
+                quad = 4;
+                startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (smallY1 - bigY1) / (-Math.tan(deg * Math.PI / 180))));
+                startY = bigY1;
+                deg -= 180;
+              } else {  // 1
+                startX = bigX2;
+                startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (bigX2 - smallX2) * (Math.tan(deg * Math.PI / 180))));
+                quad = 5;
+
+              }
+            } else if (deg >= 318 && deg <= 341) {
+              // 3, 4
+              quad = Math.floor(Math.random() * 2 + 3);
+              if (quad == 3) {
+                startX = bigX1;
+                startY = Math.floor(Math.random() * (smallY2 - smallY1) + Math.round(smallY1 + (smallX1 - bigX1) * (-Math.tan(deg * Math.PI / 180))));
+              } else {  // 4
+                startX = Math.floor(Math.random() * (smallX2 - smallX1) + Math.round(smallX1 + (smallY1 - bigY1) / (-Math.tan(deg * Math.PI / 180))));
+                startY = bigY1;
+                deg -= 180;
+              }
+            } else {
+
+            }
+
+            // 랜덤 원 중심
+            let midPointX = Math.floor(Math.random() * (midX2 - midX1) + midX1);
+            let midPointY = Math.floor(Math.random() * (midY2 - midY1) + midY1);
+
+            // 랜덤 각도, 랜덤 반지름
+            let ranDeg = Math.floor(Math.random() * 360);
+            let ranRadius = Math.floor(Math.random() * (75) + 50);
+
+            // 도착 포인트 (랜덤 원 둘레 지점)
+            let arrPointX = midPointX + ranRadius * Math.cos(ranDeg * Math.PI / 180);
+            let arrPointY = midPointY + ranRadius * Math.sin(ranDeg * Math.PI / 180);
+
+            // 원을 도는 방향 (시계2, 반시계1)
+            // (arrPointX-startX), (arrPointY-startY)   // 시작점 -> 도착점 벡터
+            // (midPointX-arrPointX), (midPointY-arrPointY) // 도착점 -> 원 중심 벡터
+            // -(midPointY-arrPointY) , (midPointX-arrPointX) // 랜덤 중심점을 반시계로 회전하는 벡터
+            let vector1 = (arrPointX - startX) * (-(midPointY - arrPointY)) + (arrPointY - startY) * (midPointX - arrPointX);  // 도는 방향(시계방향)과의 내적값
+            let vector2 = Math.acos(vector1 / (Math.pow(Math.pow((arrPointX - startX), 2) + Math.pow((arrPointY - startY), 2), 1 / 2) * ranRadius)) * 180 / Math.PI;   // 도착 포인트와 만나는 각도
+            let cirDir = 0;
+            if (vector2 >= -90 && vector2 < 90) {
+              cirDir = 1;
+            } else {
+              cirDir = 2;
+            }
+
+
+            // 1, 0     // 0도 벡터
+            deg = -Math.acos((arrPointX - startX) / (Math.pow(Math.pow((arrPointX - startX), 2) + Math.pow((arrPointY - startY), 2), 1 / 2))) * 180 / Math.PI;    // →(0도) 방향부터 도착점까지 각도
+            if (quad == 2 || quad == 3) {
+              deg = -deg;
+            }
+            if (quad == 2 || quad == 4) {
+              rotDeg = deg - 180;
+              if (quad == 2) {
+                rotDeg = 90 + (90 - rotDeg);
+              } else {
+                rotDeg = -90 + (-90 - rotDeg);
+              }
+            } else if (quad == 1 || quad == 3) {
+
+              rotDeg = deg;
+              if (quad == 1) {
+                rotDeg = -180 + (-180 - rotDeg);
+
+              } else {
+                rotDeg = -deg;
+                if (arrPointY > startY) {
+                  deg = -deg;
+                  rotDeg = -deg;
+                }
+              }
+            } else if (quad == 5) {
+              deg = -180 + (-180 - deg);
+              rotDeg = -180 + (-180 - deg);
+
+              if (arrPointY > startY) {
+                deg = -180 + (-180 - deg);
+                rotDeg = -180 + (-180 - deg);
+              }
+
+            }
+
+
+            let goPoint = cate;
+
+            let first = 0;
+            let speed = Math.floor(Math.random() * 2 + 3);
+
+
+            $('body').append('<div id="netT' + count + '" class="mineChar scuba" style="left: ' + startX + 'px; top: ' + startY + 'px; rotate:' + (rotDeg) + 'deg; position:absolute; height:50px; z-index:1;"><img class="mineChar" style="width:150px" src="/img/' + charImg + '" alt=""><img id="netI'+ count +'" class="mineChar" src="/profile/'+ profile +'" style="z-index:2; width:65px; height:60px; position:relative; left:62px; top:-91px; border-radius:50%;" ></div>');
+
+
+
+            // $('body').append('<div id="trash" class="trash" style="background-color:red; left:'+ arrPointX +'px ; top:'+arrPointY +'px; position:absolute; height:10px; width:10px;"></div>');
+            // $('body').append('<div id="trash"  class="trash" style="background-color:blue; left:'+ startX +'px; top:'+startY +'px; position:absolute; height:10px; width:10px;"></div>');
+            // $('body').append('<div id="trash" class="trash" style="background-color:green; left:'+ midPointX +'px; top:'+midPointY +'px; position:absolute; height:10px; width:10px;"></div>');
+            // 인덱스, 각도, 시작x위치, 시작y위치, 사분면 번호, 랜덤 중심점x, 랜덤 중심점y, 랜덤반지름(100~250), 도착 포인트x, 도착 포인트y, 도는 방향(시계1, 반시계2), 돌기on/off, 도는 시간
+            shipArr.push([count, deg, startX, startY, quad, midPointX, midPointY, ranRadius, arrPointX, arrPointY, cirDir, 'off', 0, rotDeg, goPoint, first, [bigX1, bigX2, bigY1, bigY2, midX1, midX2, midY1, midY2], speed, userId, time, profile]);
+
+            count++;
+
+          }
+        }
+      }
+
+
+    </script>
+
+
+
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

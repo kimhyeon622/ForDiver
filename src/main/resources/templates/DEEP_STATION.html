@@ -160,6 +160,7 @@ Stylesheets
               <form class="reservation-form"  action="Reservation" method="post" name="ResrvationTest">
                 <input name="BuyKind" type="hidden" value="수영장">
                 <input name="BuyObjectName" type="hidden" value="딥스테이션">
+                <input type="hidden" name="ObjectName" id="ObjectName" value="딥">
                 <input name="memId" type="hidden" th:value="${session.loginId}">
                 <div class="form-group">
                   <div class="input-group">
@@ -315,6 +316,18 @@ JavaScripts
   // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
   // marker.setMap(null);
 
+</script>
+<script>
+  setInterval( function(){
+    let cos = $('input[name=cos]:checked').val();
+    if(cos == "스쿠버다이빙"){
+      document.getElementById("money").value = 44000;
+      document.getElementById("ObjectName").value = "[딥스테이션] 스쿠버다이빙";
+    }else{
+      document.getElementById("money").value = 44000;
+      document.getElementById("ObjectName").value = "[딥스테이션] 프리다이빙";
+    }
+  }, 500)
 </script>
 </body>
 </html>

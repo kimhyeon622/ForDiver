@@ -38,14 +38,14 @@ public class BuyServicelmpl implements BuyService {
         if (BuyKind.equals("바다")) {
             ScubaPlacetDTO ScubaList = bDao.buyScubaList(BuyObjectName);
             mav.addObject("ScubaList", ScubaList);
-            mav.setViewName("kakaopayScuba");
             Rese.setReDateTime(reDate);
+            mav.setViewName("kakaopayScuba");
         } else {
-            PooltDTO PoolList = bDao.buyPoolList(BuyObjectName);;
+            PooltDTO PoolList = bDao.buyPoolList(BuyObjectName);
             mav.addObject("PoolList", PoolList);
-            mav.setViewName("kakaopayPool");
             String reTime = Rese.getReTime();
             Rese.setReDateTime(reDate + " " + reTime);
+            mav.setViewName("kakaopayPool");
         }
 
 

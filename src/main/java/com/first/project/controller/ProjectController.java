@@ -136,7 +136,7 @@ public class ProjectController {
 
     // 아쿠아라인
     @GetMapping("/Aqua_Line")
-    public String Aqua_Line() {
+    public String Aqua_Line(){
         return "Aqua_Line";
     }
 
@@ -153,5 +153,9 @@ public class ProjectController {
     // 모달 로그인창
     @GetMapping("/Loginmodel")
     public String Loginmodel(){ return "Loginmodel";}
+
+    // 회원 애니메이션
+    @GetMapping("/userAmt")
+    public String userAmt(){ return "userAmt"; }
 
 }

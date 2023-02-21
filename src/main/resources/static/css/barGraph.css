@@ -10,6 +10,7 @@ ul, li {
 }
 .vertical_chart_box {
     position: relative;
+    float: bottom;
 }
 .vertical_chart_box .chart_box {
     position: relative;

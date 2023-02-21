@@ -856,13 +856,14 @@ function onch(){
     let rePeople = document.getElementById("people").value;
     let pay = document.getElementById("pay");
     let money = document.getElementById("money").value;
+    let surcharge = document.getElementById("surcharge").value;
     let sum = 0;
     let DAY = new Date(reDate).getDay();
 
     console.log(DAY)
 
     if (DAY == 0 || DAY == 6){
-        sum = rePeople * (money*2);
+        sum = rePeople * (money+surcharge);
     }else{
         sum = rePeople * money;
     }

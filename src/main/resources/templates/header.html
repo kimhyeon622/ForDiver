@@ -33,57 +33,62 @@
     <div class="container">
         <!--홈페이지 명-->
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index">For Diver</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" onmousedown="catHome()" href="index">For Diver</a>
         </div>
         <!--start menu-->
         <div class="collapse navbar-collapse" id="custom-collapse">
 
                 <ul class="nav navbar-nav navbar-right">
                 <!--nav1:Home-->
-                <li><a href="index" style="color: white;"><i class="fa fa-home"></i>홈으로</a></li>
+                <li><a href="index" onmousedown="catHome()" style="color: white;"><i class="fa fa-home"></i>홈으로</a></li>
                 <!--nav2:다이빙에 대한 흥미를 끌만한 정보들-->
                     <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="icon-documents"></i>다이빙 이모저모</a>
                     <ul class="dropdown-menu" style="background-color: #6fb1cc;">
                         <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fas fa-info" style="width: 20px; height: 20px;"></i>스킨/스쿠버 다이빙</a>
                             <ul class="dropdown-menu" style="background-color: #6fb1cc;">
-                                <li><a style="color: white;" href="skinInfo"><i class="fa far fa-info" style="color: black"></i>스킨다이빙 개요</a></li>
-                                <li><a style="color: white;" href="scubaInfo"><i class="fa far fa-info" style="color: black"></i>스쿠버다이빙 개요</a></li>
+                                <li><a style="color: white;" onmousedown="catAbout()" href="skinInfo"><i class="fa far fa-info" style="color: black"></i>스킨다이빙 개요</a></li>
+                                <li><a style="color: white;" onmousedown="catAbout()" href="scubaInfo"><i class="fa far fa-info" style="color: black"></i>스쿠버다이빙 개요</a></li>
                             </ul>
                         </li>
-                        <li><a href="divingSpot" style="color: white;"><i class="icon-map"></i>국내 다이빙 명소</a></li>
-                        <li><a href="divingClub" style="color: white;"><i class="fa fa-group"></i>국내 다이빙 클럽</a></li>
+                        <li><a href="divingSpot" onmousedown="catAbout()" style="color: white;"><i class="icon-map"></i>국내 다이빙 명소</a></li>
+                        <li><a href="divingClub" onmousedown="catAbout()" style="color: white;"><i class="fa fa-group"></i>국내 다이빙 클럽</a></li>
                     </ul>
                 </li>
                 <!--nav3:다이버 샵-->
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-shopping-bag"></i>다이버 샵</a>
                     <ul class="dropdown-menu" style="background-color: #6fb1cc;">
-                        <li><a href="shopList" style="color: white;"><i class="icon-toolbox"></i>다이빙 장비</a></li>
+                        <li><a href="shopList" onmousedown="catDivShop()" style="color: white;"><i class="icon-toolbox"></i>다이빙 장비</a></li>
                         <!--트레이닝 코스는 따로 둘 수도 있음-->
-                        <li><a href="#" style="color: white;">트레이닝 코스</a></li>
-                        <li><a href="selfReservation" style="color: white;"><i class="fa fas fa-bookmark"></i>커스텀 예약</a></li>
+                        <li><a href="#" onmousedown="catDivShop()" style="color: white;">트레이닝 코스</a></li>
+                        <li><a href="selfReservation" onmousedown="catDivShop()" style="color: white;"><i class="fa fas fa-bookmark"></i>커스텀 예약</a></li>
                         <!--얘는 그냥 a 태그 모음집-->
-                        <li><a href="#" style="color: white;">리조트 예약</a></li>
+                        <li><a href="#" onmousedown="catDivShop()" style="color: white;">리조트 예약</a></li>
 
                     </ul>
                 </li>
                 <!--nav4:환경단체-->
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-leaf"></i>환경운동</a>
                     <ul class="dropdown-menu" role="menu" style="background-color: #6fb1cc;">
-                        <li><a href="crisisInfo" style="color: white;"><i class="icon-hazardous"></i>해양위기 현황</a></li>
-                        <li><a href="donateList" style="color: white;"><i class="icon-shield"></i>환경단체 목록</a></li>
+                        <li><a href="crisisInfo" onmousedown="catEnv()" style="color: white;"><i class="icon-hazardous"></i>해양위기 현황</a></li>
+                        <li><a href="donateList" onmousedown="catEnv()" style="color: white;"><i class="icon-shield"></i>환경단체 목록</a></li>
                     </ul>
                 </li>
                 <!--nav5:커뮤니티-->
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-users"></i>커뮤니티</a>
                     <ul class="dropdown-menu" role="menu" style="background-color: #6fb1cc;">
-                        <li><a href="list" style="color: white;"><i class="icon-chat"></i>자유게시판</a></li>
-                        <li><a href="galleryList" style="color: white;"><i class="icon-camera"></i>갤러리게시판</a></li>
-                        <li><a href="mNoticeList" style="color: white;"><i class="icon-megaphone"></i>공지사항</a></li>
+                        <li><a href="list" onmousedown="catComm()" style="color: white;"><i class="icon-chat"></i>자유게시판</a></li>
+                        <li><a href="galleryList" onmousedown="catComm()" style="color: white;"><i class="icon-camera"></i>갤러리게시판</a></li>
+                        <li><a href="mNoticeList" onmousedown="catComm()" style="color: white;"><i class="icon-megaphone"></i>공지사항</a></li>
 
                     </ul>
                 </li>
                 <!--nav6:이벤트-->
-                <li><a href="eventList" style="color: white;"><i class="fa fa-solid fa-star"></i>이벤트</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-solid fa-star"></i>이벤트</a>
+                     <ul class="dropdown-menu" role="menu" style="background-color: #6fb1cc;">
+                            <li><a href="eventList" onmousedown="catEvent()" style="color: white;"><i class="fa fa-solid fa-star"></i>이벤트</a></li>
+                            <li><a href="userAmt" onmousedown="catEvent()" style="color: white;"><i class="fa fa-solid fa-star"></i>회원 애니메이션</a></li>
+                     </ul>
+                </li>
                 <!--nav7 : 회원 관련창-->
                 <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;">
                     <th:block th:if="${session.loginId eq null}"><i class="icon-profile-male"></i>게스트</th:block>
@@ -113,4 +118,58 @@
 </nav>
 
 </body>
+
+<script>
+    function catHome(){
+        sessionStorage.setItem("curCategory", "1");
+    }
+    function catAbout(){
+        sessionStorage.setItem("curCategory", "2");
+    }
+    function catDivShop(){
+        sessionStorage.setItem("curCategory", "3");
+    }
+    function catEnv(){
+        sessionStorage.setItem("curCategory", "4");
+    }
+    function catComm(){
+        sessionStorage.setItem("curCategory", "5");
+    }
+    function catEvent(){
+        sessionStorage.setItem("curCategory", "6");
+    }
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+
+<script th:if="${session.loginId ne null}"  th:inline="javascript">
+
+    let username = [[${session.loginId}]];
+    let userPro = [[${session.loginm.memPROFILENAME}]];
+    if(userPro == null || userPro == ""){
+        userPro = "기본사진.png";
+    }
+
+    const websocket = new WebSocket("ws://192.168.0.55:9090/ws/index");
+
+    websocket.onopen = onOpen;
+
+    function onOpen() {  //
+
+        if(username==null || username==""){
+            return;
+        }else{
+            try{
+                var str = [username,  userPro , sessionStorage.getItem("curCategory").toString()];
+            }catch{
+                var str = [username,  userPro , 6];
+            }
+            websocket.send(str);
+        }
+
+    }
+
+</script>
 </html>

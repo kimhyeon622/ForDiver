@@ -124,7 +124,7 @@
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h1 class="product-title font-alt">[[${PoolList.PoName}]] 여행 패키지</h1>
+                                <h1 class="product-title font-alt">[[${Rese.ObjectName}]]</h1>
                             </div>
                         </div>
 
@@ -134,7 +134,7 @@
                                 <h3>예약 정보</h3>
                                 <hr/>
                                 <div class="price font-alt">
-                                    <h4 class="comment-form-title font-alt">가격 : [[${PoolList.PoPrice} * ${Rese.rePeople}]] 원</h4>
+                                    <h4 class="comment-form-title font-alt">가격 : [[${Rese.rePay}]] 원</h4>
                                 </div>
                                 <div><h4 class="comment-form-title font-alt">예약일 : [[${Rese.reDateTime}]]</h4></div>
                                 <div><h4 class="comment-form-title font-alt">인원 : [[${Rese.rePeople}]]</h4></div>
@@ -163,7 +163,7 @@
                                 <hr/>
                                 <a href="#"><img class="imgs" src="images/KG.jpg" onclick="pay()" ></a>
                                 <br/><br/>
-                                <input type="hidden" id="ScupPrice" th:value="${PoolList.PoPrice} * ${Rese.rePeople}">
+                                <input type="hidden" id="repay" th:value="${Rese.rePay}">
                                 <input type="hidden" id="maxPoint" th:value="${point}">
                                 <form method="post" action="buyPool" id="success">
                                     <input type="hidden" id="memId" name="memId" th:value="${session.loginId}">
@@ -171,7 +171,7 @@
                                     <input type="hidden" id="usePoint" name="usePoint" value="0">
                                     <input type="hidden" id="reDateTime" name="reDateTime" th:value="${Rese.reDateTime}">
                                     <input type="hidden" id="rePeople" name="rePeople" th:value="${Rese.rePeople}">
-                                    <input type="hidden" id="PoName" name="poolName" th:value="${PoolList.PoName}">
+                                    <input type="hidden" id="PoName" name="poolName" th:value="${Rese.ObjectName}">
                                     <a href="#"><img class="imgs" src="images/kakaopay.PNG" width="200px" onclick="requestPay()"></a>
                                 </form>
                             </div>
@@ -206,7 +206,7 @@ JavaScripts
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
     let buyname = document.getElementById("PoName").value;
-    let buyprice = document.getElementById("PoPrice").value;
+    let buyprice = document.getElementById("repay").value;
     let pay = document.getElementById("buyPay").value;
     let maxpoint = parseInt(document.getElementById("maxPoint").value);
 

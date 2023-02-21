@@ -156,7 +156,8 @@
               <h4 class="comment-form-title font-alt">예약</h4>
               <form class="reservation-form"  action="Reservation" method="post" name="ResrvationTest">
                 <input name="BuyKind" type="hidden" value="수영장">
-                <input name="BuyObjectName" type="hidden" value="아쿠아라인">
+                <input name="BuyObjectName" id="BuyObjectName" type="hidden" value="아쿠아라인">
+                <input type="hidden" name="ObjectName" id="ObjectName" value="아쿠아">
                 <input name="memId" type="hidden" th:value="${session.loginId}">
                 <div class="form-group">
                   <div class="input-group">
@@ -211,7 +212,6 @@
                       <option value="오후8시">오후 8:00</option>
                       <option value="오후8시30분">오후 8:30</option>
                       <option value="오후9시">오후 9:00</option>
-                      <option value="오후9시30분">오후 9:30</option>
                       <option value="오후9시30분">오후 9:30</option>
                       <option value="오후10시">오후 10:00</option>
                       <option value="오후10시30분">오후 10:30</option>
@@ -366,8 +366,10 @@ JavaScripts
     if(cos == "스쿠버다이빙"){
       document.getElementById("money").value = 30000;
       document.getElementById("surcharge").value = 0;
+      document.getElementById("ObjectName").value = "[아쿠아라인] 스쿠버다이빙";
     }else{
       document.getElementById("money").value = 15000;
+      document.getElementById("ObjectName").value = "[아쿠아라인] 프리다이빙";
     }
     }, 500)
 </script>

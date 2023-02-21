@@ -171,15 +171,38 @@ Stylesheets
                   <div class="input-group">
                     <div class="input-group-addon"><i class="icon-clock"></i></div>
                     <select class="form-control input-lg" id="time" name="reTime" type="text" required>
-                      <option value="1부(14:00~17:00)">1부(14:00~17:00)</option>
-                      <option value="2부(18:00~21:00)">2부(18:00~21:00)</option>
+                      <option value="오전9시">오전 9:00</option>
+                      <option value="오후9시30분">오전 9:30</option>
+                      <option value="오전10시">오전 10:00</option>
+                      <option value="오전10시30분">오전 10:30</option>
+                      <option value="오전11시">오전 11:00</option>
+                      <option value="오전11시30분">오전 11:30</option>
+                      <option value="오후12시">오전 12:00</option>
+                      <option value="오후12시30분">오전 12:30</option>
+                      <option value="오후1시">오후 1:00</option>
+                      <option value="오후1시30분">오후 12:30</option>
+                      <option value="오후2시">오후 2:00</option>
+                      <option value="오후2시30분">오후 2:30</option>
+                      <option value="오후3시">오후 3:00</option>
+                      <option value="오후3시30분">오후 3:30</option>
+                      <option value="오후4시">오후 4:00</option>
+                      <option value="오후4시30분">오후 4:30</option>
+                      <option value="오후5시">오후 5:00</option>
+                      <option value="오후5시30분">오후 5:30</option>
+                      <option value="오후6시">오후 6:00</option>
+                      <option value="오후6시30분">오후 6:30</option>
+                      <option value="오후7시">오후 7:00</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="icon-profile-male"></i></div>
+                    <input type="radio" name="cos" value="일반" checked>&nbsp;일반&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="cos" value="체험다이빙">&nbsp;체험다이빙&nbsp;&nbsp;&nbsp;&nbsp;
                     <input class="form-control input-lg" id="people" type="number" name="rePeople" min="1" max="20" step="1" onchange="onch()" placeholder="총 이용 인원" required/>
+                    <input type="hidden" id="money" value="33000">
+                    <input type="hidden" id="surcharge" value="22000">
                     <p >금액 : <span id="pay">0</span>원</p>
                   </div>
                 </div>
@@ -310,6 +333,19 @@ JavaScripts
   // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
   // marker.setMap(null);
 
+</script>
+<script>
+  setInterval( function(){
+    let cos = $('input[name=cos]:checked').val();
+    if(cos == "일반"){
+      document.getElementById("money").value = 33000;
+      document.getElementById("ObjectName").value = "[잠실스킨스쿠버다이빙] 일반";
+    }else{
+      document.getElementById("money").value = 100000;
+      document.getElementById("surcharge").value = 0;
+      document.getElementById("ObjectName").value = "[잠실스킨스쿠버다이빙] 체험다이빙";
+    }
+  }, 500)
 </script>
 </body>
 </html>

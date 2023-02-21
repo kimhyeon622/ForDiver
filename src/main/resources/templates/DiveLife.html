@@ -160,6 +160,7 @@
               <form class="reservation-form"  action="Reservation" method="post" name="ResrvationTest">
                 <input name="BuyKind" type="hidden" value="수영장">
                 <input name="BuyObjectName" type="hidden" value="다이브라이프">
+                <input type="hidden" name="ObjectName" id="ObjectName" value="다이브">
                 <input name="memId" type="hidden" th:value="${session.loginId}">
                 <div class="form-group">
                   <div class="input-group">
@@ -198,22 +199,16 @@
                       <option value="오후6시">오후 6:00</option>
                       <option value="오후6시30분">오후 6:30</option>
                       <option value="오후7시">오후 7:00</option>
-                      <option value="오후7시30분">오후 7:30</option>
-                      <option value="오후8시">오후 8:00</option>
-                      <option value="오후8시30분">오후 8:30</option>
-                      <option value="오후9시">오후 9:00</option>
-                      <option value="오후9시30분">오후 9:30</option>
-                      <option value="오후10시">오후 10:00</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="icon-profile-male"></i></div>
-                    <input type="radio" name="cos" value="스쿠버다이빙" checked>&nbsp;스쿠버 오픈워터 강습&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="cos" value="스쿠버다이빙">&nbspPADI 다이브 마스터 강습&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-                    <input type="radio" name="cos" value="프리다이빙">&nbsp;키즈 체험 프리다이빙 강습&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="cos" value="프리다이빙">&nbsp;서울 프리다이빙 강습 PADI 마스터 프리다이버 강습&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="cos" value="스쿠버 오픈워터 강습" checked>&nbsp;스쿠버 오픈워터 강습&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="cos" value="PADI 다이브 마스터 강습">&nbsp;PADI 다이브 마스터 강습&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                    <input type="radio" name="cos" value="키즈 체험 프리다이빙 강습">&nbsp;키즈 체험 프리다이빙 강습&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="cos" value="서울 프리다이빙 강습 PADI 마스터 프리다이버 강습">&nbsp;서울 프리다이빙 강습 PADI 마스터 프리다이버 강습&nbsp;&nbsp;&nbsp;&nbsp;
                     <input class="form-control input-lg" id="people" type="number" name="rePeople" min="1" max="10" step="1" onchange="onch()" placeholder="총 이용 인원" required=""/>
                     <input type="hidden" id="money" value="350000">
                     <input type="hidden" id="surcharge" value="0">
@@ -348,6 +343,24 @@ JavaScripts
   // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
   // marker.setMap(null);
 
+</script>
+<script>
+  setInterval( function(){
+    let cos = $('input[name=cos]:checked').val();
+    if(cos == "스쿠버 오픈워터 강습"){
+      document.getElementById("money").value = 350000;
+      document.getElementById("ObjectName").value = "[다이브라이프] 스쿠버 오픈워터 강습";
+    }else if(cos == "PADI 다이브 마스터 강습"){
+      document.getElementById("money").value = 1000000;
+      document.getElementById("ObjectName").value = "[다이브라이프] PADI 다이브 마스터 강습";
+    }else if(cos == "키즈 체험 프리다이빙 강습"){
+      document.getElementById("money").value = 100000;
+      document.getElementById("ObjectName").value = "[다이브라이프] 키즈 체험 프리다이빙 강습";
+    }else{
+      document.getElementById("money").value = 700000;
+      document.getElementById("ObjectName").value = "[다이브라이프] 서울 프리다이빙 강습 PADI 마스터 프리다이버 강습";
+    }
+  }, 500)
 </script>
 </body>
 </html>
