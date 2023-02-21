@@ -1,0 +1,31 @@
+html{
+    font-family: "Adobe 고딕 Std B";
+    text-align: center;
+    color: white;
+    font-weight: 300;
+}
+
+.card{
+    margin: 100px;
+    padding-bottom: 300px;
+}
+
+.content{
+    margin: 40px;
+    padding-bottom: 100px;
+}
+
+@keyframes blink-effect {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    animation: blink-effect 1.5s step-end infinite;
+}
+
+.clicked{
+    background: aqua;
+    color: blue;
+}

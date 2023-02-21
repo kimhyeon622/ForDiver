@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.first.project.dao.SummerDAO">
+
+    <resultMap id="result" type="code">
+        <result column="CODENUM" property="codeNum"/>
+        <result column="MEMID" property="memId"/>
+        <result column="CODETITLE" property="codeTitle"/>
+        <result column="CODEDATE" property="codeDate"/>
+        <result column="CODE" property="summercode"/>
+
+    </resultMap>
+
+    <insert id="summerWrite" parameterType="code">
+        INSERT INTO SUMMERCODET VALUES (SUMMERCODET_SEQ.NEXTVAL, #{memId}, #{codeTitle}, SYSDATE, 1, #{summercode})
+    </insert>
+
+    <insert id="summercodeCheck" parameterType="String">
+        INSERT INTO SUMMERCODET VALUES (#{summercode})
+    </insert>
+
+    <select id="toSuccess" resultMap="result">
+        SELECT * FROM SUMMERCODET
+    </select>
+
+    <select id="summerView" parameterType="int" resultMap="result">
+        SELECT * FROM SUMMERCODET WHERE CODENUM = #{codeNum}
+    </select>
+
+    <!--조회수 증가-->
+    <update id="summerViewCount">
+        UPDATE SUMMERCODET SET CODEHIT = CODEHIT + 1 WHERE CODENUM = #{codeNum}
+    </update>
+
+    <select id="summerCount" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM SUMMERCODET WHERE CODETITLE LIKE '%'||#{keyword}||'%'
+    </select>
+
+    <select id="summerList" parameterType="paging" resultMap="result">
+        SELECT * FROM SUMMERCODETLIST WHERE (RN BETWEEN #{startRow} AND #{endRow}) AND CODETITLE LIKE '%'||#{keyword}||'%'
+    </select>
+
+    <delete id="summerDelete" parameterType="int">
+        DELETE FROM SUMMERCODET WHERE CODENUM = #{codeNum}
+    </delete>
+
+    <update id="summerModify" parameterType="code">
+        UPDATE SUMMERCODET SET CODETITLE = #{codeTitle}, CODE = #{summercode} WHERE CODENUM = #{codeNum}
+    </update>
+
+    <insert id="commentWrite" parameterType="comment">
+        INSERT INTO SUMMERCOMMENTT VALUES (SC_SEQ.NEXTVAL, #{codeNum}, #{memId}, 0, #{scContent}, SYSDATE, 1)
+    </insert>
+
+    <select id="commentList" parameterType="int" resultType="comment">
+        SELECT * FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum} AND SCPARENT = 0 ORDER BY SCNUM
+    </select>
+
+    <select id="summerLikeCount" parameterType="int" resultType="int"> SELECT COUNT(*) FROM SUMMERLIKET WHERE CODENUM = #{codeNum} </select>
+
+    <select id="summerLikeCheck" parameterType="code" resultType="code">
+        SELECT * FROM SUMMERLIKET WHERE MEMID = #{memId} AND CODENUM = #{codeNum}
+    </select>
+
+    <insert id="summerLikeInsert" parameterType="code">
+        INSERT INTO SUMMERLIKET VALUES(SL_SEQ.NEXTVAL, #{codeNum}, #{memId})
+    </insert>
+
+    <delete id="summerLikeDelete" parameterType="code">
+        DELETE FROM SUMMERLIKET WHERE CODENUM = #{codeNum} AND MEMID = #{memId}
+    </delete>
+
+    <insert id="childWrite" parameterType="comment">
+        INSERT INTO SUMMERCOMMENTT VALUES(SC_SEQ.NEXTVAL,#{codeNum},#{memId},#{scParent},#{scContent},SYSDATE,1)
+    </insert>
+
+    <select id="childList" parameterType="int" resultType="comment">
+        SELECT * FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum} AND NOT SCPARENT = 0 ORDER BY SCNUM
+    </select>
+
+    <select id="commentLikeCheck" parameterType="commentLike" resultType="commentLike">
+        SELECT * FROM COMMENTLIKET WHERE MEMID = #{memId} AND SCNUM = #{scNum}
+    </select>
+
+    <insert id="commentLikeInsert" parameterType="commentLike">
+        INSERT INTO COMMENTLIKET VALUES (CL_SEQ.NEXTVAL, #{scNum}, #{memId})
+    </insert>
+
+    <delete id="commentLikeDelete" parameterType="commentLike">
+        DELETE FROM COMMENTLIKET WHERE SCNUM = #{scNum} AND MEMID = #{memId}
+    </delete>
+
+    <select id="collectChild" parameterType="comment" resultType="comment">
+        SELECT * FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum} AND SCPARENT = #{scParent}
+    </select>
+
+    <update id="commentDelete" parameterType="int">
+        UPDATE SUMMERCOMMENTT SET SCBOOL = 0 WHERE SCNUM = #{scNum}
+    </update>
+
+    <update id="commentModify" parameterType="comment">
+        UPDATE SUMMERCOMMENTT SET SCCONTENT = #{scContent} WHERE SCNUM = #{scNum}
+    </update>
+
+    <select id="allComment" parameterType="int" resultType="comment">
+        SELECT * FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum} AND SCBOOL = 1
+    </select>
+
+    <select id="commentLikeCount" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM COMMENTLIKET WHERE SCNUM = #{scNum}
+    </select>
+
+    <delete id="commentDeleteForSummerDelete" parameterType="int">
+        DELETE FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum}
+    </delete>
+
+    <select id="realAllComment" parameterType="int" resultType="int">
+        SELECT SCNUM FROM SUMMERCOMMENTT WHERE CODENUM = #{codeNum}
+    </select>
+
+    <delete id="realCommentLikeDelete" parameterType="int">
+        DELETE FROM COMMENTLIKET WHERE SCNUM = #{scNum}
+    </delete>
+
+    <delete id="summerLikeDeleteForSummerDelete" parameterType="int">
+        DELETE FROM SUMMERLIKET WHERE CODENUM = #{codeNum}
+    </delete>
+
+    <select id="checkForCommentModifyAndDelete" parameterType="int" resultType="String">
+        SELECT MEMID FROM SUMMERCOMMENTT WHERE SCNUM = #{scNum}
+    </select>
+
+</mapper>

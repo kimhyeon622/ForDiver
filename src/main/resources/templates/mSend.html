@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+  Document Title
+  =============================================
+  -->
+  <title>Titan | Multipurpose HTML5 Template</title>
+  <!--
+  Favicons
+  =============================================
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 임시 -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+          crossorigin="anonymous"></script>
+
+  <!--For summer note-->
+  <script src="/summernote/summernote-lite.js"></script>
+  <script src="/summernote/lang/summernote-ko-KR.js"></script>
+  <link rel="stylesheet" href="/summernote/summernote-lite.css">
+  <style>
+    /* 12 */
+    .custom-btn {
+      width: 130px;
+      height: 40px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+      outline: none;
+    }
+    .btn-12{
+      position: relative;
+      right: 20px;
+      bottom: 20px;
+      border:none;
+      box-shadow: none;
+      width: 130px;
+      height: 40px;
+      line-height: 42px;
+      -webkit-perspective: 230px;
+      perspective: 230px;
+    }
+    .btn-12 span {
+      background: rgb(0,172,238);
+      background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+      display: block;
+      position: absolute;
+      width: 130px;
+      height: 40px;
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+      border-radius: 5px;
+      margin:0;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+    }
+    .btn-12 span:nth-child(1) {
+      box-shadow:
+              -7px -7px 20px 0px #fff9,
+              -4px -4px 5px 0px #fff9,
+              7px 7px 20px 0px #0002,
+              4px 4px 5px 0px #0001;
+      -webkit-transform: rotateX(90deg);
+      -moz-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+      -webkit-transform-origin: 50% 50% -20px;
+      -moz-transform-origin: 50% 50% -20px;
+      transform-origin: 50% 50% -20px;
+    }
+    .btn-12 span:nth-child(2) {
+      -webkit-transform: rotateX(0deg);
+      -moz-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      -webkit-transform-origin: 50% 50% -20px;
+      -moz-transform-origin: 50% 50% -20px;
+      transform-origin: 50% 50% -20px;
+    }
+    .btn-12:hover span:nth-child(1) {
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+      -webkit-transform: rotateX(0deg);
+      -moz-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+    }
+    .btn-12:hover span:nth-child(2) {
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+      color: transparent;
+      -webkit-transform: rotateX(-90deg);
+      -moz-transform: rotateX(-90deg);
+      transform: rotateX(-90deg);
+    }
+  </style>
+
+  <!--
+  Stylesheets
+  =============================================
+
+  -->
+  <!-- Default stylesheets-->
+  <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Template specific stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link href="/lib/animate.css/animate.css" rel="stylesheet">
+  <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+  <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+  <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+  <!-- Main stylesheet and color file-->
+  <link href="/css/style.css" rel="stylesheet">
+  <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+  <!--
+  JavaScripts
+  =============================================
+  -->
+
+  <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/lib/wow/dist/wow.js"></script>
+  <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+  <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+  <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+  <script src="/lib/flexslider/jquery.flexslider.js"></script>
+  <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="/lib/smoothscroll.js"></script>
+  <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+  <script src="/js/plugins.js"></script>
+  <script src="/js/main.js"></script>
+  <style>
+    .div-page-header{
+      background-color: #E33821FF;
+    }
+    .mailcss{
+      height: 400px;
+      width:1000px;
+    }
+
+  </style>
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+
+  <header data-th-include="./header.html"></header>
+
+  <div class="main">
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+      <header data-th-include="./adminpagesidebar.html"></header>
+    </div>
+    <div id="main">
+      <section class="module bg-dark-20 div-page-header" data-background="/해저.png">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <h2 class="module-title font-alt">공지 작성 페이지</h2>
+              <div class="module-subtitle font-serif">
+                공지 작성페이지입니다.<br/>
+                사진, 영상, 영상 링크 등 자료를 자유롭게 올리고 글을 작성할 수 있습니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="module">
+        <div class="container">
+          <div class="row">
+            <span style="font-size: 20px">제목 </span>&nbsp;
+            <input type="text" name="title" id="codeTitle" size="100" height="20px" placeholder="제목은 공백 포함 25자까지만 작성할 수 있습니다!">&nbsp;
+            <button class="custom-btn btn-12" type="button" onclick="mailsend()"><span>완료</span><span>작성</span></button>
+            <br/>
+            <br/>
+            <textarea type="text" id="content" class="mailcss" name="content" cols="400" rows="100" ></textarea>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer" data-th-include="./footer.html"></footer>
+  <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+</body>
+<script>
+
+  function mailsend(){
+    let mailcontent = $('#content').val();
+    let mailTitle = $('#codeTitle').val();
+
+    console.log(mailcontent);
+    console.log(mailTitle);
+    let conf = confirm('전체메일을 전송하시겠습니까?');
+
+    if(conf) {
+      $.ajax({
+        data: {
+          "mailtitle": mailTitle,
+          "mailcontent": mailcontent
+        },
+        type: "POST",
+        url: "mSendAll",
+        dataType: "text",
+        //ajax 완료시 작동
+        success: function (data) {
+
+          if (data == "OK") {
+            alert("메일 전송 완료했습니다.")
+            location.href = "mSendAllForm?"
+          } else {
+            alert("메일 전송 중 오류가 발생했습니다.")
+          }
+
+        }
+        //ajax전송 중 에러시 작동
+        ,error: function () {
+          alert("메일 전송 중 오류가 발생했습니다. ");
+        }
+        //ajax전송 직전 작동
+        ,beforeSend: function () {
+          var width = 0;
+          var height = 0;
+          var left = 0;
+          var top = 0;
+
+          width = 300;
+          height = 300;
+
+
+          top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+          left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+
+
+
+          if($("#div_ajax_load_image").length != 0) {
+            $("#div_ajax_load_image").css({
+              "top": top+"px",
+              "left": left+"px"
+            });
+            $("#div_ajax_load_image").show();
+          }
+          else {
+            $('body').append('<div id="div_ajax_load_image" style="position:absolute; top:' + top + 'px; left:' + left + 'px; width:' + width + 'px; height:' + height + 'px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="/images/다운로드.gif" style="width:300px; height:300px;"></div>');
+          }
+
+        }
+        //ajax끝나면 작동
+        , complete: function () {
+          $("#div_ajax_load_image").hide();
+        }
+      });
+    }
+  }
+
+</script>
+</main>
+</html>

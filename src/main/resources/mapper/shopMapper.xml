@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.first.project.dao.ShopDAO">
+
+
+    <select id="btnList" parameterType="divEqSort" resultType="divEqSort">
+        SELECT * FROM DIVEQUTSORT WHERE DIVEQSONUM LIKE #{divEqSoNum}||'%'
+    </select>
+
+    <select id="hisList" parameterType="String" resultType="divEqSort">
+        SELECT * FROM DIVEQUTSORT WHERE DIVEQSONUM = #{hisNum}
+    </select>
+
+    <select id="eqCount" resultType="int" parameterType="String">
+        SELECT COUNT(*) FROM DIVEQUT WHERE DIVEQSORTNUM LIKE #{divEqSoNum}||'%'
+    </select>
+
+    <select id="eqList" resultType="divEq" parameterType="divEqList">
+        SELECT * FROM(SELECT DIVEQUT.* ,ROW_NUMBER() OVER(ORDER BY DIVEQNUM DESC) AS RN
+                      FROM DIVEQUT WHERE DIVEQSORTNUM LIKE #{divEqSortNum}||'%') WHERE RN BETWEEN #{startRow} AND #{endRow}
+    </select>
+
+    <select id="eqDetail" resultType="divEq" parameterType="String">
+        SELECT * FROM DIVEQUT WHERE DIVEQNUM = #{divEqNum}
+    </select>
+
+    <select id="cusBtnList" resultType="divEqSort" parameterType="paging">
+        SELECT DIVEQSONUM,DIVEQSONAME,DIVEQSOPHOTONAME FROM (SELECT DIVEQUTSORT.*,ROWNUM AS RN FROM DIVEQUTSORT) WHERE RN BETWEEN #{startRow} AND #{endRow}
+    </select>
+
+    <update id="eqBasketSet" parameterType="shopMember">
+        UPDATE MEMSHOPT SET EQBASKETLIST = EQBASKETLIST||#{eqBasketList} WHERE MEMSHOPID = #{loginId}
+    </update>
+
+    <update id="buyListSet" parameterType="shopMember">
+        UPDATE MEMSHOPT SET EQBASKETLIST = #{eqBasketList} WHERE MEMSHOPID = #{loginId}
+    </update>
+
+    <select id="eqBasketView" resultType="String" >
+        SELECT EQBASKETLIST FROM MEMSHOPT WHERE MEMSHOPID = #{loginId}
+    </select>
+
+    <select id="cusDBView" resultType="String" >
+        SELECT BTCUSTOMLIST FROM MEMSHOPT WHERE MEMSHOPID = #{loginId}
+    </select>
+
+    <update id="cusDBSet" parameterType="shopMember">
+        UPDATE MEMSHOPT SET BTCUSTOMLIST = #{btCustomList} WHERE MEMSHOPID = #{loginId}
+    </update>
+
+    <select id="cusSel" resultType="divEqSort" parameterType="int">
+        SELECT DIVEQSONUM,DIVEQSONAME,DIVEQSOPHOTONAME FROM (SELECT DIVEQUTSORT.*,ROWNUM AS RN FROM DIVEQUTSORT) WHERE RN = #{rowNum}
+    </select>
+
+    <insert id="shopMemSet" parameterType="String">
+        INSERT INTO MEMSHOPT VALUES (#{loginId}, '' , ' ')
+    </insert>
+
+    <update id="eqPay" parameterType="divEq">
+        UPDATE DIVEQUT SET DIVHAVE = (DIVHAVE - #{eqCount}) WHERE DIVEQNUM = #{divEqNum}
+    </update>
+
+    <update id="eqBasketReset" parameterType="shopMember">
+        UPDATE MEMSHOPT SET EQBASKETLIST = #{eqBasketList} WHERE MEMSHOPID = #{loginId}
+    </update>
+</mapper>

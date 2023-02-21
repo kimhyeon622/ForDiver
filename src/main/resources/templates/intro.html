@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    
+
+    <style>
+        
+        body{
+            background-color: white;
+            margin: 0px;
+            padding: 0px;
+            width: 20000px;
+            overflow-y: hidden;
+         
+        }
+        span,div{
+            margin: 0;
+            padding: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        #turtle {
+            position: absolute;
+        }
+        #light{
+
+            width: 30px;
+            box-sizing: initial;
+            border-bottom: 100px solid #ffc720;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            height: 3px;
+            opacity: 0.3;
+            display:none;
+            position: absolute;     
+        }   
+        .air{
+            width: 12px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(246, 248, 248, 0.47);       
+            opacity: 0.7;
+            position: absolute;         
+            border: solid rgba(255, 255, 255, 0.724) 1px;  
+        }
+
+        
+        #title{
+            margin: 0;
+            padding: 0;
+            /* display: inline-block; */
+            text-align: center;
+            height: auto;
+            line-height: 100vh;
+            justify-content : center;
+            color:white;
+            position: sticky;
+            float: left;
+            overflow: visible;
+        }
+        #videoo{
+            position: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        #sub{   /* div */
+            margin: 0;
+            padding: 0;
+            color:white;
+            position: relative;
+            overflow: visible;
+            line-height: 100vh;
+            
+            /* text-align: center; */
+            /* height: auto; */
+            /* justify-content : center; */
+        }
+        #sub1{  /* span */
+            z-index: 1;
+        }
+        #sub2{  /* span */
+            z-index: 2;
+        }
+        #sub3{  /* span */
+            z-index: 3;
+        }
+
+        #fish{
+            margin: 0;
+            padding: 0;
+            
+            background-size: cover;
+            /* display: inline-block; */
+            text-align: left;
+            height: auto;
+            line-height: 100vh;
+            background-color: black;
+            justify-content : center;
+            color:white;
+            float: left;
+            position: sticky;
+            overflow: visible;
+            z-index: 5;
+        }
+
+        #fishSub{
+            margin: 0;
+            padding: 0;
+            background-clip: text;
+            -webkit-background-clip: text;
+            
+            background-color: black;
+            /* background-image: linear-gradient(90deg, rgb(0, 0, 172), rgb(0, 0, 243) 0px,rgb(15, 15, 125)); */
+            position: relative;
+            overflow: visible;
+            line-height: 7vh;
+            font-size: 50px;
+            z-index: 1;
+            font-weight: 800;
+            
+        }
+        #video{
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
+
+        #fishContent{
+            margin: 0;
+            padding: 0;
+            top: 0px;
+            width: 1700px;
+            height: 900px;
+            background-size: cover;
+            /* display: inline-block; */
+          
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+            /* background-color: black; */
+            
+            color:white;
+            
+            
+            position: fixed;
+            overflow: visible;
+            z-index: -2;
+        }
+
+        
+        #seaEco{
+            margin: 0;
+            padding: 0;
+            /* display: inline-block; */
+            text-align: center;
+            height: auto;
+            line-height: 100vh;
+            justify-content : center;
+            background-color: black;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            color:white;
+            position: sticky;
+            float: left;
+            overflow: visible;
+            
+        }
+
+        .news{
+            background-color: bisque;
+            
+            width: 510px;
+            height: 450px;
+            position: relative;
+            float: left;
+            border-radius: 2px;
+        }
+
+        #news1{
+            z-index: 1;
+            
+            left: 500px;
+            top: 250px;
+        }
+        #news2{
+            z-index: 2;
+            left: 250px;
+            top: 150px;
+        }
+        #news3{
+            z-index: 3;
+            left: -385px;
+            top: 320px;
+        }
+
+        .speeTurtle{
+            background-color: white;
+            border-radius: 15px;
+            color: black;
+            width: 300px;
+            height: 80px;
+            border: 2px ridge black;
+            position: absolute;
+            left: -200px;
+            top: -200px;
+            text-align: center;
+            line-height: 80px;
+        }
+       
+        .speeBub{
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px ridge black;
+            background-color: white;
+            position: relative;
+            left: 250px;
+            top:7px;
+        }
+        
+
+        .menuBar{
+            position: fixed;
+            background-color: rgba(6, 155, 181, 0.5);
+            border: white 1px solid;
+            color: white;
+            left:1495px;
+            width: 185px;
+            height: 50px;
+            text-align: left;
+            padding-left: 20px;
+            line-height: 50px;
+        }
+
+        .menuBar1{
+            padding-left: 14px;
+            z-index: 100;
+            
+            top:0px;
+
+        }
+        .menuBar2{
+            padding-left: 21px;
+            z-index: 99;
+            width: 178px;
+            top:50px;
+           
+        }
+        .menuBar3{
+            padding-left: 19.5px;
+            z-index: 98;
+            width: 179.5px;
+            top:100px;
+        }
+        .menuBar4{
+            padding-left: 17px;
+            z-index: 97;
+            width: 182px;
+            top:150px;
+        }
+        
+        #goMain{
+          position: fixed;
+          left: 85%;
+          top:87%;
+          width: 200px;
+          height: 50px;
+          z-index: 97;
+          background-color: white;
+          text-align: center;
+          line-height: 50px;
+          font-size: 20px;
+          color: white;
+          visibility: hidden;
+        }
+        #goMain2{
+          
+          width: 300px;
+          height: 200px;
+          text-decoration: initial;
+          color: blue;
+          font-weight: bolder;
+        }
+
+        .noneScroll{
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .noneScroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+        }
+
+    </style>
+
+</head>
+
+<body class="noneScroll" onload="videoPlay()">
+
+    <div class="menuBar menuBar1" onclick="goScroll(1)" onmouseleave="leaveMenu()" onmouseover="overMenu()"> <span style="font-size:30px">Ⅰ</span>ntro  </div>
+    <div class="menuBar menuBar2" onclick="goScroll(2)" onmouseleave="leaveMenu()" onmouseover="overMenu()"> <span style="font-size:30px">S</span>&nbsp;ea Creatures view</div>
+    <div class="menuBar menuBar3" onclick="goScroll(3)" onmouseleave="leaveMenu()" onmouseover="overMenu()"> <span style="font-size:30px">C</span>&nbsp;ourse</div>
+    <div class="menuBar menuBar4" onclick="goScroll(4)" onmouseleave="leaveMenu()" onmouseover="overMenu()"> <span style="font-size:30px">M</span>&nbsp;ain Page</div>
+
+    <div id="title">
+        <video id="videoo" muted autoplay src="/introMedia/Divers - 130239.mp4"></video>
+        <div id="sub"></div>
+   </div>
+
+   <div id="fish">
+    <div id="fishSub" style="padding-left: 250px; padding-top: 30px;">
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;다양한 해양생물을 볼 수 있습니다
+       
+    </div>
+    
+    
+   </div>
+   <div id="fishContent">
+    
+   </div>
+
+   
+   <div id="seaEco">
+       <span style="color:white; position: absolute; top: -370px; left: 450px; font-size: 100px; font-weight: bold;">다양한 스쿠버 코스</span>
+       <img id="news1" class="news" src="/images/코스1.jpg">
+       <img id="news2" class="news" src="/images/코스2.jpg">
+       <img id="news3" class="news" src="/images/코스3.jpg">
+   </div>
+  <div id="goMain">
+    <a href="index" id="goMain2">메인 페이지로</a>
+  </div>
+
+
+    
+    <img id="turtle" src="/introImage/거북이1.png" style="width: 140px;" alt="">
+    <div id="light" onmouseover="lightOver()"></div>
+   
+    <div id="air1" class="air" style="left: 100px; top: 950px;"></div>
+    <div id="air2" class="air" style="left: 120px; top: 945px;"></div>
+    <div id="air3" class="air" style="left: 130px; top: 955px;"></div>
+    <div id="air4" class="air" style="left: 180px; top: 945px;"></div>
+    <div id="air5" class="air" style="left: 190px; top: 930px;"></div>
+    <div id="air6" class="air" style="left: 100px; top: 925px;"></div>
+    <div id="air7" class="air" style="left: 120px; top: 960px;"></div>
+    
+    <div id="air8" class="air" style="left:  800px; top: 960px;"></div>
+    <div id="air9" class="air" style="left:  820px; top: 970px;"></div>
+    <div id="air10" class="air" style="left: 830px; top: 950px;"></div>
+    <div id="air11" class="air" style="left: 880px; top: 945px;"></div>
+    <div id="air12" class="air" style="left: 890px; top: 935px;"></div>
+    <div id="air13" class="air" style="left: 800px; top: 920px;"></div>
+    <div id="air14" class="air" style="left: 820px; top: 980px;"></div>
+    
+    <div id="air15" class="air" style="left: 1400px; top: 950px;"></div>
+    <div id="air16" class="air" style="left: 1420px; top: 970px;"></div>
+    <div id="air17" class="air" style="left: 1430px; top: 955px;"></div>
+    <div id="air18" class="air" style="left: 1480px; top: 945px;"></div>
+    <div id="air19" class="air" style="left: 1490px; top: 930px;"></div>
+    <div id="air20" class="air" style="left: 1400px; top: 955px;"></div>
+    <div id="air21" class="air" style="left: 1420px; top: 980px;"></div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+</body>
+
+<!-- 마우스 거북이 + 물방울 -->
+<script>
+const a = document.getElementById('turtle');
+
+
+
+let big = 25;   // 질량, 크기(반지름)
+let eX = 0;     // 마우스 x위치
+let eY = 0;     // 마우스 y위치
+let xLen = 0;       // x 탄성길이
+let yLen = 0;       // y 탄성길이
+let k = 2;        // 탄성계수
+let mu = 0.3;       // 마찰계수
+let g = 9.81;       // 중력가속도
+let damping = mu*g*big*0;    // 마찰력
+let xForce = 0;     // x 총힘
+let yForce = 0;     // y 총힘
+let xball = 0;
+let yball = 0;
+let deg = 0;
+let light = document.getElementById("light");
+let radius = 67.5;
+
+
+let xSin = 0;
+let ySin = 0;
+
+function move(){
+        
+        xLen = (eX -75 - Number(a.style.left.substring(0,a.style.left.length-2)));
+        yLen = (eY -10 - Number(a.style.top.substring(0,a.style.top.length-2)));
+
+ 
+        if(xLen > 0){
+            xForce = xLen *k - damping;
+            if(xForce < 0){
+                xForce =0;
+            }
+        }else if(xLen <0){
+            xForce = xLen *k + damping;
+            if(xForce > 0){
+                xForce =0;
+            }
+        }else{
+            xForce = 0;
+        }
+        if(yLen > 0){
+            yForce = yLen *k - damping;
+            if(yForce < 0){
+                yForce =0;
+            }
+        }else if(yLen <0){
+            yForce = yLen *k + damping;
+            if(yForce > 0){
+                yForce =0;
+            }
+        }else{
+            yForce = 0;
+        }
+
+        // xball 볼위치 // a 움직일 볼
+        deg = getAngle(Number(a.style.left.substring(0,a.style.left.length-2)),Number(a.style.top.substring(0,a.style.top.length-2)), eX-50,eY-20) + 180;
+        light.style.rotate = deg +"deg";
+        light.style.left = (Number(a.style.left.substring(0,a.style.left.length-2))-42.5)- radius*Math.sin(deg *Math.PI/180) + "px";
+        light.style.top = (Number(a.style.top.substring(0,a.style.top.length-2))-27.5) + radius*Math.cos(deg *Math.PI/180) + "px";
+
+        a.style.left = xball+ + xForce*0.1*0.2  + 'px';
+        a.style.top = yball+ + yForce*0.1*0.2  + 'px';
+        xball =  Number(a.style.left.substring(0,a.style.left.length-2));
+        yball = Number(a.style.top.substring(0,a.style.top.length-2));
+
+        a.style.rotate = deg+90 + "deg";
+
+
+       
+    }
+    
+   
+
+    repeatMove();
+
+    function repeatMove(){  // 프레임 1초에 60번, 0.017초 마다/ 0.25초에 15번
+        
+
+        requestAnimationFrame(move);
+        requestAnimationFrame(repeatMove);
+
+    }
+
+    function getAngle(x1,y1,x2,y2) {
+        let a;
+        if(y1 == y2) {
+            if(x2<x1) {
+                a = -90;
+            } else {
+                a = 90;
+            }
+        } else if(x1==x2 && y2>y1) {
+            a = 180;
+        } else {
+            const rad = Math.atan((x2-x1)/(y1-y2));
+            a = rad * 180 / Math.PI;
+
+            if(y2>y1 && x2>x1) {
+                a = 180 + a;
+            } else if(y2>y1 && x2<x1) {
+                a = -180 + a;
+            }
+        }
+        return a;
+    }
+
+    let pointX = 0;
+
+    let pointY1 = 850;
+    let pointY2 = 845;
+    let pointY3 = 855;
+    let pointY4 = 840;
+    let pointY5 = 855;
+    let pointY6 = 825;
+    let pointY7 = 860;
+
+    let pointY8 = 860;
+    let pointY9 = 870;
+    let pointY10= 850;
+    let pointY11= 845;
+    let pointY12= 835;
+    let pointY13= 820;
+    let pointY14= 880;
+
+    let pointY15 = 850;
+    let pointY16 = 870;
+    let pointY17 = 855;
+    let pointY18 = 845;
+    let pointY19 = 830;
+    let pointY20 = 855;
+    let pointY21 = 880;
+
+    setInterval(() => {
+
+if(airGroup1 == false){
+    let randNum = Math.random()*400;
+
+    air1.style.left= pointX +randNum +"px";
+    air2.style.left= pointX +randNum +20+"px";
+    air3.style.left= pointX +randNum +30 +"px";
+    air4.style.left= pointX +randNum-20 +"px";
+    air5.style.left= pointX+randNum -10 +"px";
+    air6.style.left= pointX +randNum+"px";
+    air7.style.left= pointX +randNum+10 +"px";
+    pointY1 = 1050;
+    pointY2 = 1030;
+    pointY3 = 1060;
+    pointY4 = 1040;
+    pointY5 = 1055;
+    pointY6 = 1020;
+    pointY7 = 1070;
+    airGroup1 = true;
+}
+
+if(airGroup2 == false){
+    let randNum = Math.random()*400 + 700;
+
+    air8.style.left= pointX +randNum -20 +"px";
+    air9.style.left= pointX +randNum +30+"px";
+    air10.style.left= pointX +randNum  +"px";
+    air11.style.left= pointX +randNum-10 +"px";
+    air12.style.left= pointX+randNum +10 +"px";
+    air13.style.left= pointX +randNum -30+"px";
+    air14.style.left= pointX +randNum +20 +"px";
+    pointY8  = 1060;
+    pointY9  = 1070;
+    pointY10 = 1050;
+    pointY11 = 1045;
+    pointY12 = 1035;
+    pointY13 = 1030;
+    pointY14 = 1080;
+    airGroup2 = true;
+}
+
+if(airGroup3 == false){
+    let randNum = Math.random()*400 + 1400;
+
+    air15.style.left= pointX +randNum +10 +"px";
+    air16.style.left= pointX +randNum +20+"px";
+    air17.style.left= pointX +randNum -30 +"px";
+    air18.style.left= pointX +randNum -10 +"px";
+    air19.style.left= pointX+randNum  +"px";
+    air20.style.left= pointX +randNum +5 +"px";
+    air21.style.left= pointX +randNum -15 +"px";
+    pointY15 = 1050;
+    pointY16 = 1070;
+    pointY17 = 1055;
+    pointY18 = 1045;
+    pointY19 = 1030;
+    pointY20 = 1055;
+    pointY21 = 1080;
+    airGroup3 = true;
+}
+
+
+}, 100);
+
+let airGroup1 = true;
+let airGroup2 = true;
+let airGroup3 = true;
+let air1= document.getElementById('air1');
+let air2= document.getElementById('air2');
+let air3= document.getElementById('air3');
+let air4= document.getElementById('air4');
+let air5= document.getElementById('air5');
+let air6= document.getElementById('air6');
+let air7= document.getElementById('air7');
+
+let air8 = document.getElementById('air8');
+let air9 = document.getElementById('air9');
+let air10= document.getElementById('air10');
+let air11= document.getElementById('air11');
+let air12= document.getElementById('air12');
+let air13= document.getElementById('air13');
+let air14= document.getElementById('air14');
+
+let air15= document.getElementById('air15');
+let air16= document.getElementById('air16');
+let air17= document.getElementById('air17');
+let air18= document.getElementById('air18');
+let air19= document.getElementById('air19');
+let air20= document.getElementById('air20');
+let air21= document.getElementById('air21');
+
+setInterval(() => {
+
+if(pointY7 < 0){
+    airGroup1 = false;
+}
+
+if(pointY14 < 0){
+    airGroup2 = false;
+}
+if(pointY21 < 0){
+    airGroup3 = false;
+}
+
+pointY1 = airSpeed(pointY1);
+pointY2 = airSpeed(pointY2);
+pointY3 = airSpeed(pointY3);
+pointY4 = airSpeed(pointY4);
+pointY5 = airSpeed(pointY5);
+pointY6 = airSpeed(pointY6);
+pointY7 = airSpeed(pointY7);
+
+pointY8 = airSpeed(pointY8);
+pointY9 = airSpeed(pointY9);
+pointY10 = airSpeed(pointY10);
+pointY11 = airSpeed(pointY11);
+pointY12 = airSpeed(pointY12);
+pointY13 = airSpeed(pointY13);
+pointY14 = airSpeed(pointY14);
+
+pointY15 = airSpeed(pointY15);
+pointY16 = airSpeed(pointY16);
+pointY17 = airSpeed(pointY17);
+pointY18 = airSpeed(pointY18);
+pointY19 = airSpeed(pointY19);
+pointY20 = airSpeed(pointY20);
+pointY21 = airSpeed(pointY21);
+
+
+air1.style.top = pointY1 + 'px';
+air2.style.top = pointY2 + 'px';
+air3.style.top = pointY3 + 'px';
+air4.style.top = pointY4 + 'px';
+air5.style.top = pointY5 + 'px';
+air6.style.top = pointY6 + 'px';
+air7.style.top = pointY7 + 'px';
+
+air8.style.top = pointY8  + 'px';
+air9.style.top = pointY9  + 'px';
+air10.style.top = pointY10 + 'px';
+air11.style.top = pointY11 + 'px';
+air12.style.top = pointY12 + 'px';
+air13.style.top = pointY13 + 'px';
+air14.style.top = pointY14 + 'px';
+
+air15.style.top = pointY15 + 'px';
+air16.style.top = pointY16 + 'px';
+air17.style.top = pointY17 + 'px';
+air18.style.top = pointY18 + 'px';
+air19.style.top = pointY19 + 'px';
+air20.style.top = pointY20 + 'px';
+air21.style.top = pointY21 + 'px';
+
+if(bubbleCon){
+    bubbleSec += 10;
+}
+if(bubbleCon){
+
+    $(".speeTurtle").css({"left":  (xball - 220)+"px", "top" :  (yball -125)+"px"});
+
+if((xball - 220) <= scrollCut){
+    $(".speeTurtle").css({"left" : scrollCut + "px"});
+
+    if((xball) > (scrollCut+20)){
+        $(".speeBub").css({"left":(xball- scrollCut)+"px"});
+    }else{
+        $(".speeBub").css({"left": 20 +"px"});
+    }
+    if((yball -125) < 0){    
+        $(".speeTurtle").css({"top": "0px"});
+
+    }
+}else if((yball -125) < 0){
+    $(".speeTurtle").css({"top": "0px", "left" : (xball - 220)+"px"});
+
+}else{
+    
+    $(".speeBub").css({"left":"250px", "top" : "7px"});
+    
+}
+}
+if(bubbleSec >= 2000){
+bubbleCon = false;
+$('.speeTurtle').remove();
+bubbleSec = 0;
+}
+
+}, 10);
+
+
+let imgCount = 1;
+
+setInterval(() => {
+
+if(imgCount == 1){
+    a.src= '/introImage/거북이1.png';
+    imgCount++;
+}else if(imgCount == 2){
+    a.src= '/introImage/거북이2.png';
+    imgCount++;
+}else if(imgCount == 3){
+    a.src= '/introImage/거북이3.png';
+    imgCount++;
+}else if(imgCount == 4){
+    a.src= '/introImage/거북이4.png';
+    imgCount++;
+}else if(imgCount == 5){
+    a.src= '/introImage/거북이5.png';
+    imgCount++;
+}else if(imgCount == 6){
+    a.src= '/introImage/거북이6.png';
+    imgCount++;
+}else if(imgCount == 7){
+    a.src= '/introImage/거북이7.png';
+    imgCount++;
+}else if(imgCount == 8){
+    a.src= '/introImage/거북이8.png';
+    imgCount++;
+}else if(imgCount == 9){
+    a.src= '/introImage/거북이9.png';
+    imgCount++;
+}else if(imgCount == 10){
+    a.src= '/introImage/거북이10.png';
+    imgCount++;
+}else if(imgCount == 11){
+    a.src= '/introImage/거북이11.png';
+    imgCount++;
+}else if(imgCount == 12){
+    a.src= '/introImage/거북이12.png';
+    imgCount++;
+}else if(imgCount == 13){
+    a.src= '/introImage/거북이13.png';
+    imgCount++;
+}else if(imgCount == 14){
+    a.src= '/introImage/거북이14.png';
+    imgCount++;
+}else if(imgCount == 15){
+    a.src= '/introImage/거북이15.png';
+    imgCount++;
+}else if(imgCount == 16){
+    a.src= '/introImage/거북이16.png';
+    imgCount++;
+}else if(imgCount == 17){
+    a.src= '/introImage/거북이17.png';
+    imgCount++;
+}else if(imgCount == 18){
+    a.src= '/introImage/거북이18.png';
+    imgCount++;
+}else if(imgCount == 19){
+    a.src= '/introImage/거북이19.png';
+    imgCount=1;
+}else{
+    a.src= '/introImage/거북이1.png';
+    imgCount= 1;
+}
+}, 30);
+
+
+function airSpeed(pointY){
+if(pointY < 300){
+    pointY -= 25;
+}else if(pointY < 500){
+    pointY -= 20;
+}else if(pointY < 600){
+    pointY -= 17;
+} else if( pointY < 650){
+    pointY -= 14;
+}else if( pointY < 770){
+    pointY -= 11;
+} else if(pointY < 850){
+    pointY -= 9;
+}else if(pointY < 900){
+    pointY -= 7;
+}
+else{
+    pointY -= 6;
+}
+return pointY;
+}
+
+let bubbleCon = false;
+let bubbleSec = 0;
+
+    window.addEventListener('wheel', function(e){
+        eX = e.pageX;
+        eY = e.pageY;
+        
+        xball = Number(a.style.left.substring(0,a.style.left.length-2));
+        yball = Number(a.style.top.substring(0,a.style.top.length-2));
+        
+        
+        if(e.shiftKey == false){
+            if($('.speeTurtle').length == 0){
+                $('body').append('<div class="speeTurtle">shift + 마우스 휠을 사용해주세요!<div class="speeBub"></div></div>');
+                bubbleCon=true;
+            }
+        }
+
+
+
+    })
+
+
+    window.addEventListener('mousemove', function (e) {
+        eX = e.pageX;
+        eY = e.pageY;
+        
+
+        xball = Number(a.style.left.substring(0,a.style.left.length-2));
+        yball = Number(a.style.top.substring(0,a.style.top.length-2));
+
+    })
+
+  
+    window.addEventListener('click', function (e) {
+        eX = e.pageX;
+        eY = e.pageY;
+       
+        xball = Number(a.style.left.substring(0,a.style.left.length-2));
+        yball = Number(a.style.top.substring(0,a.style.top.length-2));
+    })
+ 
+    function lightOver(){
+    }
+
+
+   
+    
+</script>
+
+
+
+<!-- 페이지 처리 -->
+<script>
+
+    window.scrollTo({left: 0, top:0});
+
+    let scrollRem1 = 0;
+    let scrollRem2 = 0;
+
+    let video = document.getElementById('videoo');
+    let title = document.getElementById('title');
+    let sub = document.getElementById('sub');
+    
+    let goMain = document.getElementById('goMain');
+    let goMain2 = document.getElementById('goMain2');
+
+    let fish = document.getElementById('fish');
+    let fishSub = document.getElementById('fishSub');
+    let fishContent = document.getElementById('fishContent');
+
+    let seaEco =  document.getElementById('seaEco');
+    let news1 = document.getElementById('news1');
+    let news2 = document.getElementById('news2');
+    let news3 = document.getElementById('news3');
+
+    let page1 = true;
+    let page2 = false;
+    let page3 = false;
+
+    let deg0 = 0;
+    let radius1 = 50;
+    let radius2 = 50;
+    let radius3 = 50;
+
+    let cut1 = false;
+    let cut2 = false;
+    let cut3 = false;
+    let cut4 = false;
+    let cut5 = false;
+    let cut6 = false;
+
+    let cutR1 = false;
+    let cutR2 = false;
+    let cutR3 = false;
+    let cutR4 = false;
+    let cutR5 = false;
+    let cutR6 = false;
+
+
+
+    // 초기 설정
+    title.style.width=window.innerWidth+'px';
+    title.style.height=window.innerHeight + 'px';
+    video.style.left= 0+'px';
+    title.style.left= 0+'px';
+    fish.style.left = window.innerWidth +'px';
+    fish.style.width= (window.innerWidth) +'px';
+    fish.style.height=window.innerHeight + 'px';
+    fishContent.style.left = window.innerWidth +'px';
+    fishContent.style.width = (window.innerWidth) +'px';
+    fishContent.style.height = window.innerHeight + 'px';
+    seaEco.style.left = window.innerWidth +'px';
+    seaEco.style.width = (window.innerWidth) +'px';
+    seaEco.style.height =window.innerHeight + 'px';
+
+
+    // 비디오 실행
+    function videoPlay(){
+        video.play();
+    }
+
+    let screenWidth= 0;
+    setInterval(() => {
+         
+        if(page1){
+            title.style.width=window.innerWidth +'px';
+            title.style.height=window.innerHeight + 'px';
+            video.style.width=window.innerWidth +'px';
+            video.style.height=window.innerHeight + 'px';
+        }
+        if(page2){
+            fish.style.width = (window.innerWidth) +'px';
+            fish.style.height = window.innerHeight + 'px';
+            fishContent.style.width = (window.innerWidth) +'px';
+            fishContent.style.height = window.innerHeight + 'px';
+        }
+        if(page3){
+            seaEco.style.width = window.innerWidth +'px';
+            seaEco.style.height = window.innerHeight + 'px';
+        }
+        
+        screenWidth = title.style.width.substring(0,title.style.width.length-2);
+ 
+     }, 5);
+
+    let scrollCut = 0;
+    window.addEventListener('scroll', function(e){
+        pointX = this.scrollX;  // 물방울 x위치
+    })
+
+    // -- 0 ~
+    let p1Con1 = 380;   // 첫 글귀 줌아웃
+    let p1Con2 = p1Con1+820;   // 1번째 글귀
+    let p1Con2_1 = p1Con2+300;  // 텀
+    let p1Con3 = p1Con2_1+800;  // 2번째 글귀
+    let p1Con3_1 = p1Con3 + 300;    // 텀
+    let p1Con4 = p1Con3_1 + 800;    // 3번째 글귀
+    let p1Con4_1 = p1Con4 + 800;    // 텀 (모든글귀초기화)
+    let p1End = p1Con4_1;
+    // -- ~ 4200
+
+    let p1End_1 = p1End + 50;
+    let p2Start = p1End_1 + 1350;   // 슬라이드
+    let p2Start_1 = p2Start +50;
+
+    // -- ~ 5650
+
+    let p2End = p2Start_1+8400;
+    let p2End_1 = p2End + 50;
+    let p3Start = p2End_1 + 1350;
+    let p3Start_1 = p3Start+50;
+   
+    
+    let fishBool= true;
+
+     let fontSize = 0;
+     let lineHeight = 0;
+     let titleLeft = 0;
+
+     let scrollCon = false;
+
+     let urlImg = "https://cdn.hkbs.co.kr/news/photo/202001/553145_308530_388.jpg";
+     
+    let boxBool = false;
+    let goMainBool = false;
+     let box = 0;
+     setInterval(() => {
+        scrollCut = this.scrollX;
+
+        if(goMainBool){
+          if(boxBool){
+          box += 0.5;
+          if(box >= 40 && box <= 49){
+            goMain2.style.color = "white";
+          }else{
+            goMain2.style.color = "blue";
+          }
+
+          if(box >= 50){
+            boxBool = false;
+          }
+        }else{
+          box -= 0.5;
+          
+          if(box <= 0){
+            boxBool = true;
+          }
+        }
+        
+        goMain.style.boxShadow= '0 0 '+box + 'px blue';
+        
+        }
+        
+     }, 10);
+
+
+     setInterval(() => {
+           
+        // 페이지 구분  (페이지 크기조정)
+        if(scrollCut < 3500){
+            page1= true;
+            page2= false;
+            page3= false;
+        }else if(scrollCut < 6300){
+            page1= true;
+            page2= true;
+            page3= false;
+        }else if(scrollCut < 7300){
+            page1= false;
+            page2= true;
+            page3= false;
+        }else if(scrollCut < 10000){
+            page1= false;
+            page2= true;
+            page3= true;
+        }else{
+            page1= false;
+            page2= false;
+            page3= true;
+        }
+
+        
+        if(scrollCut < p1Con1){    // 2023 글씨 줌아웃
+            sub.innerHTML='<span style="font-size: '+ (350-scrollCut/3) +'px; font-weight: 800; overflow:visible;">For Divers</span>'
+            fontSize = (350-scrollCut/3);
+            {   // 초기화 값들
+            sub.style.lineHeight = 100 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            newsReset();
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut < p1Con2){ // 2023 글씨 올리기 + 글씨 크기 초기화
+            sub.style.lineHeight = (7*(p1Con2-scrollCut)/80 + 30) +'vh';    // p1Con1 : 380 일때는 30vh, p1Con2 : 1200 일때는 100vh 되도록
+            sub.innerHTML='<span style="font-size: '+ (fontSize - (fontSize-300)*((scrollCut-p1Con1)/(p1Con2-p1Con1)))+'px; font-weight: 800;">For Divers</span>'
+            {   // 초기화 값들  (lineHeight는 따로지정)
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            }
+           
+        }else if(scrollCut < p1Con2_1){ // 2023 글씨 고정(고정 위치 초기화) + 서브글귀(유령) 생성 + 텀 생성
+            {   // 초기화 값들
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+            + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:0;">Skin & Scuba</span>'  + '<br/>'
+            + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:0;">Welcome to our site</span>';
+            sub.style.lineHeight = 30 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            }
+        }else if(scrollCut < p1Con3){ // 서브글귀2 선명도 올리기
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+            + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:'+ ((scrollCut-p1Con2_1)/(p1Con3-p1Con2_1)) +';">Skin & Scuba</span>'  + '<br/>'
+            + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:0;">Welcome to our site</span>';
+            {   // 초기화 값들
+            sub.style.lineHeight = 30 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut < p1Con3_1){ // 서브글귀2 선명도 초기화 + 텀 생성
+            {   // 초기화 값들
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+            + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+            + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:0;">Welcome to our site</span>';
+            sub.style.lineHeight = 30 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            }
+        }else if(scrollCut < p1Con4){ // 서브글귀3 선명도 올리기
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+            + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+            + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:'+ ((scrollCut-p1Con3_1)/(p1Con4-p1Con3_1)) +';">Welcome to our site</span>';
+            {   // 초기화 값들
+            sub.style.lineHeight = 30 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            }
+        }else if(scrollCut < p1Con4_1){ // 서브글귀들 초기화 + 텀 생성 + 페이지 위치 초기화    (페이지1 넘기기시작)
+            {   // 초기화 값들
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+            + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+            + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Welcome to our site</span>';
+            sub.style.lineHeight = 30 +'vh';
+            title.style.left =  0 +'px';
+            video.style.left =  0 +'px';
+            fish.style.left = screenWidth + 'px';
+            fishContent.style.left = screenWidth + 'px';
+            seaEco.style.left = screenWidth + 'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut < p1End_1){ // 서브글귀들 초기화 + 텀 생성 + 페이지 위치(1,2 사이) 텀
+            {   // 초기화 값
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+                        + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+                        + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Welcome to our site</span>';
+            sub.style.lineHeight = 30 +'vh';
+            seaEco.style.left = screenWidth + 'px';
+            }
+            title.style.left =  (0 -(screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth)*((scrollCut-p1End)/50)) +'px';
+            video.style.left =  (0 -(screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth)*((scrollCut-p1End)/50)) +'px';
+            fish.style.left = (screenWidth +(screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1))*((scrollCut-p1End)/50)) +'px';
+
+        }else if(scrollCut < p2Start){ // 1페이지~ 2페이지 넘기기
+            {   // 초기화 값
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+                        + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+                        + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Welcome to our site</span>';
+            sub.style.lineHeight = 30 +'vh';
+            seaEco.style.left = screenWidth + 'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+            }
+            title.style.left =  (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth) +'px';
+            video.style.left =  (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth) +'px';
+            fish.style.left = (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1)) +'px';
+            fishContent.style.left = (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1)) +'px';
+            // fishSub.style.backgroundImage = 'linear-gradient(90deg,rgb(0, 0, 172),blue ,blue,white '+ (((scrollCut - p2Start_1)/2350)*screenWidth*2 + (screenWidth*0.5)) +'px,blue, blue,rgb(0, 0, 172))';
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p2Start_1){  // 1페이지 끝 2페이지 시작 5650
+            {   // 초기화 값
+            sub.innerHTML='<span id="sub1" style="font-size:'+ 300 +'px; font-weight: 800;">For Divers</span>' + '<br/>'
+                        + '<span id="sub2" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Skin & Scuba</span>'  + '<br/>'
+                        + '<span id="sub3" style="font-size:'+ 150 +'px; line-height: 3vh; font-weight: 800; opacity:1;">Welcome to our site</span>';
+                    }
+            // fishSub.style.backgroundImage = 'linear-gradient(90deg,rgb(0, 0, 172),blue ,blue,white '+ (((scrollCut - p2Start_1)/2350)*screenWidth*2 + (screenWidth*0.5)) +'px,blue, blue,rgb(0, 0, 172))';
+            title.style.left =  (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth) +'px';
+            video.style.left =  (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1) - screenWidth) +'px';
+            fish.style.left = (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1)) +'px';
+            fishContent.style.left = (screenWidth*(p2Start - scrollCut)/(p2Start-p1End_1)) +'px';
+            seaEco.style.left = screenWidth + 'px';
+        }else if(scrollCut< p2Start_1+500){  // 글씨 색 스타트
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';    
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            newsReset();
+            }
+            if(fishBool){
+              fishContent.innerHTML = '<video id="video" muted autoplay src="/introMedia/Aquarium - 109185.mp4"></video>';
+              fishBool=false;
+            }
+            fish.style.backgroundColor = 'rgba(255,255,255,0)';
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,black,black,rgba(255, 255, 255, 0) ' + (200-(p2Start_1 - scrollCut)/10) +'%)';
+        }else if(scrollCut< p2Start_1+2000){  // 글씨 색 중간 움직임
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';   
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,rgba(255, 255, 255, 0) ' + ((p2Start_1+2000 - scrollCut)/10) +'%,black,black)';
+            
+        }else if(scrollCut< p2Start_1+2700){  // 글씨 색 마무리
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            }       // 15~ -50
+            fish.style.backgroundImage = 'linear-gradient(90deg,rgba(255, 255, 255, 0) ' + ((p2Start_1+2150 - scrollCut)/10) +'%, black ,black,black,black)';
+            fishBool=true;
+        }else if(scrollCut< p2Start_1+3200){  // 글씨 색 스타트
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';    
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            }
+            if(fishBool){
+              fishContent.innerHTML = '<video id="video" muted autoplay src="/introMedia/Jellyfish - 33995.mp4"></video>';
+              fishBool=false;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,black,black,rgba(255, 255, 255, 0) ' + (200-(p2Start_1+2700 - scrollCut)/10) +'%)';
+        }else if(scrollCut< p2Start_1+4700){  // 글씨 색 중간 움직임
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';   
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+            }
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,rgba(255, 255, 255, 0) ' + ((p2Start_1+4700 - scrollCut)/10) +'%,black,black)';
+            
+        }else if(scrollCut< p2Start_1+5400){  // 글씨 색 마무리
+            {   // 초기화 값
+            newsReset();
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            }       // 15~ -50
+            fish.style.backgroundImage = 'linear-gradient(90deg,rgba(255, 255, 255, 0) ' + ((p2Start_1+4850 - scrollCut)/10) +'%, black ,black,black,black)';
+
+            fishBool= true;
+        }else if(scrollCut< p2Start_1+5900){  // 글씨 색 스타트
+            {   // 초기화 값
+            newsReset();
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';    
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            }
+            if(fishBool){
+              fishContent.innerHTML = '<video id="video" muted autoplay src="/introMedia/Sea Horse - 109332.mp4"></video>';
+              fishBool=false;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,black,black,rgba(255, 255, 255, 0) ' + (200-(p2Start_1+5400 - scrollCut)/10) +'%)';
+        }else if(scrollCut< p2Start_1+7400){  // 글씨 색 중간 움직임
+            {   // 초기화 값
+            newsReset();
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';   
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            }
+            fish.style.backgroundImage = 'linear-gradient(90deg, black ,black,rgba(255, 255, 255, 0) ' + ((p2Start_1+7400 - scrollCut)/10) +'%,black,black)';
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p2Start_1+8100){  // 글씨 색 마무리
+            {   // 초기화 값
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = 0 +'px';
+            fishContent.style.left= 0 +'px'; 
+            seaEco.style.left = screenWidth + 'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+            }       // 15~ -50
+            fish.style.backgroundImage = 'linear-gradient(90deg,rgba(255, 255, 255, 0) ' + ((p2Start_1+7550 - scrollCut)/10) +'%, black ,black,black,black)';
+
+            fishBool= true;
+        }else if(scrollCut< p2End){  // 텀  8650
+            {   // 초기화 값
+            newsReset();
+            fish.style.left = 0 +'px';
+            fishContent.style.left= 0 +'px'; 
+            fishSub.style.backgroundColor = "black";
+            seaEco.style.left = screenWidth + 'px';
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p2End_1){  // 슬라이드 텀  8700
+            {   // 초기화 값
+            newsReset();
+            fishSub.style.backgroundColor = "black";
+            }
+            
+            fish.style.left =  (0 -(screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth)*((scrollCut-p2End)/50)) +'px';
+            fishContent.style.left= (0 -(screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth)*((scrollCut-p2End)/50)) +'px';
+            seaEco.style.left = (screenWidth +(screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1))*((scrollCut-p2End)/50)) +'px';
+            
+        }else if(scrollCut< p3Start){  // 2페~3페 슬라이드 10050
+            {   // 초기화 값            
+            newsReset();
+            fishSub.style.backgroundColor = "black";
+            }
+            fish.style.left =  (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth) +'px';
+            fishContent.style.left= (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth) +'px';
+            seaEco.style.left = (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1)) +'px';
+            
+        }else if(scrollCut< p3Start_1){  // 슬라이드 텀
+            {   // 초기화 값
+            newsReset();
+            fishSub.style.backgroundColor = "black";
+            }
+            fish.style.left =  (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth) +'px';
+            fishContent.style.left=  (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1) - screenWidth) +'px';
+            seaEco.style.left = (screenWidth*(p3Start - scrollCut)/(p3Start-p2End_1)) +'px';
+            
+        }else if(scrollCut< p3Start_1+300){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") , rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") ),url("+ urlImg +")";
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR1 = true;
+                cutR2 = true;
+                cutR3 = true;
+                cutR4 = true;
+                cutR5 = true;
+                cutR6 = true;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p3Start_1+600){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") , rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") ),url("+ urlImg +")";
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+                cut2 = true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR2 = true;
+                cutR3 = true;
+                cutR4 = true;
+                cutR5 = true;
+                cutR6 = true;
+            }
+
+        }else if(scrollCut< p3Start_1+700){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage ="linear-gradient(rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") , rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") ),url("+ urlImg +")";
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+                cut2 = true;
+                cut3 = true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR3 = true;
+                cutR4 = true;
+                cutR5 = true;
+                cutR6 = true;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p3Start_1+800){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") , rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") ),url("+ urlImg +")";
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+                cut2 = true;
+                cut3 = true;
+                cut4= true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR4 = true;
+                cutR5 = true;
+                cutR6 = true;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p3Start_1+900){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") , rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1100) +") ),url("+ urlImg +")";
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+                cut2 = true;
+                cut3 = true;
+                cut4 = true;
+                cut5 = true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR5 = true;
+                cutR6 = true;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+        }else if(scrollCut< p3Start_1+1100){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            seaEco.style.backgroundImage = "rgba(0, 0, 0, "+ (1-(scrollCut-p3Start_1)/1000) +")"
+            }
+            if(scrollCut < this.scrollX){
+                cut1 = true;
+                cut2 = true;
+                cut3 = true;
+                cut4 = true;
+                cut5 = true;
+                cut6 = true;
+            }
+            if(scrollCut > this.scrollX){
+                cutR6 = true;
+            }
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+
+        }else if(scrollCut< p3Start_1+2000){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            }
+            cutR6 = false;
+            cut1 = true;
+            cut2 = true;
+            cut3 = true;
+            cut4 = true;
+            cut5 = true;
+            cut6 = true;
+          
+            if(goMainBool){
+              goMainBool= false;
+              goMain.style.visibility='hidden';
+            }
+            
+        }else if(scrollCut< p3Start_1+5000){  // 3페
+            {   // 초기화 값
+            fishSub.style.backgroundColor = "black";
+            fish.style.left =  -screenWidth +'px';
+            fishContent.style.left =  -screenWidth +'px';
+            seaEco.style.left = 0 +'px';
+            }
+            cutR6 = false;
+            cut1 = true;
+            cut2 = true;
+            cut3 = true;
+            cut4 = true;
+            cut5 = true;
+            cut6 = true;
+            
+            if(!goMainBool){
+              goMainBool= true;
+              goMain.style.visibility='visible';
+            }
+            
+            
+
+            
+        }else {
+            title.style.left =  -screenWidth +'px';
+            video.style.left =  -screenWidth +'px';
+            fish.style.left = -(screenWidth) + 'px';
+        }
+        
+     }, 5);
+     
+
+     // page3 조건 만족할 때 실행
+     setInterval(() => {
+        
+        if(cut1 || cut2 || cut3 || cut4 || cut5 || cut6){
+            if(cut1){    //1
+                if(deg0 < 60){
+                    deg0 += 5;
+
+                    radius1 += 5;
+                    news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                    news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+
+                    radius2 += 5;
+                    news2.style.left = (250 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                    news2.style.top = (125 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+
+                    radius3 += 5;
+                    news3.style.left = (-300 + radius3*Math.cos((deg0+265)*Math.PI/180)) +'px';
+                    news3.style.top = (370 + radius3*Math.sin((deg0+265)*Math.PI/180)) +'px';
+                }
+                 if(deg0 >= 60){
+                    cut1 =false;
+                }   
+            }
+
+            if(!cut1 && cut2){   // 2
+                if(deg0 < 120){
+                    deg0 += 5;
+
+                    radius1 += 5;
+                    news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                    news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+
+                    radius2 += 5;
+                    if(deg0 > 100){
+                        radius2 += 5;
+                    }        
+                    news2.style.left = (250 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                    news2.style.top = (125 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+                    
+                    radius3 += 5;
+                    news3.style.left = (-300 + radius3*Math.cos((deg0+265)*Math.PI/180)) +'px';
+                    news3.style.top = (370 + radius3*Math.sin((deg0+265)*Math.PI/180)) +'px';
+                }
+                 if(deg0  >= 120){
+                    cut2 = false;
+                }  
+            }
+
+            if(!cut1 && !cut2 && cut3){   // 2
+                if(deg0 < 180){
+                    deg0 += 5;
+
+                    radius1 += 5;
+                    news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                    news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+
+                    radius2 += 10;
+                    news2.style.left = (250 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                    news2.style.top = (125 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+
+                    radius3 += 5;
+                    news3.style.left = (-300 + radius3*Math.cos((deg0+265)*Math.PI/180)) +'px';
+                    news3.style.top = (370 + radius3*Math.sin((deg0+265)*Math.PI/180)) +'px';
+                }
+                if(deg0 >= 180){
+                    cut3 = false;
+                }  
+
+            }
+            if(!cut1 && !cut2 &&!cut3 && cut4){   // 2
+                if(deg0 < 240){
+                    deg0 += 5;
+
+                    radius1 += 5;
+                    news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                    news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+
+                    radius2 += 10;
+                    if(deg0 > 180){
+                        radius2 += 5;
+                    }
+                    news2.style.left = (250 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                    news2.style.top = (125 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+
+                    radius3 += 5;
+                    if(deg0 > 190){
+                        radius3 += 5;
+                    }
+                    if(deg0 >= 200){
+                        radius3 += 10;
+                    }
+                    news3.style.left = (-300 + radius3*Math.cos((deg0+265)*Math.PI/180)) +'px';
+                    news3.style.top = (370 + radius3*Math.sin((deg0+265)*Math.PI/180)) +'px';
+                }
+                 if(deg0 >= 240){
+                    cut4 = false;
+                }  
+
+            }
+            if(!cut1 && !cut2 &&!cut3 && !cut4 && cut5){   // 2
+                if(deg0 < 300){
+                    deg0 += 5;
+
+                    radius1 += 5;
+                    if(deg0 >  240){
+                        radius1 += 5;
+                    }
+                    if(deg0 > 270){
+                        radius1 += 5;
+                    }       
+                    news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                    news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+
+                    radius2 += 5;
+                    if(deg0 >  240){
+                        radius2 -= 15;
+                    }
+                    news2.style.left = (250 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                    news2.style.top = (125 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+
+                    radius3 += 20;
+                    if(deg0 > 270){
+                        radius3 += 30;
+                    }
+                    if(deg0 <= 285){
+                        news3.style.left = (-300 + radius3*Math.cos((deg0+265)*Math.PI/180)) +'px';
+                        news3.style.top = (370 + radius3*Math.sin((deg0+265)*Math.PI/180)) +'px';
+                        
+                    }
+                }
+                 if(deg0 >= 300){
+                    news3.style.left = -990 +'px';
+                    news3.style.top = 250 +'px';
+                    cut5 = false;
+                    
+                }  
+
+            }
+            if(!cut1 && !cut2 &&!cut3 && !cut4 && !cut5 && cut6){   // 2
+
+                if(deg0 < 360){
+                    deg0 += 5;
+                    radius1 += 15;
+                    if(deg0 > 325){
+                        radius1 += 15;
+                    }
+                    if(deg0 <= 360){
+
+                        news1.style.left = (450 + radius1*Math.cos(deg0*Math.PI/180)) +'px';
+                        news1.style.top = (250 + radius1*Math.sin(deg0*Math.PI/180)) +'px';
+                        
+                    }
+
+                    if(deg0 > 270){
+                        radius2 -= 40;
+                    }
+                    if(deg0 <= 320){
+                        news2.style.left = (245 + radius2*Math.cos((deg0+180)*Math.PI/180)) +'px';
+                        news2.style.top = (115 + radius2*Math.sin((deg0+180)*Math.PI/180)) +'px';
+                        
+                    }
+                    
+                }
+                if(deg0 >= 360){
+                    news1.style.left = 1155 +'px';
+                    news1.style.top = 250 +'px';
+                    news2.style.left = 85 +'px';
+                    news2.style.top = 250 +'px';
+                    cut6 = false;
+                    deg0= 365;
+                }  
+            }
+            
+        }
+
+        if(cutR1 || cutR2 || cutR3 || cutR4 || cutR5 || cutR6){
+
+            if (cutR6) {   // 2
+                if (deg0 <= 365) {
+                    deg0 -= 5;
+                    radius1 -= 15;
+                    if (deg0 > 325) {
+                        radius1 -= 15;
+                    }
+                    if (deg0 <= 360) {
+
+                        news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                        news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+                    }
+
+                    if (deg0 > 270) {
+                        radius2 += 40;
+                    }
+                    if (deg0 <= 320) {
+                        news2.style.left = (245 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                        news2.style.top = (115 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+                    }
+                }
+                if (deg0 <= 305) {
+                    cutR6 = false;
+                }
+
+            }
+
+            if (!cutR6 && cutR5) {   // 2
+                if (deg0 <= 305) {
+                    deg0 -= 5;
+
+                    radius1 += 5;
+                    if (deg0 > 240) {
+                        radius1 -= 5;
+                    }
+                    if (deg0 > 270) {
+                        radius1 -= 5;
+                    }
+                    news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                    news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+
+                    radius2 -= 5;
+                    if (deg0 > 240) {
+                        radius2 += 15;
+                    }
+                    news2.style.left = (250 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                    news2.style.top = (125 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+
+                    radius3 -= 20;
+                    if (deg0 > 270) {
+                        radius3 -= 30;
+                    }
+                    if (deg0 <= 285) {
+                        news3.style.left = (-300 + radius3 * Math.cos((deg0 + 265) * Math.PI / 180)) + 'px';
+                        news3.style.top = (370 + radius3 * Math.sin((deg0 + 265) * Math.PI / 180)) + 'px';
+                    }
+                }
+                if (deg0 <= 245) {
+                    cutR5 = false;
+                }
+            }
+
+            if (!cutR6 && !cutR5 && cutR4) {   // 2
+                if (deg0 <= 245) {
+                    deg0 -= 5;
+
+                    radius1 -= 5;
+                    news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                    news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+
+                    radius2 -= 10;
+                    if (deg0 > 180) {
+                        radius2 -= 5;
+                    }
+                    news2.style.left = (250 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                    news2.style.top = (125 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+
+                    radius3 -= 5;
+                    if (deg0 > 190) {
+                        radius3 -= 5;
+                    }
+                    if (deg0 >= 200) {
+                        radius3 -= 10;
+                    }
+                    news3.style.left = (-300 + radius3 * Math.cos((deg0 + 265) * Math.PI / 180)) + 'px';
+                    news3.style.top = (370 + radius3 * Math.sin((deg0 + 265) * Math.PI / 180)) + 'px';
+                }
+                if (deg0 <= 185) {
+                    cutR4 = false;
+                }
+            }
+
+            if (!cutR6 &&!cutR5 && !cutR4 && cutR3) {   // 2
+                if (deg0 <= 185) {
+                    deg0 -= 5;
+
+                    radius1 -= 5;
+                    news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                    news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+
+                    radius2 -= 10;
+                    news2.style.left = (250 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                    news2.style.top = (125 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+
+                    radius3 -= 5;
+                    news3.style.left = (-300 + radius3 * Math.cos((deg0 + 265) * Math.PI / 180)) + 'px';
+                    news3.style.top = (370 + radius3 * Math.sin((deg0 + 265) * Math.PI / 180)) + 'px';
+                }
+                if (deg0 <= 125) {
+                    cutR3 = false;
+                }
+
+            }
+
+            if (!cutR6 && !cutR5 && !cutR4 && !cutR3 && cutR2) {   // 2
+                if (deg0 <= 125) {
+                    deg0 -= 5;
+
+                    radius1 -= 5;
+                    news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                    news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+
+                    radius2 -= 5;
+                    if (deg0 > 100) {
+                        radius2 -= 5;
+                    }
+                    news2.style.left = (250 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                    news2.style.top = (125 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+
+                    radius3 -= 5;
+                    news3.style.left = (-300 + radius3 * Math.cos((deg0 + 265) * Math.PI / 180)) + 'px';
+                    news3.style.top = (370 + radius3 * Math.sin((deg0 + 265) * Math.PI / 180)) + 'px';
+                }
+                if (deg0 <= 65) {
+                    cutR2 = false;
+                }
+            }
+           
+            if (!cutR6 && !cutR5 && !cutR4 && !cutR3 && !cutR2 && cutR1) {    //1
+
+                if (deg0 <= 65) {
+                    deg0 -= 5;
+
+                    radius1 -= 5;
+                    news1.style.left = (450 + radius1 * Math.cos(deg0 * Math.PI / 180)) + 'px';
+                    news1.style.top = (250 + radius1 * Math.sin(deg0 * Math.PI / 180)) + 'px';
+
+                    radius2 -= 5;
+                    news2.style.left = (250 + radius2 * Math.cos((deg0 + 180) * Math.PI / 180)) + 'px';
+                    news2.style.top = (125 + radius2 * Math.sin((deg0 + 180) * Math.PI / 180)) + 'px';
+
+                    radius3 -= 5;
+                    news3.style.left = (-300 + radius3 * Math.cos((deg0 + 265) * Math.PI / 180)) + 'px';
+                    news3.style.top = (370 + radius3 * Math.sin((deg0 + 265) * Math.PI / 180)) + 'px';
+                }
+                if (deg0 <= 5) {
+                    news1.style.left = 500 + 'px';
+                    news1.style.top = 250 + 'px';
+                    news2.style.left = 250 + 'px';
+                    news2.style.top = 150 + 'px';
+                    news3.style.left = -380 + 'px';
+                    news3.style.top = 340 + 'px';    
+                    cutR1 = false;
+                    deg0 = 0;
+                    radius1 = 50;
+                    radius2 = 50;
+                    radius3 = 50;
+                }
+            }
+        }
+
+
+    }, 10);
+
+
+
+    
+
+    function goScroll(num){
+
+        if(num == 1){
+            window.scrollTo({left: 0,
+            top: 0, behavior:"smooth"
+        });
+        }else if(num == 2){
+            window.scrollTo({left: p2Start_1,
+            top: 0, behavior:"smooth"
+        });
+        }else if(num == 3){
+            window.scrollTo({left: p3Start_1,
+            top: 0, behavior:"smooth"
+        });
+        }else{
+            location.href="#";
+        }
+        
+    }
+     
+    function newsReset(){
+        news1.style.left = 500 + 'px';
+        news1.style.top = 250 + 'px';
+        news2.style.left = 250 + 'px';
+        news2.style.top = 150 + 'px';
+        news3.style.left = -380 + 'px';
+        news3.style.top = 340 + 'px';    
+        deg0 = 0;
+        radius1 = 50;
+        radius2 = 50;
+        radius3 = 50;
+        cut1 = false;
+        cut2 = false;
+        cut3 = false;
+        cut4 = false;
+        cut5 = false;
+        cut6 = false;
+        cutR1 = false;
+        cutR2 = false;
+        cutR3 = false;
+        cutR4 = false;
+        cutR5 = false;
+        cutR6 = false;
+        seaEco.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1) , rgba(0, 0, 0, 1) ),url("+ urlImg +")";
+    }
+
+    function overMenu(){
+        $('.menuBar').css({"background-color" : "rgba(6, 155, 181, 0.8)"});
+
+        $('.menuBar2').css({"visibility" : "visible"});
+        $('.menuBar3').css({"visibility" : "visible"});
+        $('.menuBar4').css({"visibility" : "visible"});
+
+
+    }
+
+    function leaveMenu(){
+        $('.menuBar').css({"background-color" : "rgba(6, 155, 181, 0.500)"});
+
+        $('.menuBar2').css({"visibility" : "hidden"});
+        $('.menuBar3').css({"visibility" : "hidden"});
+        $('.menuBar4').css({"visibility" : "hidden"});
+    
+    }
+
+
+    
+    $('.menuBar2').css({"visibility" : "hidden"});
+    $('.menuBar3').css({"visibility" : "hidden"});
+    $('.menuBar4').css({"visibility" : "hidden"});
+
+    // requestAnimationFrame(move);
+    // requestAnimationFrame(repeatMove);
+
+
+</script>
+
+
+</html>

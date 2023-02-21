@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	[1] namespace >> dao 파일 경로
+	[2] id >> dao interface의 추상메소드 이름
+	[3] alias >> dto class에서 설정한 alias 
+ -->
+
+<mapper namespace="com.first.project.dao.MemberDAO">
+
+    <!--아이디 체크-->
+    <select id="mCheckID" parameterType="String" resultType="String">
+        SELECT MEMID FROM MEMBERT WHERE MEMID = #{memId}
+    </select>
+
+
+    <insert id="mJoin" parameterType="member">
+        INSERT INTO MEMBERT VALUES (
+                                       #{memId}, #{memPw},#{memName},#{memBirth},
+                                       #{memGender},#{memEmail},#{memPhone},#{memAddr},
+                                       #{memPROFILENAME},SYSDATE, #{memIs})
+    </insert>
+
+    <select id="mview" resultType="member" parameterType="String">
+        SELECT * FROM MEMBERT WHERE MEMID=#{memId}
+    </select>
+
+    <select id="mLogin" resultType="member" parameterType="member">
+        SELECT * FROM MEMBERT WHERE MEMID=#{memId}
+    </select>
+
+    <select id="mlist"  resultType="member" >
+        SELECT * FROM MEMBERT
+    </select>
+
+    <update id="mModify" parameterType="member">
+        UPDATE MEMBERT SET MEMNAME=#{memName}, MEMBIRTH=#{memBirth},
+                           MEMGENDER=#{memGender}, MEMPHONE=#{memPhone} , MEMADDR=#{memAddr}, MEMPROFILENAME=#{memPROFILENAME} WHERE MEMID=#{memId}
+    </update>
+
+    <delete id="mDelete" parameterType="String">
+        DELETE FROM MEMBERT WHERE MEMID=#{memId}
+    </delete>
+
+
+    <!-- 검색된 회원 개수 확인 -->
+    <select id="mCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM MEMBERT WHERE ${category} LIKE '%'||#{search}||'%'
+    </select>
+
+
+    <!-- 검색된 회원 페이징 처리 -->
+    <select id="m_pList" parameterType="paging" resultType="member">
+        SELECT * FROM (SELECT ROWNUM num, MEMBERT.* FROM MEMBERT WHERE ${category} LIKE '%'||#{search}||'%') WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+    <update id="mModifyPassword" parameterType="member">
+        UPDATE MEMBERT SET MEMPW=#{memPw} WHERE MEMID=#{memId}
+    </update>
+
+    <!--비번 찾기-->
+
+    <!-- 나의 문의내역 -->
+    <!-- 검색된 문의 개수 확인 -->
+    <select id="myQuestCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM QUESTT
+        WHERE ${category} LIKE '%'||#{search}||'%'
+          AND MEMID=#{stringkeyword1}
+    </select>
+
+    <!-- 검색된 문의 페이징 처리 -->
+    <select id="myQuestList" parameterType="paging" resultType="quest">
+        SELECT * FROM (
+                          SELECT ROWNUM num, C.* FROM (SELECT * FROM QUESTT WHERE ${category} LIKE '%'||#{search}||'%'
+                                                                              AND MEMID=#{stringkeyword1} ORDER BY QUDATE DESC)C
+                      ) WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+
+    <!--회원 복구 내역-->
+    <!-- 검색된 회원복구 개수 확인 -->
+    <select id="mRestroreCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM RESTORET
+        WHERE ${category} LIKE '%'||#{search}||'%'
+    </select>
+
+    <!-- 검색된 회원복구 페이징 처리 -->
+    <select id="mRestroreList" parameterType="paging" resultType="restore">
+        SELECT * FROM (
+                          SELECT ROWNUM num, RESTORET.* FROM RESTORET WHERE ${category} LIKE '%'||#{search}||'%'
+                      ) WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+    <update id="mRestore" parameterType="member">
+        UPDATE MEMBERT SET MEMIS=1 WHERE MEMID=#{memId}
+    </update>
+
+    <update id="mOut" parameterType="member">
+        UPDATE MEMBERT SET MEMIS=0 WHERE MEMID=#{memId}
+    </update>
+
+    <update id="mAddBlackList" parameterType="member">
+        UPDATE MEMBERT SET MEMIS=2 WHERE MEMID=#{memId}
+    </update>
+
+    <!-- 문의내역 -->
+    <!-- 검색된 문의 개수 확인 -->
+    <select id="mQuestCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM QUESTT
+        WHERE ${category} LIKE '%'||#{search}||'%'
+    </select>
+
+    <!-- 검색된 문의 페이징 처리 -->
+    <select id="mQuestList" parameterType="paging" resultType="quest">
+        SELECT * FROM (
+                          SELECT ROWNUM num,
+                                 A.* FROM (SELECT * FROM QUESTT WHERE ${category} LIKE '%'||#{search}||'%' ORDER BY QUDATE DESC)A
+                      ) WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+    <select id="mQuestView" resultType="quest" parameterType="int">
+        SELECT * FROM QUESTT WHERE QUNUM=#{QUNUM}
+    </select>
+
+    <insert id="mQuest" parameterType="quest">
+        INSERT INTO QUESTT VALUES (QUESTTS.NEXTVAL, #{MEMID},#{QUCONTENT},null,
+                                   SYSDATE,null)
+    </insert>
+
+    <select id="mQuestnum" resultType="int">
+        SELECT QUNUM FROM (SELECT ROWNUM num, D.* FROM (select * from QUESTT ORDER BY QUNUM DESC)D) WHERE num = 1
+    </select>
+
+    <update id="mAnswer" parameterType="quest">
+        UPDATE QUESTT SET QUANSWER=#{QUANSWER}, QUANDATE=SYSDATE WHERE QUNUM=#{QUNUM}
+    </update>
+
+
+    <!-- 공지사항 목록 -->
+    <!-- 검색된 공지 개수 확인 -->
+    <select id="mnotiCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM NOTICET
+        WHERE ${category} LIKE '%'||#{search}||'%'
+    </select>
+
+    <!-- 검색된 공지 페이징 처리 -->
+    <select id="mnoti_pList" parameterType="paging" resultType="notice">
+        SELECT * FROM (SELECT ROWNUM num, NOTICET.* FROM NOTICET WHERE ${category} LIKE '%'||#{search}||'%'
+                      ) WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+    <!--공지 작성-->
+    <insert id="mNoticeWrite" parameterType="notice">
+        INSERT INTO NOTICET VALUES (NOTICETS.NEXTVAL,#{NOTITLE},#{NOCONTENT},SYSDATE)
+    </insert>
+
+    <update id="mNoticeModify" parameterType="notice">
+        UPDATE NOTICET SET NOTITLE=#{NOTITLE}, NOCONTENT=#{NOCONTENT} WHERE NONUM=#{NONUM}
+    </update>
+
+    <delete id="mNoticeDelete" parameterType="String">
+        DELETE FROM NOTICET WHERE NONUM=#{NONUM}
+    </delete>
+
+    <select id="msearchEmail" parameterType="String" resultType="String" >
+        SELECT MEMEMAIL FROM MEMBERT WHERE MEMID=#{memId}
+    </select>
+
+    <select id="mNoticeView" resultType="notice" parameterType="int">
+        SELECT * FROM NOTICET WHERE NONUM=#{NONUM} ORDER BY NODATE DESC
+    </select>
+
+    <insert id="mRestoresend" parameterType="restore">
+        INSERT INTO RESTORET VALUES (RESTORETS.NEXTVAL, #{MEMID},#{RESREASON},SYSDATE)
+    </insert>
+
+    <!--구매내역-->
+    <!-- 검색된 구매내역 개수 확인 -->
+    <select id="myBuyListCount" parameterType="paging" resultType="int" >
+        SELECT COUNT(*) FROM BUY
+        WHERE ${category} LIKE '%'||#{search}||'%'
+            ${stringkeyword1}
+    </select>
+
+    <!-- 검색된 구매내역을 최신순으로 페이징 검색 -->
+    <select id="myBuyList" parameterType="paging" resultType="buy">
+        SELECT * FROM (SELECT ROWNUM num, B.* FROM (SELECT * FROM BUY WHERE ${category} LIKE '%'||#{search}||'%'
+            ${stringkeyword1} ORDER BY BUYDATE DESC)B
+                      ) WHERE num BETWEEN #{startRow} and #{endRow}
+    </select>
+
+
+
+
+
+
+</mapper>

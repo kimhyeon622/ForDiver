@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="nickName">
+    <meta name="date" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cube.css">
+    <link rel="shortcut icon" href="/favicon/favicon.png" type="image/x-icon">
+    <!--For Graph-->
+    <link rel="stylesheet" href="/css/barGraph.css">
+    <!--For Slider-->
+    <link rel="stylesheet" href="/css/autoSlider.css">
+
+    <title>For Diver | 해양위기 자가진단 결과 페이지</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+
+    <style>
+        .side_back{
+            font-size: 48px;
+        }
+
+        .side_front{
+            font-size: 48px;
+        }
+
+        #pointButton{
+            width: 300px;
+            height: 150px;
+            font-size: 36px;
+            background: blue;
+            color: white;
+        }
+
+        #pointButton:hover{
+            background: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<input type="hidden" name="memId" id="memId" th:value='${crisis.memId}'>
+
+<br/>
+<h1 style="text-align: center">해양위기 자가진단 결과</h1>
+<h3 style="text-align: center">상자 위에 마우스 커서를 올려 자신의 유형을 확인해보세요!</h3>
+<br/>
+
+<div class="global_stage">
+    <div class="stage">
+        <div class="cube" style="z-index:1;">
+            <div class="side_bottom"></div>
+            <div class="side_top"></div>
+            <div class="side_back">친밀도</div>
+            <div class="side_right"></div>
+            <div class="side_left" id="friendCharacter"></div>
+            <div class="side_front">친밀도</div>
+        </div>
+    </div>
+    <div class="stage">
+        <div class="cube" style="z-index:2;">
+            <div class="side_bottom"></div>
+            <div class="side_top"></div>
+            <div class="side_back">인지도</div>
+            <div class="side_right"></div>
+            <div class="side_left" id="knowCharacter"></div>
+            <div class="side_front">인지도</div>
+        </div>
+    </div>
+    <div class="stage">
+        <div class="cube" style="z-index:3;">
+            <div class="side_bottom"></div>
+            <div class="side_top"></div>
+            <div class="side_back">참여도</div>
+            <div class="side_right"></div>
+            <div class="side_left" id="participantCharacter"></div>
+            <div class="side_front">참여도</div>
+        </div>
+    </div>
+    <div class="stage">
+        <div class="cube" style="z-index:2;">
+            <div class="side_bottom"></div>
+            <div class="side_top"></div>
+            <div class="side_back">파괴도</div>
+            <div class="side_right"></div>
+            <div class="side_left" id="destroyCharacter"></div>
+            <div class="side_front">파괴도</div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<!--점수 차트-->
+<h2 style="text-align: center">[[${crisis.memId}]]님의 점수 분포</h2>
+<br/>
+<div class="vertical_chart_box">
+    <div class="chart_box">
+        <ul class="axis_y">
+            <li class="item">0<span class="blind"></span></li>
+            <li class="item">5<span class="blind"></span></li>
+            <li class="item">10<span class="blind"></span></li>
+            <li class="item">15<span class="blind"></span></li>
+            <li class="item">20<span class="blind"></span></li>
+        </ul>
+        <ul class="axis_x">
+            <li class="item">
+                <div class="text_box">
+                    <strong class="day">친밀도</strong>
+                    <span class="time"><span id="friendPoint"></span>점</span>
+                </div>
+                <button type="button" class="graph">
+                    <span id="friendGraph" class="time data1"><span class="blind">data 타입 1</span></span>
+                </button>
+            </li>
+            <li class="item">
+                <div class="text_box">
+                    <strong class="day">인지도</strong>
+                    <span class="time"><span id="knowPoint"></span>점</span>
+                </div>
+                <button type="button" class="graph">
+                    <span id="knowGraph" class="time data2"><span class="blind">data 타입 2</span></span>
+                </button>
+            </li>
+            <li class="item">
+                <div class="text_box">
+                    <strong class="day">참여도</strong>
+                    <span class="time"><span id="participantPoint"></span>점</span>
+                </div>
+                <button type="button" class="graph">
+                    <span id="participantGraph" class="time data3"><span class="blind">data 타입 3</span></span>
+                </button>
+            </li>
+            <li class="item">
+                <div class="text_box">
+                    <strong class="day">파괴도</strong>
+                    <span class="time"><span id="destroyPoint"></span>점</span>
+                </div>
+                <button type="button" class="graph">
+                    <span id="destroyGraph" class="time data4"><span class="blind">data 타입 4</span></span>
+                </button>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!--이동 링크들 : 환경 단체 & 해양위기 - -->
+<div>
+    <h2><a href="donateList">환경 단체 목록으로</a></h2>
+    <h2><a href="crisisInfo">해양위기 현황 알아보기</a></h2>
+    <!--포인트 받는 버튼-->
+    <button id="pointButton" type="button" onclick="getPoint()">포인트 받기</button>
+    <script>
+        let memId = document.getElementById('memId').value;
+        let point = 50000;
+
+        function getPoint(){
+            let conf = confirm('포인트를 획득하시겠습니까? 포인트를 획득하시면 다시 참여하실 수 없습니다.');
+
+            if(conf){
+
+                console.log(memId);
+                console.log(point);
+
+                $.ajax({
+                    url:"getPoint",
+                    type:"POST",
+                    data:{
+                        "memId":memId,
+                        "usablePoint":point
+                    },
+                    dataType:"text",
+                    success: function (result){
+
+                        if(result == "OK"){
+                            alert('포인트를 획득하셨습니다. 메인 페이지로 이동합니다.');
+                            location.href = "index";
+                        } else {
+                            console.log('포인트를 획득하지 못했습니다.');
+                        }
+
+                    },
+                    error: alert('getPoint 함수 통신 실패!')
+                });
+                //End getPoint
+            } else {
+                alert('취소하셨습니다.');
+            }
+        }
+    </script>
+</div>
+</body>
+<script>
+
+    //점수 계산
+    let quest1 = [[${crisis.quest1}]];
+    let quest2 = [[${crisis.quest2}]];
+    let quest3 = [[${crisis.quest3}]];
+    let quest4 = [[${crisis.quest4}]];
+    let quest5 = [[${crisis.quest5}]];
+    let quest6 = [[${crisis.quest6}]];
+    let quest7 = [[${crisis.quest7}]];
+    let quest8 = [[${crisis.quest8}]];
+    let quest9 = [[${crisis.quest9}]];
+    let quest10 = [[${crisis.quest10}]];
+    let quest11 = [[${crisis.quest11}]];
+
+    //친화도, 인지도, 참여도, 파괴도
+    let friend = quest1 + quest2;
+    let know = quest3 + quest5;
+    let participant = quest3;
+    let destroy = quest7 + quest8;
+
+    //친화도
+    if(friend >= 10){
+        document.getElementById('friendCharacter').innerHTML = "<img src='/selfCheckImages/바다이웃.png' width='500' height='450'/>"
+    } else if(friend >= 6){
+        document.getElementById('friendCharacter').innerHTML = "<img src='/selfCheckImages/관광객.png' width='500' height='450'/>"
+    } else {
+        document.getElementById('friendCharacter').innerHTML = "<img src='/selfCheckImages/육지인.png' width='500' height='450'/>"
+    }
+
+    //질문 4처리
+    if(quest4 > 0){
+        know += quest4;
+        participant += quest4;
+    } else {
+        destroy += 10;
+    }
+
+    //질문 6처리
+    if(quest6 > 0){
+        participant += quest6;
+    } else {
+        destroy += 10;
+    }
+
+    //질문 9처리
+    if(quest9 > 0){
+        participant += quest9;
+    } else {
+        destroy += 10;
+    }
+
+    //질문 10처리
+    if(quest10 > 0){
+        participant += quest10;
+        know += quest10;
+    } else {
+        destroy += 5;
+    }
+
+    //질문 11처리
+    if(quest11 > 0){
+        participant += quest11;
+    } else {
+        destroy += 5;
+    }
+
+    //점수 산출 전 그래프 위한 백분율 계산
+    //백분율 = (점수/최대점수) * 100
+    let friendGraph = Math.ceil((friend/20) * 100);
+    let knowGraph = Math.ceil((know/40) * 100);
+    let participantGraph = Math.ceil((participant/60) * 100);
+    let destroyGraph = Math.ceil((destroy/100) * 100);
+
+    //그래프에 스타일 부여(그래프 높이)
+    document.getElementById('friendGraph').style.height = friendGraph + '%';
+    document.getElementById('knowGraph').style.height = knowGraph + '%';
+    document.getElementById('participantGraph').style.height = participantGraph + '%';
+    document.getElementById('destroyGraph').style.height = destroyGraph + '%';
+
+    //점수들
+    know = Math.ceil((know)/2);
+    participant = Math.ceil((participant)/3);
+    destroy = Math.ceil((destroy)/5);
+
+    document.getElementById('friendPoint').innerHTML = friend;
+    document.getElementById('knowPoint').innerHTML = know;
+    document.getElementById('participantPoint').innerHTML = participant;
+    document.getElementById('destroyPoint').innerHTML = destroy;
+
+
+    //인지도 18/10/
+    if(know >= 18){
+        document.getElementById('knowCharacter').innerHTML = "<img src='/selfCheckImages/하카세.png' width='500' height='450'/>"
+    } else if(know >= 10){
+        document.getElementById('knowCharacter').innerHTML = "<img src='/selfCheckImages/연구생.png' width='500' height='450'/>"
+    } else {
+        document.getElementById('knowCharacter').innerHTML = "<img src='/selfCheckImages/책빵.png' width='500' height='450'/>"
+    }
+
+
+    //참여도 14/10/
+    if(participant >= 14){
+        document.getElementById('participantCharacter').innerHTML = "<img src='/selfCheckImages/수호자.png' width='500' height='450'/>"
+    } else if(participant >= 10){
+        document.getElementById('participantCharacter').innerHTML = "<img src='/selfCheckImages/도우미.png' width='500' height='450'/>"
+    } else {
+        document.getElementById('participantCharacter').innerHTML = "<img src='/selfCheckImages/생선도움짤.png' width='500' height='450'/>"
+    }
+
+    //파괴도 10/5/0
+    if(destroy >= 10){
+        document.getElementById('destroyCharacter').innerHTML = "<img src='/selfCheckImages/환경파괴자.png' width='500' height='450'/>"
+    } else if(destroy >= 5){
+        document.getElementById('destroyCharacter').innerHTML = "<img src='/selfCheckImages/편의주의.png' width='500' height='450'/>"
+    } else {
+        document.getElementById('destroyCharacter').innerHTML = "<img src='/selfCheckImages/환경애호가.png' width='500' height='450'/>"
+    }
+
+    //입장 시 포인트를 받았는지 확인
+    function checkPoint(){
+        let id = document.getElementById('memId').value;
+
+        console.log(id);
+        console.log('checkPoint 시행');
+
+        $.ajax({
+            url:"checkPoint",
+            type:"POST",
+            data:{"memId": id},
+            async:false,
+            dataType: "text",
+            success:function (result){
+                if(result=="OK"){
+                    //해당 테이블에 아이디가 존재하지 않으면 새로 받을 수 있음
+                    console.log('checkPoint 시행됨');
+                } else {
+                    //있다면 더 받지 못함
+                    let pb = document.getElementById('pointButton');
+
+                    pb.setAttribute('hidden','hidden');
+                    console.log('checkPoint 시행');
+
+                }
+            },
+            error:console.log('checkPoint 함수 통신 실패!')
+        });
+    }
+
+    checkPoint();
+
+</script>
+
+</html>

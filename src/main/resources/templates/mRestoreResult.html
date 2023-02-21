@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+  Document Title
+  =============================================
+  -->
+  <title>Titan | Multipurpose HTML5 Template</title>
+  <!--
+  Favicons
+  =============================================
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!--
+  Stylesheets
+  =============================================
+
+  -->
+  <!-- Default stylesheets-->
+  <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Template specific stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link href="/lib/animate.css/animate.css" rel="stylesheet">
+  <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+  <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+  <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+  <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+  <!-- Main stylesheet and color file-->
+  <link href="/css/style.css" rel="stylesheet">
+  <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+
+  <style>
+    @media(min-width: 1200px){
+      .container{
+        width:1200px;
+      }
+    }
+    .module.mformain{
+      min-height: 600px;
+    }
+    .mypage{
+      float:left;
+      min-height:700px;
+    }
+    .mypage.mypage_menu{
+      width:30%;
+      height:100%;
+      border: 1px solid black;
+    }
+    .mypage.mypage_view{
+      width:70%;
+      border: 1px solid black;
+      padding:20px;
+      height:100%;
+    }
+    .outinfo{
+      height:500px;
+      width: 100%;
+    }
+    .buttoncontainer{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .btn.btn-danger.btn-round{
+      margin:auto;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+  <header data-th-include="./header.html"></header>
+  <div class="main">
+    <section class="module mformain">
+      <div class="container">
+        <div class="alert alert-success" role="alert">
+          <strong>[[${RestoreResult}]]</strong>
+          <span id="timer"></span>
+          <span>초 후에 메인화면으로 돌아갑니다.</span>
+        </div>
+      </div>
+    </section>
+    <footer data-th-include="./footer.html"></footer>
+  </div>
+  <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+<!--
+JavaScripts
+=============================================
+-->
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+  let timer = document.getElementById("timer");
+  let x = 10;
+  let myTime;
+  window.addEventListener('load', function () {
+    myTime=setInterval(function () {
+      x--;
+      if (x <= 0) {
+        x = 0;
+        location.href = 'index';
+        clearInterval(myTime);
+      }
+      timer.innerHTML = x;
+    }, 1000)
+  });
+
+</script>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/wow/dist/wow.js"></script>
+<script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="/lib/flexslider/jquery.flexslider.js"></script>
+<script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/lib/smoothscroll.js"></script>
+<script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>Titan | Multipurpose HTML5 Template</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+
+
+      <header data-th-include="./header.html"></header>
+
+      <div class="main">
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt">구매 페이지</h1>
+              </div>
+            </div>
+            <hr class="divider-w pt-20">
+            <form action="eqBuyList" method="post" name="eqBuyList">
+            <div class="row">
+              <div class="col-sm-12">
+
+                <table class="table table-striped table-border checkout-table">
+                  <tbody>
+                    <tr>
+                      <th class="hidden-xs" style="max-width: 55px;">장비</th>
+                      <th>이름 (남은 수량)</th>
+                      <th class="hidden-xs">가격</th>
+                      <th>수량</th>
+                      <th>총 가격</th>
+                      <th>구매 취소</th>
+                    </tr>
+                    <tr class="cartList" th:if="${buyList ne null}" th:each="buyList : ${buyList}" th:id="buyTr+${buyListStat.count}">
+                      <td style="text-align: center; max-width: 55px; padding: 5px;" class="hidden-xs"><img style="max-width: 50px; max-height: 55px;" th:src="@{/images/mine/eqImage/} + ${buyList.divPhotoName}" alt="Accessories Pack"/></td>
+                      <td>
+                        <h5 class="product-title font-alt">[[${buyList.divEqName}]]&nbsp;(남은 수량 : [[${buyList.divHave}]])</h5>
+                        <span calss="tbCount" th:id="maxHave+${buyListStat.count}" hidden="hidden">[[${buyList.divHave}]]</span>
+                      </td>
+                      <td class="hidden-xs">
+                        <h5 class="product-title font-alt" th:id="tbPriceOne+${buyListStat.count}">￦&nbsp;[[${buyList.divEqPriceStr}]]</h5>
+                      </td>
+                      <td>
+                        <input class="form-control" th:id="eqCount+${buyListStat.count}" th:onchange="countChange([[${buyListStat.count}]])" type="number" name="totalPriceStr" th:value="${buyList.eqCount}" max="50" min="1"/>
+                      </td>
+                      <td>
+                        <h5 class="product-title font-alt" th:id="tbPrice+${buyListStat.count}">￦&nbsp;[[${buyList.totalPriceStr}]]</h5>
+                      </td>
+                      <input type="hidden" th:value="${buyList.divEqName}" th:id="eqName+${buyListStat.count}">
+                      <input type="hidden" th:value="${buyList.divEqNum}" th:id="eqNum+${buyListStat.count}">
+                      <input type="hidden" th:value="${buyList.divEqNum}" name="divEqNum">
+                      <td class="pr-remove"><a href='javascript:void(0);' title="Remove" th:onclick="buyDelete([[${buyListStat.count}]])"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+
+                </div>
+              </div>
+              <div class="col-sm-3 col-sm-offset-3">
+                <div class="form-group">
+                  <input class="btn btn-block btn-round btn-d pull-right" type="button" onclick="buyList()" value="장바구니 저장">
+                </div>
+              </div>
+            </div>
+            </form>
+            <hr style="margin-top: 20px;" class="divider-w">
+            <div class="row mt-70">
+              <div class="col-sm-5 col-sm-offset-7">
+                <div class="shop-Cart-totalbox">
+                  <h4 class="font-alt">총 가격</h4>
+                  <table class="table table-striped table-border checkout-table">
+                    <tbody>
+                      <tr>
+                        <th>총 장비 가격 :</th>
+                        <td id="totPrice1">￦&nbsp;[[${totalEq}]]</td>
+                      </tr>
+                      <tr>
+                        <th>배송비 :</th>
+                        <td>￦&nbsp;2,000</td>
+                      </tr>
+                      <tr class="shop-Cart-totalprice">
+                        <th>총 가격 :</th>
+                        <td id="totPrice2">￦&nbsp;[[${totalPr}]]</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="btn btn-lg btn-block btn-round btn-d" onclick="eqBuy()">결제하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer data-th-include="./footer.html"></footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"></script>
+
+    <script th:inline="javascript">
+
+      let tbSize = $('input[name=divEqNum]').length;
+
+      for(let i = 1; i <= tbSize ; i++){
+
+        try{
+          let pricetot = $('#tbPrice'+i).html().substring(7,$('#tbPrice'+i).html().length);
+          pricetot = pricetot.replaceAll(",",'');
+          totPrice += Number(pricetot);
+
+          if(Number($('#eqCount'+i).val()) > Number($('#maxHave'+i).html())){
+
+          }
+
+
+        }catch{
+
+        }
+
+      }
+
+
+
+      function buyList(){
+        eqBuyList.submit();
+      }
+
+      function buyDelete(num){
+        $('#buyTr'+num).remove();
+
+        let totPrice = 0;
+
+        for(let i = 1; i <= tbSize ; i++){
+
+          try{
+            let pricetot = $('#tbPrice'+i).html().substring(7,$('#tbPrice'+i).html().length);
+            pricetot = pricetot.replaceAll(",",'');
+            totPrice += Number(pricetot);
+          }catch{
+
+          }
+
+        }
+
+        let cc = totPrice.toString();
+
+        if(cc.length >= 1 && cc.length <= 3){
+          $('#totPrice1').html("￦&nbsp;"+(totPrice));
+        }else if(cc.length >= 4 && cc.length <= 6){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), cc.length));
+        }else if(cc.length >= 7 && cc.length <= 9){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+"," + cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), cc.length));
+        }else if(cc.length >= 10 && cc.length <= 12){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+","+ cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), ((cc.length%3)==0 ? 9 : cc.length%3+6))+"," + cc.substring(((cc.length%3)==0 ? 9 : cc.length%3+6), cc.length));
+        }else if(cc.length >= 13 && cc.length <= 15){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+","+ cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), ((cc.length%3)==0 ? 9 : cc.length%3+6))+"," + cc.substring(((cc.length%3)==0 ? 9 : cc.length%3+6), ((cc.length%3)==0 ? 12 : cc.length%3+9))+"," + cc.substring(((cc.length%3)==0 ? 12 : cc.length%3+9), cc.length));
+        }else{
+          $('#totPrice1').html("￦&nbsp;"+(totPrice));
+        }
+
+        let totPrice2 = totPrice +2000;
+
+        let dd = totPrice2.toString();
+
+        if(dd.length >= 1 && dd.length <= 3){
+          $('#totPrice2').html("￦&nbsp;"+(totPrice2));
+        }else if(dd.length >= 4 && dd.length <= 6){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), dd.length));
+        }else if(dd.length >= 7 && dd.length <= 9){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+"," + dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), dd.length));
+        }else if(dd.length >= 10 && dd.length <= 12){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+","+ dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), ((dd.length%3)==0 ? 9 : dd.length%3+6))+"," + dd.substring(((dd.length%3)==0 ? 9 : dd.length%3+6), dd.length));
+        }else if(dd.length >= 13 && dd.length <= 15){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+","+ dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), ((dd.length%3)==0 ? 9 : dd.length%3+6))+"," + dd.substring(((dd.length%3)==0 ? 9 : dd.length%3+6), ((dd.length%3)==0 ? 12 : dd.length%3+9))+"," + dd.substring(((dd.length%3)==0 ? 12 : dd.length%3+9), dd.length));
+        }else{
+          $('#totPrice2').html("￦&nbsp;"+(totPrice2));
+        }
+
+
+      }
+
+      let totPrice2 = $('#totPrice2').html().substring(7,$('#totPrice2').html().length);
+      totPrice2 = totPrice2.replaceAll(",","");
+      totPrice2 = Number(totPrice2);
+
+      function countChange(num){
+
+        if($('#eqCount'+num).val() > Number($('#maxHave'+num).html())){
+          $('#eqCount'+num).val(Number($('#maxHave'+num).html()));
+        }
+
+        let priceOne = $('#tbPriceOne'+num).html().substring(7,$('#tbPriceOne'+num).html().length);
+        priceOne = priceOne.replaceAll(",",'');
+        let ss = Number($('#eqCount'+num).val());
+        let aa = (Number(priceOne)*ss);
+        let bb = aa.toString();
+
+        if(bb.length >= 1 && bb.length <= 3){
+          $('#tbPrice'+num).html("￦&nbsp;"+(Number(priceOne)*ss));
+        }else if(bb.length >= 4 && bb.length <= 6){
+          $('#tbPrice'+num).html("￦&nbsp;"+ bb.substring(0, ((bb.length%3)==0 ? 3 : bb.length%3 ))+","+bb.substring(((bb.length%3)==0 ? 3 : bb.length%3), bb.length));
+        }else if(bb.length >= 7 && bb.length <= 9){
+          $('#tbPrice'+num).html("￦&nbsp;"+ bb.substring(0, ((bb.length%3)==0 ? 3 : bb.length%3 ))+","+ bb.substring(((bb.length%3)==0 ? 3 : bb.length%3), ((bb.length%3)==0 ? 6 : bb.length%3+3))+"," + bb.substring(((bb.length%3)==0 ? 6 : bb.length%3+3), bb.length));
+        }else if(bb.length >= 10 && bb.length <= 12){
+          $('#tbPrice'+num).html("￦&nbsp;"+ bb.substring(0, ((bb.length%3)==0 ? 3 : bb.length%3 ))+","+ bb.substring(((bb.length%3)==0 ? 3 : bb.length%3), ((bb.length%3)==0 ? 6 : bb.length%3+3))+","+ bb.substring(((bb.length%3)==0 ? 6 : bb.length%3+3), ((bb.length%3)==0 ? 9 : bb.length%3+6))+"," + bb.substring(((bb.length%3)==0 ? 9 : bb.length%3+6), bb.length));
+        }else{
+          $('#tbPrice'+num).html("￦&nbsp;"+(Number(priceOne)*ss));
+        }
+
+        let totPrice = 0;
+
+        for(let i = 1; i <= tbSize ; i++){
+
+          try{
+            let pricetot = $('#tbPrice'+i).html().substring(7,$('#tbPrice'+i).html().length);
+            pricetot = pricetot.replaceAll(",",'');
+            totPrice += Number(pricetot);
+          }catch{
+
+          }
+
+        }
+
+        let cc = totPrice.toString();
+
+        if(cc.length >= 1 && cc.length <= 3){
+          $('#totPrice1').html("￦&nbsp;"+(totPrice));
+        }else if(cc.length >= 4 && cc.length <= 6){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), cc.length));
+        }else if(cc.length >= 7 && cc.length <= 9){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+"," + cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), cc.length));
+        }else if(cc.length >= 10 && cc.length <= 12){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+","+ cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), ((cc.length%3)==0 ? 9 : cc.length%3+6))+"," + cc.substring(((cc.length%3)==0 ? 9 : cc.length%3+6), cc.length));
+        }else if(cc.length >= 13 && cc.length <= 15){
+          $('#totPrice1').html("￦&nbsp;"+ cc.substring(0, ((cc.length%3)==0 ? 3 : cc.length%3 ))+","+ cc.substring(((cc.length%3)==0 ? 3 : cc.length%3), ((cc.length%3)==0 ? 6 : cc.length%3+3))+","+ cc.substring(((cc.length%3)==0 ? 6 : cc.length%3+3), ((cc.length%3)==0 ? 9 : cc.length%3+6))+"," + cc.substring(((cc.length%3)==0 ? 9 : cc.length%3+6), ((cc.length%3)==0 ? 12 : cc.length%3+9))+"," + cc.substring(((cc.length%3)==0 ? 12 : cc.length%3+9), cc.length));
+        }else{
+          $('#totPrice1').html("￦&nbsp;"+(totPrice));
+        }
+
+        totPrice2 = totPrice +2000;
+
+        let dd = totPrice2.toString();
+
+        if(dd.length >= 1 && dd.length <= 3){
+          $('#totPrice2').html("￦&nbsp;"+(totPrice2));
+        }else if(dd.length >= 4 && dd.length <= 6){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), dd.length));
+        }else if(dd.length >= 7 && dd.length <= 9){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+"," + dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), dd.length));
+        }else if(dd.length >= 10 && dd.length <= 12){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+","+ dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), ((dd.length%3)==0 ? 9 : dd.length%3+6))+"," + dd.substring(((dd.length%3)==0 ? 9 : dd.length%3+6), dd.length));
+        }else if(dd.length >= 13 && dd.length <= 15){
+          $('#totPrice2').html("￦&nbsp;"+ dd.substring(0, ((dd.length%3)==0 ? 3 : dd.length%3 ))+","+ dd.substring(((dd.length%3)==0 ? 3 : dd.length%3), ((dd.length%3)==0 ? 6 : dd.length%3+3))+","+ dd.substring(((dd.length%3)==0 ? 6 : dd.length%3+3), ((dd.length%3)==0 ? 9 : dd.length%3+6))+"," + dd.substring(((dd.length%3)==0 ? 9 : dd.length%3+6), ((dd.length%3)==0 ? 12 : dd.length%3+9))+"," + dd.substring(((dd.length%3)==0 ? 12 : dd.length%3+9), dd.length));
+        }else{
+          $('#totPrice2').html("￦&nbsp;"+(totPrice2));
+        }
+
+
+
+      }
+
+      function eqBuy(){
+
+        let totCount = 0;
+        let mainEq = null;
+
+        for(let i = 1; i <= tbSize ; i++){
+
+          try{
+            if(mainEq == null){
+              mainEq = $('#eqName'+i).val();
+            }
+            let pricetot = $('#tbPrice'+i).html().substring(7,$('#tbPrice'+i).html().length);
+            totCount ++;
+
+          }catch{
+          }
+
+
+
+        }
+        if (totCount <= 1){
+
+        }else{
+          mainEq += " 외 " +(totCount-1)+"종";
+        }
+
+        console.log(mainEq);
+        console.log($('#totPrice2').html().substring(0,1)+" "+ $('#totPrice2').html().substring(7,$('#totPrice2').html().length));
+
+        requestPay(mainEq);
+
+      }
+
+      function requestPay(mainEq) {
+
+        var IMP = window.IMP;
+        IMP.init('imp75130024');
+
+        IMP.request_pay({
+          pg: 'kakaopay',
+          pay_method: 'card',
+          merchant_uid: 'merchant_' + new Date().getTime(),
+          name: mainEq,       // 구매한 장비 이름
+          quantity: 1,        // 갯수
+          amount : totPrice2, // 구매한 금액
+          buyer_name: '이름',
+          buyer_postcode: '123-456',
+
+        }, function (rsp) {
+          if (rsp.success) {
+            var msg = '결제가 완료되었습니다.';
+            msg += '총 금액 : ' + totPrice2;
+            $.ajax({
+              type : "POST",
+              url : "buyEquipment",
+              data : {
+                "memId" : [[${session.loginId}]],
+                "buyPay" : totPrice2,
+                "equitmentName" : mainEq
+              },
+              dataType : "text" ,
+              async : true,
+              success : function(date){
+                alert("성공")
+                let eqList = Array();
+
+                for(let i = 1; i <= tbSize ; i++){
+                      try{
+                        let eqName = $('#eqNum'+i).val();
+                        let mainCnt = $('#eqCount'+i).val();
+
+                        eqList.push([eqName,mainCnt]);
+
+                      } catch {
+                      }
+
+              }
+                location.href = "eqCntDown?eqList=" + eqList;
+
+              },
+              error : function(){
+
+              }
+            });
+          } else {
+            var msg = '결제에 실패하였습니다.';
+            msg += '에러코드 : ' + rsp.error_code;
+            msg += '에러내용 : ' + rsp.error_msg;
+          }
+          alert(msg);
+        });
+      };
+
+    </script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+
+</html>

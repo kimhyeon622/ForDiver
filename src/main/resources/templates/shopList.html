@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>Titan | Multipurpose HTML5 Template</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="images/mine/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="images/mine/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="images/mine/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="images/mine/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist/owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+    <script src="/summernote/summernote-lite.js"></script>
+    <script src="/summernote/lang/summernote-ko-KR.js"></script>
+    <link rel="stylesheet" href="/summernote/summernote-lite.css">
+
+    <style>
+
+      /* 초기버튼 스타일 */
+      .equip{
+        background-color: rgba(38, 167, 222, 0.84);
+        position: relative;
+        border-radius: 5px;
+        margin: 5px;
+        float: left;
+        background-image: linear-gradient(180deg, rgba(227, 246, 255, 0.81) , rgba(136, 207, 241, 0.81), rgba(227, 246, 255, 0.81));
+        border: solid 2px rgba(136, 207, 241, 0.81);
+        text-align: center;
+
+      }
+      .equip:hover{
+        box-shadow: 0 0 25px rgba(50, 190, 249, 0.84);
+        letter-spacing: 0.1em;
+      }
+
+      button:hover{
+        box-shadow: 0 0 20px #71dfe3;
+      }
+
+      /* 초기버튼 크기 */
+      .equip-Main{
+        width: 25%;
+        height: 96%;
+      }
+      .equip-Main2{
+        width: 15%;
+        height: 96%;;
+      }
+      .equip-Main3{
+        padding-top: 0%;
+        width: 15%;
+        height: 22%;
+      }
+
+      /* history버튼 스타일 */
+      .hisBtn{
+        float: left;
+      }
+      .hisSpan{
+        color: #6fb1cc;
+        font-weight: bold;
+        font-size: 20px;
+        float: left;
+      }
+
+      /* 버튼 글자 스타일 */
+      h3{
+        font-family: HY신명조;
+
+        font-style: revert;
+        font-weight: revert;
+        color: rgb(21, 55, 80);
+
+      }
+
+      .cusAfBf{
+        width: 3px;
+        border-radius: 5px;
+        border-bottom: 30px solid rgba(38, 167, 222, 0.84);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        height: 0px;
+        rotate: -90deg;
+
+        box-sizing: initial;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+      }
+      .cusPage{
+        width: 30px;
+        height: 30px;
+        background-color: rgba(38, 167, 222, 0.84) ;
+        margin: 5px;
+        text-align: center;
+        border-radius: 5px;
+        line-height: 30px;
+        box-sizing: initial;
+        padding: 0px;
+        display: inline-block;
+        color: white
+      }
+      .cusFin{
+        width: 80px;
+        height: 40px;
+        background-color: rgba(38, 167, 222, 0.84) ;
+        margin: 5px;
+        text-align: center;
+        border-radius: 5px;
+        line-height: 40px;
+        box-sizing: initial;
+        padding: 0px;
+        display: inline-block;
+        color: white;
+        font-size: 17px;
+      }
+
+
+      /* 선택한 장비목록 스타일 */
+      .eq_box {
+        width: 400px;
+        height: 700px;
+        left: 1250px;
+        top: 70px;
+        position: absolute;
+        border: outset 7px rgba(71, 114, 224, 0.438);
+        background-image: linear-gradient(45deg, white, rgba(136, 207, 241, 0.81), white);
+
+        display: initial;
+        box-sizing: initial;
+        margin: 0px;
+        padding: 0px;
+      }
+      .eq_skin {
+        width: 190px;
+        height: 50px;
+        left: 1250px;
+        top: 10px;
+        position: absolute;
+        border-radius: 5px;
+        background-color: #6fb1cc;
+        display: initial;
+        box-sizing: initial;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        border: 0px;
+      }
+      .eq_scub {
+        width: 190px;
+        height: 50px;
+        left: 1470px;
+        top: 10px;
+        position: absolute;
+        border-radius: 5px;
+        background-color: #1C92C9;
+        display: initial;
+        box-sizing: initial;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        border: 0px;
+      }
+
+      /* 부수장비 */
+      .eq1 {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: white;
+        border: ridge 3px rgba(71, 114, 224, 0.438);
+        position: relative;
+        display: inline-block;
+
+        margin: 0px;
+        padding: 0px;
+        box-sizing: initial;
+
+      }
+      /* 슈트 */
+      .eq2 {
+        width: 120px;
+        height: 350px;
+        border-radius: 50%;
+        background-color: white;
+        border: ridge 3px rgba(71, 114, 224, 0.438);
+        position: relative;
+        display: inline-block;
+
+        margin: 0px;
+        padding: 0px;
+        box-sizing: initial;
+
+      }
+      /* 메인장비 */
+      .eq3 {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: white;
+        border: ridge 3px rgba(71, 114, 224, 0.438);
+        position: relative;
+        display: inline-block;
+
+        margin: 0px;
+        padding: 0px;
+        box-sizing: initial;
+
+      }
+      .eqSpan1{
+        float: left;
+        left: -10%;
+        top:-32%;
+        position: relative;
+        font-weight: bolder;
+        font-size: 25px;
+        color: rgba(34, 81, 197, 0.85);
+        font-style: italic;
+        z-index: 2;
+
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+      }
+      .eqSpan2{
+        float: left;
+        left: -10%;
+        top: 10%;
+        position: relative;
+        font-weight: bolder;
+        font-size: 25px;
+        color: rgba(34, 81, 197, 0.85);
+        font-style: italic;
+        z-index: 2;
+
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+      }
+      .eqSpan3{
+        float: left;
+        left: 0%;
+        top:-23%;
+        position: relative;
+        font-weight: bolder;
+        font-size: 25px;
+        color: rgba(34, 81, 197, 0.85);
+        font-style: italic;
+        z-index: 2;
+
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+      }
+      /* 부수장비 사진 */
+      .eqImg1{
+        height: 80%;
+        width: 80%;
+        float: left;
+        left: 8%;
+        top: -39%;
+        position: relative;
+        border-radius: 50%;
+        z-index: 0;
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+      }
+      /* 슈트 사진 */
+      .eqImg2{
+        height: 50%;
+        width: 97%;
+        float: left;
+        left: 3%;
+        top: 10%;
+        position: relative;
+        border-radius: 50%;
+        z-index: 0;
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+      }
+      /* 메인장비 사진 */
+      .eqImg3{
+        height: 80%;
+        width: 80%;
+        float: left;
+        left: 10%;
+        top: -27%;
+        position: relative;
+        border-radius: 50%;
+        z-index: 0;
+
+        margin: 0px;
+        padding: 0px;
+        display: initial;
+        box-sizing: initial;
+
+      }
+
+
+      /* 버튼 hover 스타일 */
+      a:hover, button:hover{
+        filter: brightness(110%);
+      }
+      .pageAct{
+        filter: brightness(70%);
+      }
+
+    </style>
+
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <!-- 헤더 -->
+      <header data-th-include="./header.html"></header>
+
+      <div class="main">
+        <section class="module bg-dark-60 shop-page-header" data-background="https://www.deeperblue.com/wp-content/uploads/2019/10/AdobeStock_69756440-scaled.jpeg">
+          <div class="container" >
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">스킨 스쿠버 장비 샵</h2>
+                <div class="module-subtitle font-serif">마음에 드는 장비를 골라보세요.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="module-small" style="margin: 10px; padding: 10px; height: 50vh;">
+          <!-- 버튼 목록 -->
+          <div class="container" style="padding: 2px; height: 40vh;  overflow: hidden; padding-left: 1vw; ">
+
+            <button th:if="${session.loginId ne null}" id="cusView" onclick="btnCustomList()" style="border: 0px; position: absolute; left: 1430px; top: 12px; width: 120px; height: 150px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</h3></button>
+
+            <button th:if="${session.loginId ne null}" id="cusMake" onclick="btnCustom(0)" style=" border: 0px; position: absolute; left: 1430px; top: 222px; width: 120px; height: 150px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</br>만들기</h3></button>
+
+            <div id="btnList" style="position: initial; display: initial; box-sizing: initial; height: 40vh;">
+
+            <!-- 분류 1 -->
+            <a href='javascript:void(0);'><div class="equip equip-Main" onclick="buttonList('1')" style="padding-top: 5%;">
+              <div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >
+              <img src="/images/mine/btnImage/스킨btn.png" style="max-height:150px; max-width: 150px; "/></div>
+               <h3 id="btn1">스킨 장비</h3> <span id="btnNum1" hidden="hidden">A/</span>
+            </div></a>
+            <a href='javascript:void(0);'><div class="equip equip-Main" onclick="buttonList('2')" style="padding-top: 5%;">
+              <div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >
+              <img src="/images/mine/btnImage/스쿠버btn.png" style="max-height:150px; max-width: 150px; "/></div>
+              <h3 id="btn2">스쿠버 장비</h3> <span id="btnNum2" hidden="hidden">B/</span>
+            </div></a>
+              <a href='javascript:void(0);'><div class="equip equip-Main2" onclick="buttonList('3')" style="padding-top: 5%;">
+                <div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >
+                <img src="/images/mine/btnImage/프리다이빙btn.png" style="max-height:100px; max-width: 100px; "/></div>
+                <h3 id="btn3">프리다이빙</h3> <span id="btnNum3" hidden="hidden">A/1/</span>
+              </div></a>
+              <a href='javascript:void(0);'> <div class="equip equip-Main2" onclick="buttonList('4')" style="padding-top: 5%;">
+                <div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >
+                <img src="/images/mine/btnImage/스쿠버악세btn.png" style="max-height:100px; max-width: 100px; "/></div>
+                <h3 id="btn4">스쿠버 악세서리</h3> <span id="btnNum4" hidden="hidden">C/</span>
+              </div></a>
+              <a href='javascript:void(0);'><div class="equip equip-Main3" onclick="buttonList('5')">
+                <h3 id="btn5">비치용품</h3> <span id="btnNum5" hidden="hidden">D/</span>
+              </div></a>
+              <a href='javascript:void(0);'><div class="equip equip-Main3" onclick="buttonList('6')">
+              <h3 id="btn6">수중촬영</h3> <span id="btnNum6" hidden="hidden">E/</span>
+              </div></a>
+              <a href='javascript:void(0);'><div class="equip equip-Main3" onclick="buttonList('7')">
+                <h3 id="btn7">구조구난</h3> <span id="btnNum7" hidden="hidden">F/</span>
+              </div></a>
+              <a href='javascript:void(0);'><div class="equip equip-Main3" onclick="buttonList('8')">
+              <h3 id="btn8">산업잠수</h3> <span id="btnNum8" hidden="hidden">G/</span>
+              </div></a>
+            </div>
+          </div>
+          <!-- 버튼 히스토리 -->
+          <div class="container"  style="padding-top: 5px; bottom: -1vh; position: relative; padding-left: 1.5vw; ">
+
+            <a id="goHome" href='javascript:void(0);'><div onclick="btnHistory('-1')" style="float: left; width: 36px; height: 36px; border-radius: 50%; padding-left: 8px; padding-top:5px;  border: 2px solid #1C92C9;"><i class="fa fa-fw" style="scale: 200%; color: #1C92C9" >&#xF015;</i></div></a>
+            <span class="hisSpan" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+            <div id="btnHistory" style="position: initial; display: initial; box-sizing: initial;">
+
+            </div>
+
+          </div>
+
+        </section>
+        <hr class="divider-w" style="width: 73%;">
+        <section class="module-small">
+
+          <!-- 장비 품목 리스트 -->
+          <div class="container" style="margin-left: 35px;" >
+            <div class="row multi-columns-row" id="eqList" style='width:1170px; height:772px;'>
+              <div th:each="eqList : ${eqList}" class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">
+                <div class="shop-item" >
+                  <div class="shop-item-image"  style="width: 262px; height: 296px; line-height: 296px;"><img th:src="@{/images/mine/eqImage/} + ${eqList.divPhotoName}" style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>
+                    <div class="shop-item-detail" th:onmouseup="eqDetail([[${eqList.divEqNum}]])"><a class="btn btn-round btn-b"><span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>
+                  </div>
+                  <span hidden="hidden" >[[${eqList.divEqNum}]]</span>
+                  <h4 class="shop-item-title font-alt"><a href="#">[[${eqList.divEqName}]]</a></h4>￦&nbsp;[[${eqList.divEqPriceStr}]]
+                </div>
+              </div>
+            </div>
+            <!-- 페이지 처리 -->
+            <div class="row" style="margin-left: 400px; ">
+              <div class="col-sm-12">
+                <div class="pagination font-alt">
+
+
+                  <a href='javascript:void(0);' onclick="pageCon('-2')"><i class="fa fa-angle-double-left"></i></a>
+                  <a href='javascript:void(0);' onclick="pageCon('-1')"><i class="fa fa-angle-left"></i></a>
+                  <span id="pageList" >
+                  <span th:each=" i : ${#numbers.sequence(paging.startPage, paging.endPage)}">
+                   <a th:if="${paging.page == i}" class="active pageAct" href='javascript:void(0);' id="curPage" th:onclick="pageCon([[${i}]])" >[[${i}]]</a>
+                  <a th:if="${paging.page != i}" href='javascript:void(0);' th:onclick="pageCon([[${i}]])" >[[${i}]]</a>
+                  </span>
+                  </span>
+                  <a href='javascript:void(0);' onclick="pageCon('-3')"><i class="fa fa-angle-right"></i></a>
+                  <a href='javascript:void(0);' onclick="pageCon('-4')"><i class="fa fa-angle-double-right"></i></a>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="eq_skin" onclick="eqSkin()"><h3 style="margin: 0px;">스킨 장비</h3></button>
+          <button class="eq_scub" onclick="eqScub()"><h3 style="margin: 0px;">스쿠버 장비</h3></button>
+          <!-- 선택한 아이템 장비창 -->
+          <div class="eq_box">
+            <!-- 마스크 -->
+            <div class="eq1" id="maskDiv" style="left: 40%; top:6%;">
+              <span class="eqSpan1">마스크</span>
+              <img id="maskImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+            <!-- 레귤레이터 -->
+            <div class="eq1" id="reguDiv"  style="left: -3%; top:14%;" >
+              <span class="eqSpan1">호흡기</span>
+              <img id="reguImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1" >
+            </div>
+            <!-- 옥토 -->
+            <div class="eq1" id="octoDiv"  style="left: -43%; top:27%;">
+              <span class="eqSpan1" style="width: 200px;">보조호흡기</span>
+              <img id="octoImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1" >
+            </div>
+            <!-- 스노클 -->
+            <div class="eq1" id="snokDiv" style="left: -5%; top:15%;">
+              <span class="eqSpan1">스노클</span>
+              <img id="snokImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+            <!-- 슈트 -->
+            <div class="eq2" id="suitDiv" style="left: 35%; top:12%;">
+              <span class="eqSpan2">슈트</span>
+              <img id="suitImg"  src="/images/mine/eqImage/흰사진.png" class="eqImg2">
+            </div>
+            <!-- 공기통 -->
+            <div class="eq3"  id="airpDiv"  style="left: 34%; top:-13%;">
+              <span class="eqSpan3">공기통</span>
+              <img id="airpImg" src="/images/mine/eqImage/흰사진.png" class="eqImg3">
+            </div>
+            <!-- 가방 -->
+            <div class="eq3" id="bcdDiv" style="left: -64%; top:-3%;">
+              <span class="eqSpan3">부력자켓</span>
+              <img id="bcdImg" src="/images/mine/eqImage/흰사진.png" class="eqImg3">
+            </div>
+            <!-- 오리발(핀) -->
+            <div class="eq3" id="flipDiv" style="left: 65%; top:14%;">
+              <span class="eqSpan3">오리발</span>
+              <img id="flipImg" src="/images/mine/eqImage/흰사진.png" class="eqImg3">
+            </div>
+            <!-- 컴퓨터 -->
+            <div class="eq1" id="compDiv" style="left: -30%; top:8%;">
+              <span class="eqSpan1">컴퓨터</span>
+              <img id="compImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+            <!-- 게이지 -->
+            <div class="eq1" id="gaugDiv" style="left: -40%; top:-6%;">
+              <span class="eqSpan1">게이지</span>
+              <img id="gaugImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+            <!-- 부츠 -->
+            <div class="eq1" id="bootsDiv" style="left: -37%; top: 8%;">
+              <span class="eqSpan1">부츠</span>
+              <img id="bootsImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+            <!-- 장갑 -->
+            <div class="eq1"  id="globDiv" style="left: 70%; top:-26%;">
+              <span class="eqSpan1">장갑</span>
+              <img id="globImg" src="/images/mine/eqImage/흰사진.png" class="eqImg1">
+            </div>
+          </div>
+        </section>
+        <footer data-th-include="./footer.html"></footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"></script>
+    <script>
+
+      let opBool = true;
+      let opa = 0;
+
+      let deggImg = null;
+      let deggBool = 3;
+      let degg= 0;
+      let curBtn = "";
+      let bright = 100;
+      let brightOn = true;
+      setInterval(function(e){
+        if(brightOn){
+          bright++;
+        }else{
+          bright--;
+        }
+        if(bright >= 170){
+          brightOn = false;
+        }
+        if(bright <= 100){
+          brightOn = true;
+        }
+
+        if(opBool){
+          opa += 0.01;
+          if(opa >= 1){
+            opBool=false;
+          }
+        }
+
+        $('.equip').css({'opacity': opa});
+
+        $(curBtn).css('filter' , 'brightness('+ bright +'%)');
+        $('#cusBriPage').css('filter' , 'brightness('+ bright +'%)');
+
+        if(deggBool == 0){
+          degg += 2;
+          if(degg > 25){
+            deggBool=1;
+          }
+        }else if (deggBool== 1){
+          degg -= 2;
+          if(degg < -25){
+            deggBool=2;
+          }
+        }else if(deggBool==2){
+          degg += 2;
+          if(degg >= 0){
+            degg=3;
+          }
+        }else{
+          degg=0;
+        }
+        if(deggImg != null){
+          deggImg.style.rotate = degg+ "deg";
+        }
+
+
+                            }, 10);
+      // 현재 히스토리버튼 반짝임
+
+      // let lef = $('#btnList').offset().left;
+      // let ddd = 1;
+      // let movBool = false;
+      // 버튼 움직임 애니메이션
+      // setInterval(function (e){
+      //
+      //   if(movBool){
+      //     ddd += 1;
+      //     $('#btnList').css({'left' : (lef-ddd*ddd)+"px"});
+      //   }
+      //
+      // },10);
+
+
+      $('.equip').hover(function (){
+        deggBool=0;
+        deggImg = this.getElementsByTagName("img").item(0);
+        console.log('hover');
+      },
+      function (){
+      });
+
+      function btnHistory(num1){
+
+        let input = "";
+
+        if(num1 == '-1'){
+
+        input =  "<a href='javascript:void(0);'>"
+        + " <div class='equip equip-Main' onClick=\"buttonList('1')\" style='padding-top: 5%;'>"
+         + '<div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >'
+         +"   <img src='/images/mine/btnImage/스킨btn.png' style=\"max-height:150px; max-width: 150px; \"/></div>"
+         +"   <h3 id='btn1'>스킨 장비</h3> <span id='btnNum1' hidden='hidden'>A/</span>"
+         +" </div>"
+        +"</a>"
+       +" <a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main' onClick=\"buttonList('2')\" style='padding-top: 5%;'>"
+        + '<div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >'
+        +    "<img src='/images/mine/btnImage/스쿠버btn.png' style=\"max-height:150px; max-width: 150px; \"/></div>"
+        +    "<h3 id='btn2'>스쿠버 장비</h3> <span id='btnNum2' hidden='hidden'>B/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main2' onClick=\"buttonList('3')\" style='padding-top: 5%;'>"
+        + '<div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >'
+        +    "<img src='/images/mine/btnImage/프리다이빙btn.png' style=\"max-height:100px; max-width: 100px; \"/></div>"
+        +    "<h3 id='btn3'>프리다이빙</h3> <span id='btnNum3' hidden='hidden'>A/1/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main2' onClick=\"buttonList('4')\" style='padding-top: 5%;'>"
+        + '<div style="width: 100%; height: 55%; line-height: 170px; text-align: center; display: inline-block; " >'
+        +    "<img src='/images/mine/btnImage/스쿠버악세btn.png' style=\"max-height:100px; max-width: 100px; \"/></div>"
+        +    "<h3 id='btn4'>스쿠버 악세서리</h3> <span id='btnNum4' hidden='hidden'>C/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main3' onClick=\"buttonList('5')\">"
+        +   " <h3 id='btn5'>비치용품</h3> <span id='btnNum5' hidden='hidden'>D/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main3' onClick=\"buttonList('6')\">"
+        +   " <h3 id='btn6'>수중촬영</h3> <span id='btnNum6' hidden='hidden'>E/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main3' onClick=\"buttonList('7')\">"
+        +   " <h3 id='btn7'>구조구난</h3> <span id='btnNum7' hidden='hidden'>F/</span>"
+        +  "</div>"
+        +"</a>"
+        +"<a href='javascript:void(0);'>"
+        +  "<div class='equip equip-Main3' onClick=\"buttonList('8')\">"
+        +    "<h3 id='btn8'>산업잠수</h3> <span id='btnNum8' hidden='hidden'>G/</span>"
+        +  "</div>"
+        +"</a>";
+
+        insertHtmlFun(document.getElementById("btnList") , input);
+          $('.equip').css('opacity', 0);
+          opa = 0.3;
+          opBool=true;
+
+
+          $('.equip').hover(function (){
+                    deggBool=0;
+                    deggImg = this.getElementsByTagName("img").item(0);
+                    console.log('hover');
+                  },
+                  function (){
+                  });
+
+        $('#btnHistory').html("");
+
+          $.ajax({
+            type : "POST",
+            url : "buttonList",
+            data : {
+              "divEqSoNum" : ""
+            },
+            dataType : "json" ,
+            success : function(data){
+
+
+              if(data[2].length == 0){
+                $('#eqList').html("<div style='width:1170px; height:772px;'>d</div>");
+                return;
+              }
+
+              let input3 = ""
+
+              for(let i in data[2][0]){
+
+                input3 += '<div class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">'
+                        + '<div class="shop-item">'
+                        + '<div class="shop-item-image" style="width: 262px; height: 296px; line-height: 296px;">'
+                        + '<img src="/images/mine/eqImage/'+data[2][0][i].divPhotoName + '"'
+                        + ' style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>'
+                        + '<div class="shop-item-detail" onclick="eqDetail('+ data[2][0][i].divEqNum +')"><a class="btn btn-round btn-b">'
+                        + '<span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>'
+                        + '</div>'
+                        + '<span hidden="hidden">' + data[2][0][i].divEqNum + '</span>'
+                        + '<h4 class="shop-item-title font-alt"><a href="javascript:void(0);">' + data[2][0][i].divEqName + '</a>'
+                        + '</h4>￦&nbsp;'+data[2][0][i].divEqPriceStr
+                        + '</div></div>';
+              }
+              insertHtmlFun(document.getElementById("eqList") , input3);
+
+              let input4 = "";
+              for(let i =0; i <= (data[2][1].endPage-data[2][1].startPage); i++ ) {
+                if(data[2][1].startPage+i == data[2][1].page){
+                  if(data[2][1].page == data[2][1].endPage){
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                  }else{
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                  }
+                }else if(data[2][1].startPage+i == data[2][1].endPage){
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                }else{
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                }
+              }
+              insertHtmlFun(document.getElementById("pageList") , input4);
+            },
+            error : function(){
+              alert("버튼 리스트 통신 실패!");
+            }
+          });
+
+        }else{
+
+          let hisBtn = $("#hisBtn" + num1).html();
+          let hisNum = $("#hisNum" + num1).html();
+
+          $.ajax({
+            type : "POST",
+            url : "buttonList",
+            data : {
+              "divEqSoName" : hisBtn,
+              "divEqSoNum" : hisNum
+            },
+            dataType : "json" ,
+            success : function(data){
+
+
+              if(data[0].length == 0){
+                return;
+              }
+
+              let num = data[0].length;
+              let div1 = parseInt(num / 6);
+              let div2 = num % 6;
+
+              if(div2 == 0){
+
+                div2=6;
+                div1--;
+              }
+
+              // 기준 길이 96(퍼센트)
+              let wid = 0;
+              let hei = 0;
+              let imgWid = 60;
+              let imgHei = 60;
+              let displ = "initial";
+              let padTop = 0;
+              let lineHei = 170;
+              let dvHei = 55;
+              let font = 25;
+
+              if(div1 == 0){
+                padTop = 5;
+                wid =  95 /div2;
+                hei = 95;
+                imgHei = (100 + 100/div2 + 100/(div2*div2));
+                imgWid = (100 + 100/div2 + 100/(div2*div2));
+
+              }else if(div1 == 1){
+                wid = 95 / 6;
+                hei = 95 / 2;
+                padTop = 2;
+                imgHei = 95;
+                imgWid = 95;
+                lineHei = 50;
+                font = 23;
+              }else if(div1 == 2){
+                wid = 95 / 6;
+                hei = 95 / 3;
+                imgHei = 45;
+                imgWid = 90;
+                padTop = 1;
+                lineHei = 0;
+                dvHei = 35;
+                font = 21;
+              }else if(div1 == 3){
+                wid = 95 / 6;
+                hei = 91 / 4;
+                imgWid = 0;
+                imgHei = 0;
+                displ = "none";
+                font = 19;
+              }else{
+
+              }
+              wid = parseInt(wid);
+              hei = parseInt(hei);
+
+
+              let input = ""
+
+              for(let i in data[0]){
+
+                input += "<a href='javascript:void(0);'><div class='equip' onClick=\"buttonList('"+i+"')\" style='width: "+ wid + "%; height: "+ hei + "%; padding-top: "+ padTop +"%;'>";
+                if(div1 <3){
+                  input +=   '<div style="width: 100%; height: '+ dvHei + '%; line-height: '+ lineHei + 'px; text-align: center; display: inline-block; " >';
+                }
+                input += " <img src='/images/mine/btnImage/" + data[0][i].divEqSoPhotoName+ "' style='max-width:"+imgWid+"px; max-height:"+imgHei+"px; display: "+ displ +";'>";
+                if(div1 <3){
+                  input +=   '</div>';
+                }
+
+                input += "<h3 id='btn" + i+ "' style='font-size: "+ font +"px;'>"+ data[0][i].divEqSoName+ "</h3> <span id='btnNum"+ i +"' hidden='hidden'>"+ data[0][i].divEqSoNum +"</span>"
+                        + "</div></a>";
+
+              }
+              insertHtmlFun(document.getElementById("btnList") , input);
+              $('.equip').css('opacity', 0);
+              opa = 0.3;
+              opBool=true;
+
+
+              $('.equip').hover(function (){
+                        deggBool=0;
+                        deggImg = this.getElementsByTagName("img").item(0);
+                        console.log('hover');
+                      },
+                      function (){
+                      });
+
+              let input2 = "";
+
+              if(data[1].length != 0){
+
+              }
+              let b = 0;
+              for(let i in data[1]){
+                b = (data[1].length-1-i);
+                if(b == data[1].length-1){
+                  input2 += "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                          + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+
+                }else{
+                  input2 += "<span class='hisSpan'>&nbsp;&nbsp; ▶ &nbsp;&nbsp;</span>"
+                          + "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                          + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+                }
+                curBtn = "#hisBtn"+b;
+              }
+              $('#btnHistory').html(input2);
+
+              if(data[2].length == 0){
+                $('#eqList').html("<div style='width:1170px; height:772px;'>d</div>");
+                return;
+              }
+
+              let input3 = ""
+
+              for(let i in data[2][0]){
+
+                input3 += '<div class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">'
+                        + '<div class="shop-item">'
+                        + '<div class="shop-item-image" style="width: 262px; height: 296px; line-height: 296px;">'
+                        + '<img src="/images/mine/eqImage/'+data[2][0][i].divPhotoName + '"'
+                        + ' style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>'
+                        + '<div class="shop-item-detail" onclick="eqDetail('+ data[2][0][i].divEqNum +')"><a class="btn btn-round btn-b">'
+                        + '<span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>'
+                        + '</div>'
+                        + '<span hidden="hidden">' + data[2][0][i].divEqNum + '</span>'
+                        + '<h4 class="shop-item-title font-alt"><a href="javascript:void(0);">' + data[2][0][i].divEqName + '</a>'
+                        + '</h4>￦&nbsp;'+data[2][0][i].divEqPriceStr
+                        + '</div></div>';
+              }
+              insertHtmlFun(document.getElementById("eqList") , input3);
+
+              let input4 = "";
+
+              for(let i =0; i <= (data[2][1].endPage-data[2][1].startPage); i++ ) {
+                if(data[2][1].startPage+i == data[2][1].page){
+                  if(data[2][1].page == data[2][1].endPage){
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                  }else{
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                  }
+                }else if(data[2][1].startPage+i == data[2][1].endPage){
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                }else{
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                }
+              }
+              insertHtmlFun(document.getElementById("pageList") , input4);
+
+            },
+            error : function(){
+              alert("버튼 리스트 통신 실패!");
+            }
+          });
+        }
+      }
+
+      function buttonList(num){
+
+        // movBool = true;
+        let btnName = $("#btn" + num).html();
+        let btnNum = $("#btnNum" + num).html();
+
+        $.ajax({
+          type : "POST",
+          url : "buttonList",
+          data : {
+            "divEqSoName" : btnName,
+            "divEqSoNum" : btnNum
+          },
+          dataType : "json",
+          success : function(data){
+
+            if(data[0].length == 0){
+              let input2 = "";
+
+              if(data[1].length != 0){
+
+              }
+              let b = 0;
+              for(let i in data[1]){
+                b = (data[1].length-1-i);
+                if(b == data[1].length-1){
+                  input2 += "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                          + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+
+                }else{
+                  input2 += "<span class='hisSpan'>&nbsp;&nbsp; ▶ &nbsp;&nbsp;</span>"
+                          + "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                          + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+                }
+                curBtn = "#hisBtn"+b;
+              }
+              $('#btnHistory').html(input2);
+
+              if(data[2].length == 0){
+                $('#eqList').html("<div style='width:1170px; height:772px;'>d</div>");
+                return;
+              }
+
+              let input3 = ""
+
+              for(let i in data[2][0]){
+
+                input3 += '<div class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">'
+                        + '<div class="shop-item">'
+                        + '<div class="shop-item-image" style="width: 262px; height: 296px; line-height: 296px;">'
+                        + '<img src="/images/mine/eqImage/'+data[2][0][i].divPhotoName + '"'
+                        + ' style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>'
+                        + '<div class="shop-item-detail" onclick="eqDetail('+ data[2][0][i].divEqNum +')"><a class="btn btn-round btn-b">'
+                        + '<span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>'
+                        + '</div>'
+                        + '<span hidden="hidden">' + data[2][0][i].divEqNum + '</span>'
+                        + '<h4 class="shop-item-title font-alt"><a href="javascript:void(0);">' + data[2][0][i].divEqName + '</a>'
+                        + '</h4>￦&nbsp;'+data[2][0][i].divEqPriceStr
+                        + '</div></div>';
+              }
+              insertHtmlFun(document.getElementById("eqList") , input3);
+
+              let input4 = "";
+
+              for(let i =0; i <= (data[2][1].endPage-data[2][1].startPage); i++ ) {
+                if(data[2][1].startPage+i == data[2][1].page){
+                  if(data[2][1].page == data[2][1].endPage){
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                  }else{
+                    input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                  }
+                }else if(data[2][1].startPage+i == data[2][1].endPage){
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                }else{
+                  input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                }
+              }
+
+              insertHtmlFun(document.getElementById("pageList") , input4);
+              return;
+            }
+
+            let num = data[0].length;
+            let div1 = parseInt(num / 6);
+            let div2 = num % 6;
+
+            if(div2 == 0){
+
+              div2=6;
+              div1--;
+            }
+
+            // 기준 길이 96(퍼센트)
+            let wid = 0;
+            let hei = 0;
+            let imgWid = 60;
+            let imgHei = 60;
+            let displ = "initial";
+            let padTop = 0;
+            let lineHei = 170;
+            let dvHei = 55;
+            let font = 25;
+
+            if(div1 == 0){
+              padTop = 5;
+              wid =  95 /div2;
+              hei = 95;
+              imgHei = (100 + 100/div2 + 100/(div2*div2));
+              imgWid = (100 + 100/div2 + 100/(div2*div2));
+
+            }else if(div1 == 1){
+              wid = 95 / 6;
+              hei = 95 / 2;
+              padTop = 2;
+              imgHei = 95;
+              imgWid = 95;
+              lineHei = 50;
+              font = 23;
+            }else if(div1 == 2){
+              wid = 95 / 6;
+              hei = 95 / 3;
+              imgHei = 45;
+              imgWid = 90;
+              padTop = 1;
+              lineHei = 0;
+              dvHei = 35;
+              font = 21;
+            }else if(div1 == 3){
+              wid = 95 / 6;
+              hei = 91 / 4;
+              imgWid = 0;
+              imgHei = 0;
+              displ = "none";
+              font = 19;
+            }else{
+
+            }
+            wid = parseInt(wid);
+            hei = parseInt(hei);
+
+
+            let input = ""
+
+            for(let i in data[0]){
+
+              input += "<a href='javascript:void(0);'><div class='equip' onClick=\"buttonList('"+i+"')\" style='width: "+ wid + "%; height: "+ hei + "%; padding-top: "+ padTop +"%;'>";
+              if(div1 <3){
+                input +=   '<div style="width: 100%; height: '+ dvHei + '%; line-height: '+ lineHei + 'px; text-align: center; display: inline-block; " >';
+              }
+              input += " <img src='/images/mine/btnImage/" + data[0][i].divEqSoPhotoName+ "' style='max-width:"+imgWid+"px; max-height:"+imgHei+"px; display: "+ displ +";'>";
+              if(div1 <3){
+                input +=   '</div>';
+              }
+
+              input += "<h3 id='btn" + i+ "' style='font-size: "+ font +"px;'>"+ data[0][i].divEqSoName+ "</h3> <span id='btnNum"+ i +"' hidden='hidden'>"+ data[0][i].divEqSoNum +"</span>"
+                      + "</div></a>";
+
+            }
+
+            insertHtmlFun(document.getElementById("btnList") , input);
+            $('.equip').css('opacity', 0);
+            opa = 0.3;
+            opBool=true;
+
+
+            $('.equip').hover(function (){
+                      deggBool=0;
+                      deggImg = this.getElementsByTagName("img").item(0);
+                      console.log('hover');
+                    },
+                    function (){
+                    });
+            let input2 = "";
+
+            if(data[1].length != 0){
+
+            }
+            let b = 0;
+            for(let i in data[1]){
+              b = (data[1].length-1-i);
+              if(b == data[1].length-1){
+                input2 += "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                        + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+
+              }else{
+                input2 += "<span class='hisSpan'>&nbsp;&nbsp; ▶ &nbsp;&nbsp;</span>"
+                        + "<button class='btn btn-round btn-b hisBtn' id='hisBtn"+ b +"' onClick=\"btnHistory('"+b+"')\">"+ data[1][b].divEqSoName +"</button>"
+                        + "<span id='hisNum"+b+"' hidden='hidden'>"+ data[1][b].divEqSoNum +"</span>"
+              }
+              curBtn = "#hisBtn"+b;
+            }
+            $('#btnHistory').html(input2);
+
+
+            if(data[2].length == 0){
+              $('#eqList').html("<div style='width:1170px; height:772px;'>d</div>");
+              return;
+            }
+
+            let input3 = ""
+
+            for(let i in data[2][0]){
+
+              input3 += '<div class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">'
+                      + '<div class="shop-item">'
+                      + '<div class="shop-item-image" style="width: 262px; height: 296px; line-height: 296px;">'
+                      + '<img src="/images/mine/eqImage/'+data[2][0][i].divPhotoName + '"'
+                      + ' style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>'
+                      + '<div class="shop-item-detail" onclick="eqDetail('+ data[2][0][i].divEqNum +')"><a class="btn btn-round btn-b">'
+                      + '<span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>'
+                      + '</div>'
+                      + '<span hidden="hidden">' + data[2][0][i].divEqNum + '</span>'
+                      + '<h4 class="shop-item-title font-alt"><a href="javascript:void(0);">' + data[2][0][i].divEqName + '</a>'
+                      + '</h4>￦&nbsp;'+data[2][0][i].divEqPriceStr
+                      + '</div></div>';
+            }
+            insertHtmlFun(document.getElementById("eqList") , input3);
+
+            let input4 = "";
+
+            for(let i =0; i <= (data[2][1].endPage-data[2][1].startPage); i++ ) {
+              if(data[2][1].startPage+i == data[2][1].page){
+                if(data[2][1].page == data[2][1].endPage){
+                  input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+                }else{
+                  input4 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+                }
+              }else if(data[2][1].startPage+i == data[2][1].endPage){
+                input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>";
+              }else{
+                input4 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[2][1].startPage+i) +"')\">"+ (data[2][1].startPage+i) +"</a>&nbsp;";
+              }
+            }
+            insertHtmlFun(document.getElementById("pageList") , input4);
+
+          },
+          error : function(){
+            alert("버튼 리스트 통신 실패!");
+          }
+        });
+      }
+
+      let cusTotal = 0;
+
+      function cusCheck(num){
+
+        if($('#cusCbx'+num).is(':checked') == false){
+          if(cusTotal>=18){
+            alert('즐겨찾기는 최대 18개까지만 지정할 수 있습니다.');
+            return;
+          }
+          $('#cusCbx'+num).prop('checked',true);
+          cusTotal++;
+        }else{
+          $('#cusCbx'+num).prop('checked',false);
+          cusTotal--;
+        }
+      }
+
+      // loginId 리셋 -완료-
+      function cusReset(){
+
+        let loginId = "[[${session.loginId}]]";
+        if(loginId == ""){
+          return;
+        }
+
+        $.ajax({
+          type : "POST",
+          url : "customReset",
+          data : {
+            "loginId" : loginId
+          },
+          dataType : "text" ,
+          success : function(data){
+              if(data != "OK"){
+                return;
+              }
+
+          },
+          error : function(){
+            alert("리셋 통신 실패!");
+            return;
+          }
+        });
+        for(let i = 0; i < 18; i++){
+          $('#cusCbx'+i).prop('checked',false);
+        }
+        cusTotal=0;
+      }
+
+      // loginId 들고가야함 즐겨찾기 세팅 -완료-
+      function btnCustom(num){
+
+        let loginId = "[[${session.loginId}]]";
+        if(loginId == ""){
+          return;
+        }
+
+        let cbxList = "";
+        let cusCurPage = $('#cusCurPage').html();
+        if(cusCurPage == null){
+          cusCurPage = -1;
+        }
+
+        if(num==0){
+          $('#cusView').css({'visibility' : "hidden"});
+          $('#cusMake').css({'visibility' : "hidden"});
+          $('#goHome').css({'visibility' : "hidden"});
+
+          num=1;
+        }
+        if(num == -1){
+          if(cusCurPage >=1 && cusCurPage <= 5){
+            num=1;
+          }else if(cusCurPage >=6 && cusCurPage <= 10){
+            num=5;
+          }else{
+            num=10;
+          }
+        }
+        if(num == -2){
+          if(cusCurPage >=1 && cusCurPage <= 5){
+            num=6;
+          }else if(cusCurPage >=6 && cusCurPage <= 10){
+            num=10;
+          }else{
+            num=10;
+          }
+        }
+
+        for(let i =0; i < 18 ; i++){
+          if($('#cusCbx'+i).is(':checked')){
+            cbxList += (i+1) + "/";
+          }
+        }
+
+        $.ajax({
+          type : "POST",
+          url : "buttonCustom",
+          data : {
+            "page" : num,
+            "cusCurPage" : cusCurPage,
+            "cbxList" : cbxList,
+            "loginId" : loginId
+          },
+          dataType : "json",
+          success : function(data){
+
+            // 기준 길이 96(퍼센트)
+            let wid = 0;
+            let hei = 0;
+            let imgWid = 60;
+            let imgHei = 60;
+            let displ = "initial";
+            let padTop = 0;
+            let lineHei = 170;
+            let dvHei = 55;
+
+            wid = 95 / 6;
+            hei = 95 / 3;
+            imgHei = 45;
+            imgWid = 90;
+            padTop = 1;
+            lineHei = 0;
+            dvHei = 35;
+
+            wid = parseInt(wid);
+            hei = parseInt(hei);
+
+
+            let input = ""
+
+            for(let i in data[0]){
+
+              input += "<a href='javascript:void(0);' onclick=\"cusCheck('"+ i +"')\"><div class='equip' style='width: "+ wid + "%; height: "+ hei + "%; padding-top: "+ padTop +"%;'>";
+              input += '<input type="checkbox" onclick="return;" id="cusCbx'+ i +'" '+ data[0][i].cbxBool +' style="position: absolute; right: 15px; top: 15px; width: 20px; height: 20px;">';
+              input +=   '<div style="width: 100%; height: '+ dvHei + '%; line-height: '+ lineHei + 'px; text-align: center; display: inline-block; " >';
+              input += " <img src='/images/mine/btnImage/" + data[0][i].divEqSoPhotoName+ "' style='max-width:"+imgWid+"px; max-height:"+imgHei+"px; display: "+ displ +";'>";
+              input +=   '</div>';
+              input += "<h3 id='btn" + i+ "' style='font-size: 16px;'>"+ data[0][i].divEqSoName+ "</h3> <span id='btnNum"+ i +"' hidden='hidden'>"+ data[0][i].divEqSoNum +"</span>"
+                      + "</div></a>";
+
+            }
+            insertHtmlFun(document.getElementById("btnList") , input);
+            $('.equip').css('opacity', 0);
+            opa = 0.3;
+            opBool=true;
+
+
+            $('.equip').hover(function (){
+                      deggBool=0;
+                      deggImg = this.getElementsByTagName("img").item(0);
+                      console.log('hover');
+                    },
+                    function (){
+                    });
+
+            let input2 = "";
+            input2 += "<button class='cusFin' onclick=\"cusReset()\" style=\"position: absolute; border: 0px; top: -1px;  left: 20px; \">리셋하기</button>"
+                    +  '<span style="position: relative; top: 5px;  left: 300px; display: inline-block; ">'
+                    + "<a href='javascript:void(0);' onclick=\"btnCustom('-1')\"> <div class='cusAfBf'></div></a>&nbsp;"
+                    + '<span style="position: relative; top: -10px; display: inline-block;">'
+                    + "<span id='cusCurPage' hidden='hidden'>"+ data[1].page +"</span>";
+
+            for(let i =0; i <= (data[1].endPage-data[1].startPage); i++) {
+              if(data[1].startPage+i == data[1].page){
+                input2 += "<a href='javascript:void(0);' id='cusBriPage' onclick=\"btnCustom('" + (data[1].startPage+i) +"')\"><div class='cusPage'>"+ (data[1].startPage+i) +"</div></a>";
+              }else{
+                input2 += "<a href='javascript:void(0);' onclick=\"btnCustom('" + (data[1].startPage+i) +"')\"><div class='cusPage'>"+ (data[1].startPage+i) +"</div></a>";
+              }
+            }
+
+            input2 += "</span>"
+                    + '<a href="javascript:void(0);" onclick=\"btnCustom(\'-2\')\"> <div class="cusAfBf" style="rotate: 90deg;"></div></a>'
+                    + "</span>"
+                    + "<a href='javascript:void(0);' onclick=\"btnCustom('-3')\">"
+                    + "<div class='cusFin' style=\"position: relative; top: -5px;  left: 657px; \">선택완료</div>"
+                    + "</a>";
+
+            insertHtmlFun(document.getElementById("btnHistory") , input2);
+            cusTotal = data[2];
+
+            if(num== -3){
+              $('#cusView').css({'visibility' : "visible"});
+              $('#cusMake').css({'visibility' : "visible"});
+              $('#goHome').css({'visibility' : "visible"});
+
+              btnHistory('-1');
+              return;
+            }
+
+          },
+          error : function(){
+            alert("버튼 리스트 통신 실패!");
+          }
+        });
+      }
+
+      // loginId 즐겨찾기 보기 -완료-
+      function btnCustomList(){
+
+        let loginId = "[[${session.loginId}]]";
+        if(loginId == ""){
+          return;
+        }
+
+        $.ajax({
+          type : "POST",
+          url : "cusBtnList",
+          data : {
+            "loginId" : loginId
+          },
+          dataType : "json",
+          success : function(data){
+
+            if(data[0].length == 0) {
+              alert('등록된 즐겨찾기가 없습니다.');
+              return;
+            }
+
+            let num = data[0].length;
+            let div1 = parseInt(num / 6);
+            let div2 = num % 6;
+
+            if(div2 == 0){
+
+              div2=6;
+              div1--;
+            }
+
+            // 기준 길이 96(퍼센트)
+            let wid = 0;
+            let hei = 0;
+            let imgWid = 60;
+            let imgHei = 60;
+            let displ = "initial";
+            let padTop = 0;
+            let lineHei = 170;
+            let dvHei = 55;
+            let font = 16;
+            if(div1 == 0){
+              padTop = 5;
+              wid =  95 /div2;
+              hei = 95;
+              imgHei = (100 + 100/div2 + 100/(div2*div2));
+              imgWid = (100 + 100/div2 + 100/(div2*div2));
+              font= 25;
+            }else if(div1 == 1){
+              wid = 95 / 6;
+              hei = 95 / 2;
+              padTop = 2;
+              imgHei = 95;
+              imgWid = 95;
+              lineHei = 50;
+              font= 23;
+            }else if(div1 == 2){
+              wid = 95 / 6;
+              hei = 95 / 3;
+              imgHei = 45;
+              imgWid = 90;
+              padTop = 1;
+              lineHei = 0;
+              dvHei = 35;
+
+            }else if(div1 == 3){
+              wid = 95 / 6;
+              hei = 91 / 4;
+              imgWid = 0;
+              imgHei = 0;
+              displ = "none";
+            }else{
+
+            }
+            wid = parseInt(wid);
+            hei = parseInt(hei);
+
+
+            let input = ""
+
+            for(let i in data[0]){
+
+              input += "<a href='javascript:void(0);'><div class='equip' onClick=\"buttonList('"+i+"')\" style='width: "+ wid + "%; height: "+ hei + "%; padding-top: "+ padTop +"%;'>";
+              if(div1 <3){
+                input +=   '<div style="width: 100%; height: '+ dvHei + '%; line-height: '+ lineHei + 'px; text-align: center; display: inline-block; " >';
+              }
+              input += " <img src='/images/mine/btnImage/" + data[0][i].divEqSoPhotoName+ "' style='max-width:"+imgWid+"px; max-height:"+imgHei+"px; display: "+ displ +";'>";
+              if(div1 <3){
+                input +=   '</div>';
+              }
+
+              input += "<h3 id='btn" + i+ "' style='font-size: "+ font +"px;'>"+ data[0][i].divEqSoName+ "</h3> <span id='btnNum"+ i +"' hidden='hidden'>"+ data[0][i].divEqSoNum +"</span>"
+                      + "</div></a>";
+
+            }
+
+            insertHtmlFun(document.getElementById("btnList") , input);
+            $('.equip').css('opacity', 0);
+            opa = 0.3;
+            opBool=true;
+
+
+            $('.equip').hover(function (){
+                      deggBool=0;
+                      deggImg = this.getElementsByTagName("img").item(0);
+                      console.log('hover');
+                    },
+                    function (){
+                    });
+
+          },
+          error : function(){
+            alert("버튼 리스트 통신 실패!");
+          }
+        });
+
+
+      }
+
+      function pageCon(num1){
+
+        let hisNum = $('#hisNum0').html();
+        if(hisNum == null){
+          hisNum = "";
+        }
+
+        let num = Number(num1);
+        let endBool = false;
+
+        if(num == -1){
+          if(parseInt($('#curPage').html()) == 1){
+            num = 1;
+          }else{
+            num = parseInt($('#curPage').html()) -1;
+          }
+        }else if(num == -2){
+          num = 1;
+        }else if(num == -3){
+          num = parseInt($('#curPage').html()) +1;
+        }else if(num == -4){
+          endBool = true;
+        }else{
+
+        }
+
+
+        $.ajax({
+          type : "POST",
+          url : "equipList",
+          data : {
+            "page" : num,
+            "divEqSoNum" : hisNum
+          },
+          dataType : "json" ,
+          success : function(data){
+
+            if(endBool){
+              pageCon(data[1].maxPage);
+              return;
+            }
+
+            if(data[0].length == 0){
+              $('#eqList').html("<div style='width:1170px; height:772px;'>&nbsp;</div>");
+              return;
+            }
+
+            let input = ""
+
+            for(let i in data[0]){
+
+              input += '<div class="col-sm-6 col-md-3 col-lg-3" style="max-height: 386px;">'
+                      + '<div class="shop-item">'
+                      + '<div class="shop-item-image" style="width: 262px; height: 296px; line-height: 296px;">'
+                      + '<img src="/images/mine/eqImage/'+data[0][i].divPhotoName + '"'
+                      + ' style="max-height: 296px; max-width: 262px;" alt="Accessories Pack"/>'
+                      + '<div class="shop-item-detail" onclick="eqDetail('+ data[0][i].divEqNum +')"><a class="btn btn-round btn-b">'
+                      + '<span class="icon-magnifying-glass" >&nbsp;상세보기</span></a></div>'
+                      + '</div>'
+                      + '<span hidden="hidden">' + data[0][i].divEqNum + '</span>'
+                      + '<h4 class="shop-item-title font-alt"><a href="javascript:void(0);">' + data[0][i].divEqName + '</a>'
+                      + '</h4>￦&nbsp;'
+                      +  data[0][i].divEqPriceStr
+                      + '</div></div>';
+            }
+            insertHtmlFun(document.getElementById("eqList") , input);
+
+            let input2 = "";
+
+            for(let i =0; i <= (data[1].endPage-data[1].startPage); i++ ) {
+              if(data[1].startPage+i == data[1].page){
+                if(data[1].page == data[1].endPage){
+                  input2 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[1].startPage+i) +"')\">"+ (data[1].startPage+i) +"</a>";
+                }else{
+                  input2 += "<a class='active pageAct' href='javascript:void(0);' id='curPage' onclick=\"pageCon('" + (data[1].startPage+i) +"')\">"+ (data[1].startPage+i) +"</a>&nbsp;";
+                }
+              }else if(data[1].startPage+i == data[1].endPage){
+                input2 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[1].startPage+i) +"')\">"+ (data[1].startPage+i) +"</a>";
+              }else{
+                input2 += "<a href='javascript:void(0);' onclick=\"pageCon('" + (data[1].startPage+i) +"')\">"+ (data[1].startPage+i) +"</a>&nbsp;";
+              }
+            }
+            insertHtmlFun(document.getElementById("pageList") , input2);
+
+          },
+          error : function(){
+            alert("버튼 리스트 통신 실패!");
+          }
+        });
+
+
+
+      }
+
+      function eqDetail(eqNum){
+
+        let loginId = "[[${session.loginId}]]";
+        console.log(loginId);
+
+        $.ajax({
+          type : "POST",
+          url : "eqDetail",
+          data : {
+            "divEqNum" : eqNum
+          },
+          dataType : "json" ,
+          async : false,
+          success : function(data){
+
+            let srcStr = '<div class="container" style="background-color: white; padding: 50px; border-radius: 15px;"><div class="row"><div class="col-sm-6 mb-sm-80" style=" width: 482px; height: 474px; line-height: 474px; text-align: center; margin-right: 30px;"><a class="gallery"><img style="max-width: 482px; max-height: 474px; " src="/images/mine/eqImage/'+ data.divPhotoName +'" alt="Single Product Image"/></a></div><div class="col-sm-6"><div class="row"><br/><br/><div class="col-sm-12"><h1 class="product-title font-alt">'+ data.divEqName +'</h1><h4 class="product-title font-alt">&ensp;(남은수량 : '+ data.divHave +')</h4><div></div><div class="row mb-20"><div class="col-sm-12"></div></div><div class="row mb-20"><div class="col-sm-12"><div class="price font-alt"><span class="amount">￦&nbsp;'+ data.divEqPriceStr + '</span></div></div></div><br/><br/><div class="row mb-20"><div class="col-sm-12"><div class="description"></div></div></div>';
+            if(loginId != ""){
+              srcStr += '<div class="row mb-20"><div class="col-sm-4 mb-sm-20"><input id="eqCount" class="form-control input-lg" type="number" name="" value="1" max="40" min="1" required="required"/></div><div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b" onclick=\'eqDirect(\"'+ eqNum +'\")\' href=\'javascript:void(0);\'>바로 구매</a></div></div><div class="row mb-20" ><div class="col-sm-8" style="float: right;"><a class="btn btn-lg btn-block btn-round btn-b" onclick=\'eqBasket(\"'+ eqNum +'\")\' href=\'javascript:void(0);\' style="background-color: #de0000;">장바구니 담기</a></div></div>';
+            }
+            srcStr += '<div class="row mb-20"><div class="col-sm-12"></div></div></div></div></div>';
+
+            $.magnificPopup.open({
+
+              items:{
+                src : srcStr,
+                type : 'inline'
+              }
+            });
+          },
+          error : function(){
+            alert("상세보기 통신 실패!");
+          }
+        });
+
+      }
+
+      // loginId 장바구니 담기 -완료-
+      function eqBasket(eqNum){
+
+        let loginId = "[[${session.loginId}]]";
+        if(loginId == ""){
+          return;
+        }
+
+        console.log( $("#eqCount").val());
+
+        $.ajax({
+          type : "POST",
+          url : "eqBasket",
+          data : {
+            "divEqNum" : eqNum,
+            "eqCount" : $("#eqCount").val(),
+            "loginId" : loginId
+          },
+          dataType : "json" ,
+          async : false,
+          success : function(data){
+
+            if(data[0] == "none"){
+              alert("남은 수량이 없습니다.");
+              return;
+            }else{
+              alert("장바구니에 담았습니다.");
+              if(data[0] == "no"){
+                return;
+              }else{
+                console.log(data[0] + "//"+ data[1]);
+
+                for(let i in data[0]) {
+                  $("#"+data[0][i]+"Img").attr("src", "/images/mine/eqImage/"+ data[1][i]);
+                }
+              }
+            }
+          },
+          error : function(){
+            alert("장바구니 통신 실패!");
+          }
+        });
+      }
+
+      // 페이지에서 처리할 것
+      // loginId 들고가기 처리 -완료-
+      function eqDirect(eqNum){
+
+        let loginId = "[[${session.loginId}]]";
+        if(loginId == ""){
+          return;
+        }
+
+        $.ajax({
+          type : "POST",
+          url : "eqBasket",
+          data : {
+            "divEqNum" : eqNum,
+            "eqCount" : $("#eqCount").val(),
+            "loginId" : loginId
+          },
+          dataType : "json" ,
+          async : false,
+          success : function(data){
+
+            if(data[0] == "none"){
+              alert("남은 수량이 없습니다.");
+              return;
+            }else{
+              location.href = "shopCheckout";
+            }
+          },
+          error : function(){
+            alert("구매페이지 통신 실패!");
+          }
+        });
+      }
+
+      let skinOn = false;
+      let scubOn = true;
+      let opac = 1.1;
+      function eqSkin(){
+
+        if(!skinOn){
+          skinOn = true;
+          scubOn = false;
+          opac = 1;
+        }
+      }
+
+      function eqScub(){
+
+        if(!scubOn){
+          skinOn = false;
+          scubOn = true;
+          opac = 0;
+        }
+      }
+
+      // 스킨&스쿠버 장비 애니메이션
+      setInterval(function (e){
+        if(opac >= 0 && skinOn){
+          opac = opac -0.03;
+          $('#reguDiv').css({'opacity' : opac});
+          $('#octoDiv').css({'opacity' : opac});
+          $('#bcdDiv').css({'opacity' : opac});
+          $('#airpDiv').css({'opacity' : opac});
+          $('#gaugDiv').css({'opacity' : opac});
+          $('#compDiv').css({'opacity' : opac});
+
+        }
+        if(opac <= 1 && scubOn){
+          opac = opac +0.03;
+          $('#reguDiv').css({'opacity' : opac});
+          $('#octoDiv').css({'opacity' : opac});
+          $('#bcdDiv').css({'opacity' : opac});
+          $('#airpDiv').css({'opacity' : opac});
+          $('#gaugDiv').css({'opacity' : opac});
+          $('#compDiv').css({'opacity' : opac});
+
+        }
+      }, 10);
+
+
+      function insertHtmlFun(nodeTemp, htmlTemp) {
+        removeAllChild(nodeTemp);
+        nodeTemp.insertAdjacentHTML("afterBegin", htmlTemp);
+      }
+
+      function removeAllChild(nodeTemp) {
+        while (nodeTemp.hasChildNodes()) { nodeTemp.removeChild(nodeTemp.lastChild);
+        }
+      }
+
+    </script>
+
+
+
+
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

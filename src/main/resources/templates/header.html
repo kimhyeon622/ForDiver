@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="changmin">
+    <meta name="date" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="style.css">
+    <!--fa icon 사용 위한 link-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/6.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <title></title>
+    <style>
+        .imageSizeForHeader{
+            height:20px;!important;
+            width:20px;!important;
+        }
+
+        i{
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-loader" style="background-color: #1C92C9;">
+    <div class="loader">Loading...</div>
+</div>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation" style="background-color: #1C92C9;">
+    <div class="container">
+        <!--홈페이지 명-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index">For Diver</a>
+        </div>
+        <!--start menu-->
+        <div class="collapse navbar-collapse" id="custom-collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                <!--nav1:Home-->
+                <li><a href="index" style="color: white;"><i class="fa fa-home"></i>홈으로</a></li>
+                <!--nav2:다이빙에 대한 흥미를 끌만한 정보들-->
+                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="icon-documents"></i>다이빙 이모저모</a>
+                    <ul class="dropdown-menu" style="background-color: #6fb1cc;">
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fas fa-info" style="width: 20px; height: 20px;"></i>스킨/스쿠버 다이빙</a>
+                            <ul class="dropdown-menu" style="background-color: #6fb1cc;">
+                                <li><a style="color: white;" href="skinInfo"><i class="fa far fa-info" style="color: black"></i>스킨다이빙 개요</a></li>
+                                <li><a style="color: white;" href="scubaInfo"><i class="fa far fa-info" style="color: black"></i>스쿠버다이빙 개요</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="divingSpot" style="color: white;"><i class="icon-map"></i>국내 다이빙 명소</a></li>
+                        <li><a href="divingClub" style="color: white;"><i class="fa fa-group"></i>국내 다이빙 클럽</a></li>
+                    </ul>
+                </li>
+                <!--nav3:다이버 샵-->
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-shopping-bag"></i>다이버 샵</a>
+                    <ul class="dropdown-menu" style="background-color: #6fb1cc;">
+                        <li><a href="shopList" style="color: white;"><i class="icon-toolbox"></i>다이빙 장비</a></li>
+                        <!--트레이닝 코스는 따로 둘 수도 있음-->
+                        <li><a href="#" style="color: white;">트레이닝 코스</a></li>
+                        <li><a href="selfReservation" style="color: white;"><i class="fa fas fa-bookmark"></i>커스텀 예약</a></li>
+                        <!--얘는 그냥 a 태그 모음집-->
+                        <li><a href="#" style="color: white;">리조트 예약</a></li>
+
+                    </ul>
+                </li>
+                <!--nav4:환경단체-->
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-leaf"></i>환경운동</a>
+                    <ul class="dropdown-menu" role="menu" style="background-color: #6fb1cc;">
+                        <li><a href="crisisInfo" style="color: white;"><i class="icon-hazardous"></i>해양위기 현황</a></li>
+                        <li><a href="donateList" style="color: white;"><i class="icon-shield"></i>환경단체 목록</a></li>
+                    </ul>
+                </li>
+                <!--nav5:커뮤니티-->
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;"><i class="fa fa-users"></i>커뮤니티</a>
+                    <ul class="dropdown-menu" role="menu" style="background-color: #6fb1cc;">
+                        <li><a href="list" style="color: white;"><i class="icon-chat"></i>자유게시판</a></li>
+                        <li><a href="galleryList" style="color: white;"><i class="icon-camera"></i>갤러리게시판</a></li>
+                        <li><a href="mNoticeList" style="color: white;"><i class="icon-megaphone"></i>공지사항</a></li>
+
+                    </ul>
+                </li>
+                <!--nav6:이벤트-->
+                <li><a href="eventList" style="color: white;"><i class="fa fa-solid fa-star"></i>이벤트</a></li>
+                <!--nav7 : 회원 관련창-->
+                <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: white;">
+                    <th:block th:if="${session.loginId eq null}"><i class="icon-profile-male"></i>게스트</th:block>
+                    <th:block th:if="${session.loginId ne null && session.loginId ne 'admin'}">
+                        <img class="imageSizeForHeader" th:src="@{/profile/{name}(name=${session.loginm.memPROFILENAME})}"/> [[${session.loginId}]] 님
+                    </th:block>
+                    <th:block th:if="${session.loginId ne null && session.loginId eq 'admin'}">
+                        <img class="imageSizeForHeader" th:src="@{/profile/{name}(name=${session.loginm.memPROFILENAME})}"/>관리자 님
+                    </th:block>
+                </a>
+                    <ul class="dropdown-menu" style="background-color: #6fb1cc;">
+                        <li><a th:if="${session.loginId eq null}" href="mJoinForm" style="color: white;"><i class="fa fa-solid fa-link"></i>회원가입</a></li>
+                        <li><a th:if="${session.loginId eq null}" href="mLoginForm" style="color: white;"><i class="fa fa-sign-in"></i>로그인</a></li>
+
+                        <li><a th:if="${session.loginId ne null}" th:href="@{mView(memId=${session.loginId})}" style="color: white;"><i class="fa fa-regular fa-id-card"></i>내 정보보기</a></li>
+
+                        <!--관리자 페이지-->
+                        <li><a th:if="${session.loginId ne null && session.loginId eq 'admin'}" href="mQuestList" style="color: white;"><i class="icon-gears"></i>관리자 페이지</a></li>
+
+                        <!--로그아웃은 항상 끝에 위치하도록-->
+                        <li><a th:if="${session.loginId ne null}" href="mLogout" style="color: white;"><i class="fa fa-sign-out"></i>로그아웃</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>

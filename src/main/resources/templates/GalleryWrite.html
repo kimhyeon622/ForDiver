@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="nickName">
+    <meta name="date" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/favicon/favicon.png" type="image/x-icon">
+    <title>갤러리 게시글 작성</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        /* 12 */
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+            outline: none;
+        }
+
+        .btn-12 {
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+            border: none;
+            box-shadow: none;
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            -webkit-perspective: 230px;
+            perspective: 230px;
+        }
+
+        .btn-12 span {
+            background: rgb(0, 172, 238);
+            background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+            margin: 0;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .btn-12 span:nth-child(1) {
+            box-shadow: -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+
+        .btn-12 span:nth-child(2) {
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+
+        .btn-12:hover span:nth-child(1) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+
+        .btn-12:hover span:nth-child(2) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+            color: transparent;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+    </style>
+
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!--보안-->
+    <script th:if="${session.loginm eq null}">
+        alert('로그인 후에 이용해주세요!');
+        location.href = "mLogin";
+    </script>
+
+    <style>
+        span {
+            font-size: 16px;
+        }
+
+        button {
+            background: rgb(0, 172, 238);
+            background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Adobe 고딕 Std B";
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        .obut:hover {
+            background: lightskyblue;
+        }
+
+        input[type=file]::file-selector-button {
+            width: 100px;
+            height: 30px;
+            background: rgb(0, 172, 238);
+            background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+            color: #fff;
+            border: 1px solid #4d4d4d;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input[type=file]::file-selector-button:hover {
+            background: lightskyblue;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+<main>
+
+    <header data-th-include="./header.html"></header>
+    <section>
+        <div style="height: 100px"></div>
+
+        <br/>
+        <button style="margin-left: 100px;" onclick="goList()" class="custom-btn btn-12">
+            <span>돌아가기</span><span>갤러리게시판으로</span></button>
+        <script>
+            function goList() {
+                location.href = "galleryList";
+            }
+        </script>
+        <br/>
+        <br/>
+        <div style="margin-left: 100px; margin-right: 100px;">
+            <h1>갤러리 게시글 작성</h1>
+            <form action="galleryWrite" enctype="multipart/form-data" id="galleryForm" method="post">
+                <input th:if="${session.loginm ne null}" type="hidden" name="memId" id="memId" th:value="${session.loginm.memId}">
+                <div>
+                    <h2>제목 &nbsp;<input type="text" name="pTitle" id="pTitle" size="50" placeholder="제목은 16자까지!"></h2>
+
+                    <h3>사진, 영상을 자유롭게 등록하실 수 있습니다.</h3>
+                    <h4><strong>※주의 : 영상은 MP4 형식만 지원합니다!</strong></h4>
+                    <h4><strong>※주의 : 해당 사이트와 관련없는 사진이나 영상은 관리자에 의해 삭제될 수 있습니다!</strong></h4>
+                    <!--등록 버튼-->
+                    <button class="obut" width="100px" height="25px" type="button" onclick="gallerySubmit()">등록</button>
+                    <br/>
+
+                    <h4>썸네일 선택 <input type="file" name="pPhoto" accept="image/*" onchange="readURLThumb(this)"/></h4>
+                    <img id="thumbPreview" width="300px" height="170px"/>
+                    <br/>
+                    <br/>
+
+                    <h3>사진 선택</h3>
+
+                    <!--onchange는 미리보기를 위함-->
+                    <span id="imageZone1">
+            사진 1 <input class="files" type="file" accept="image/*" id="pcFile1" name='pcFile'
+                        onchange="readURL1(this)"/></span>
+
+
+                    <span id="imageZone2"></span>
+                    <span id="imageZone3"></span>
+                    <span id="imageZone4"></span>
+                    <span id="imageZone5"></span>
+                    <span id="imageZone6"></span>
+                    <span id="imageZone7"></span>
+                    <span id="imageZone8"></span>
+                    <span id="imageZone9"></span>
+                    <span id="imageZone10"></span>
+                    <div id="imagePreview" style="padding: 3px; border: solid 1px lightskyblue; border-radius: 5px;">
+                        <img id="preview1" width="150px" height="200px">
+                        <img id="preview2" width="150px" height="200px">
+                        <img id="preview3" width="150px" height="200px">
+                        <img id="preview4" width="150px" height="200px">
+                        <img id="preview5" width="150px" height="200px">
+                        <img id="preview6" width="150px" height="200px">
+                        <img id="preview7" width="150px" height="200px">
+                        <img id="preview8" width="150px" height="200px">
+                        <img id="preview9" width="150px" height="200px">
+                        <img id="preview10" width="150px" height="200px">
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <h3>영상 선택</h3>
+                    <!--비디오 파트-->
+                    <span>영상 1 <input class="videos" type="file" id="pcFile11" name="pcFile" accept="video/mp4"
+                                      onchange="readVideo1(this)"/></span>
+                    <span id="videoZone2"></span>
+                    <span id="videoZone3"></span>
+                    <span id="videoZone4"></span>
+                    <span id="videoZone5"></span>
+                    <span id="videoZone6"></span>
+                    <span id="videoZone7"></span>
+                    <span id="videoZone8"></span>
+                    <span id="videoZone9"></span>
+                    <span id="videoZone10"></span>
+                    <div id="videoPreview" style="background-color: lightskyblue">
+                        <video id="preview11" width="200px" height="200px"></video>
+                        <video id="preview12" width="200px" height="200px"></video>
+                        <video id="preview13" width="200px" height="200px"></video>
+                        <video id="preview14" width="200px" height="200px"></video>
+                        <video id="preview15" width="200px" height="200px"></video>
+                        <video id="preview16" width="200px" height="200px"></video>
+                        <video id="preview17" width="200px" height="200px"></video>
+                        <video id="preview18" width="200px" height="200px"></video>
+                        <video id="preview19" width="200px" height="200px"></video>
+                        <video id="preview20" width="200px" height="200px"></video>
+                    </div>
+                    <br/>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer data-th-include="./footer.html"></footer>
+
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+</body>
+<script>
+
+    //썸네일 미리보기
+    function readURLThumb(input) {
+
+        if (input.files && input.files[0]) {
+
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('thumbPreview').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            //다시 누르거나 취소 누르면 비워줌
+            document.getElementById('thumbPreview').src = "";
+
+        }
+    }
+
+    //사진 미리보기
+    function readURL1(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview1').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone2');
+
+            imageZone.innerHTML = "사진 2 <input class='files' type='file' accept='image/*' id='pcFile2' name='pcFile' onchange='readURL2(this)'/>"
+
+        } else {
+            //다시 누르거나 취소 누르면 비워줌
+            document.getElementById('preview1').src = "";
+
+        }
+
+    }
+
+    function readURL2(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview2').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone3');
+
+            imageZone.innerHTML = "사진 3 <input class='files' type='file' accept='image/*' id='pcFile3' name='pcFile' onchange='readURL3(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview2').src = "";
+
+        }
+
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL3(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview3').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone4');
+
+            imageZone.innerHTML = "사진 4 <input class='files' type='file' accept='image/*' id='pcFile4' name='pcFile' onchange='readURL4(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview3').src = "";
+
+        }
+
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL4(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview4').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone5');
+
+            imageZone.innerHTML = "사진 5 <input class='files' type='file' accept='image/*' id='pcFile5' name='pcFile' onchange='readURL5(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview4').src = "";
+
+        }
+
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL5(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview5').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+            cnt++;
+
+            let imageZone = document.getElementById('imageZone6');
+
+            imageZone.innerHTML = "사진 6 <input class='files' type='file' accept='image/*' id='pcFile6' name='pcFile' onchange='readURL6(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview5').src = "";
+
+        }
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL6(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview6').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone7');
+
+            imageZone.innerHTML = "사진 7 <input class='files' type='file' accept='image/*' id='pcFile7' name='pcFile' onchange='readURL7(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview6').src = "";
+
+        }
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL7(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview7').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone8');
+
+            imageZone.innerHTML = "사진 8 <input class='files' type='file' accept='image/*' id='pcFile8' name='pcFile' onchange='readURL8(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview7').src = "";
+
+        }
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL8(input) {
+
+        if (input.files && input.files[0]) {
+
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview8').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone9');
+
+            imageZone.innerHTML = "사진 9 <input class='files' type='file' accept='image/*' id='pcFile9' name='pcFile' onchange='readURL9(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview8').src = "";
+        }
+
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL9(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview9').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+            let imageZone = document.getElementById('imageZone10');
+
+            imageZone.innerHTML = "사진 10 <input class='files' type='file' accept='image/*' id='pcFile10' name='pcFile' onchange='readURL10(this)'/>"
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview9').src = "";
+        }
+    }
+
+    //바꿔야 할 거 : 함수 이름 - 숫자
+    function readURL10(input) {
+
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('preview10').src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            //다시 누르면 비워줌
+            document.getElementById('preview10').src = "";
+        }
+    }
+
+    //여기서부터 비디오. class도 videos. files와 마찬가지로 이용가치는 현재 없음
+    //영상 1 <input class='videos' type='file' id='pcFile11' name='pcFile' accept='video/mp4' onchange='readVideo1(this)'/>
+
+    //비디오 프리뷰 숫자 + 10
+    function readVideo1(data) {
+        //data가 곧 let inputFile = document.getElementById("pcFile11");
+        let video = document.getElementById("preview11");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone2");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 2 <input class='videos' type='file' id='pcFile12' name='pcFile' accept='video/mp4' onchange='readVideo2(this)'/>"
+    }
+
+    function readVideo2(data) {
+
+        let video = document.getElementById("preview12");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone3");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 3 <input class='videos' type='file' id='pcFile13' name='pcFile' accept='video/mp4' onchange='readVideo3(this)'/>"
+    }
+
+    function readVideo3(data) {
+
+        let video = document.getElementById("preview13");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone4");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 4 <input class='videos' type='file' id='pcFile14' name='pcFile' accept='video/mp4' onchange='readVideo4(this)'/>"
+    }
+
+    function readVideo4(data) {
+
+        let video = document.getElementById("preview14");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone5");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 5 <input class='videos' type='file' id='pcFile15' name='pcFile' accept='video/mp4' onchange='readVideo5(this)'/>"
+    }
+
+    function readVideo5(data) {
+
+        let video = document.getElementById("preview15");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone6");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 6 <input class='videos' type='file' id='pcFile16' name='pcFile' accept='video/mp4' onchange='readVideo6(this)'/>"
+    }
+
+    function readVideo6(data) {
+
+        let video = document.getElementById("preview16");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone7");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 7 <input class='videos' type='file' id='pcFile17' name='pcFile' accept='video/mp4' onchange='readVideo7(this)'/>"
+    }
+
+    function readVideo7(data) {
+
+        let video = document.getElementById("preview17");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone8");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 8 <input class='videos' type='file' id='pcFile18' name='pcFile' accept='video/mp4' onchange='readVideo8(this)'/>"
+    }
+
+    function readVideo8(data) {
+
+        let video = document.getElementById("preview18");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone9");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 9 <input class='videos' type='file' id='pcFile19' name='pcFile' accept='video/mp4' onchange='readVideo9(this)'/>"
+    }
+
+    function readVideo9(data) {
+
+        let video = document.getElementById("preview19");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+        let next = document.getElementById("videoZone10");
+
+        //영상 번호 - id - onchange 변경
+        next.innerHTML = "영상 10 <input class='videos' type='file' id='pcFile20' name='pcFile' accept='video/mp4' onchange='readVideo10(this)'/>"
+    }
+
+    //마지막 10번째!
+    function readVideo10(data) {
+
+        let video = document.getElementById("preview20");
+
+        const file = data.files[0];
+        const videourl = URL.createObjectURL(file);
+        video.setAttribute("src", videourl); //src 부여
+        video.play(); //자동 재생
+
+    }
+
+    //등록 버튼
+    function gallerySubmit() {
+
+        let pTitle = document.getElementById('pTitle').value;
+
+        let conf = confirm('등록하시겠습니까?');
+
+        if (conf) {
+            //제목 길이 제한
+            if(pTitle.length > 16){
+                alert('제목이 16자가 넘어갔습니다!');
+                $('#pTitle').val(pTitle.substring(0, 16));
+
+            } else {
+
+                document.getElementById('galleryForm').submit();
+            }
+
+        } else {
+
+            alert('취소하셨습니다.');
+        }
+    }
+
+
+</script>
+</html>

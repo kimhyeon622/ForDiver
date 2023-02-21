@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.first.project.dao.GalleryDAO">
+    <insert id="galleryWrite1" parameterType="gallery">
+        INSERT INTO PHOTOT VALUES (PHOTOTS.NEXTVAL, #{memId}, SYSDATE, #{pTitle}, #{pPhotoName})
+    </insert>
+
+    <select id="getPnum" parameterType="gallery" resultType="int">
+        SELECT PNUM FROM PHOTOT WHERE MEMID = #{memId} AND PTITLE = #{pTitle} AND PPHOTONAME = #{pPhotoName}
+    </select>
+
+    <insert id="galleryWrite2" parameterType="gallery">
+        INSERT INTO PHOTOCONTENTT VALUES (PHOTOCONTENTTS.NEXTVAL, #{pNum}, #{pcFileName}, #{pcPhoto})
+    </insert>
+
+    <select id="galleryView" parameterType="int" resultType="gallery">
+        SELECT * FROM PHOTOT WHERE PNUM = #{pNum}
+    </select>
+
+    <select id="galleryDatas" parameterType="int" resultType="gallery">
+        SELECT * FROM PHOTOCONTENTT WHERE PNUM = #{pNum}
+    </select>
+
+    <delete id="galleryDelete" parameterType="int">
+        DELETE FROM PHOTOT WHERE PNUM = #{pNum}
+    </delete>
+
+    <select id="galleryCount" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM PHOTOT WHERE PTITLE LIKE '%'||#{keyword}||'%'
+    </select>
+
+    <select id="galleryList" parameterType="paging" resultType="gallery">
+        SELECT * FROM PHOTOTLIST WHERE (RN BETWEEN #{startRow} AND #{endRow}) AND PTITLE LIKE '%'||#{keyword}||'%'
+    </select>
+
+    <select id="galleryLikeCount" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM PHOTOLIKET WHERE PNUM = #{pNum}
+    </select>
+
+    <select id="galleryLikeCheck" parameterType="gallery" resultType="gallery">
+        SELECT * FROM PHOTOLIKET WHERE MEMID = #{memId} AND PNUM = #{pNum}
+    </select>
+
+    <insert id="galleryLikeInsert" parameterType="gallery">
+        INSERT INTO PHOTOLIKET VALUES(PHOTOLIKETS.NEXTVAL, #{memId}, #{pNum})
+    </insert>
+
+    <delete id="galleryLikeDelete" parameterType="gallery">
+        DELETE FROM PHOTOLIKET WHERE PNUM = #{pNum} AND MEMID = #{memId}
+    </delete>
+
+    <insert id="commentWrite" parameterType="pComment">
+        INSERT INTO PHOTOCOMMENTT VALUES (PHOTOCOMMENTTS.NEXTVAL, #{pNum}, #{memId}, 0, #{pcmContent}, SYSDATE, 1)
+    </insert>
+
+    <select id="commentList" parameterType="int" resultType="pComment">
+        SELECT * FROM PHOTOCOMMENTT WHERE PNUM = #{pNum} AND PCMPARENT = 0 ORDER BY PCMNUM
+    </select>
+
+    <insert id="childWrite" parameterType="pComment">
+        INSERT INTO PHOTOCOMMENTT VALUES(PHOTOCOMMENTTS.NEXTVAL,#{pNum},#{memId},#{pcmParent},#{pcmContent},SYSDATE,1)
+    </insert>
+
+    <select id="childList" parameterType="int" resultType="pComment">
+        SELECT * FROM PHOTOCOMMENTT WHERE PNUM = #{pNum} AND NOT PCMPARENT = 0 ORDER BY PCMNUM
+    </select>
+
+    <select id="collectChild" parameterType="pComment" resultType="pComment">
+        SELECT * FROM PHOTOCOMMENTT WHERE PNUM = #{pNum} AND PCMPARENT = #{pcmParent}
+    </select>
+
+    <update id="commentModify" parameterType="pComment">
+        UPDATE PHOTOCOMMENTT SET PCMCONTENT = #{pcmContent} WHERE PCMNUM = #{pcmNum}
+    </update>
+
+    <update id="commentDelete" parameterType="int">
+        UPDATE PHOTOCOMMENTT SET PCMBOOL = 0 WHERE PCMNUM = #{pcmNum}
+    </update>
+
+    <select id="allComment" parameterType="int" resultType="pComment">
+        SELECT * FROM PHOTOCOMMENTT WHERE PNUM = #{pNum} AND PCMBOOL = 1
+    </select>
+
+    <select id="commentLikeCount" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM PHOTOCOMMENTLIKET WHERE PCMNUM = #{pcmNum}
+    </select>
+
+    <select id="commentLikeCheck" parameterType="pcLike" resultType="pcLike">
+        SELECT * FROM PHOTOCOMMENTLIKET WHERE MEMID = #{memId} AND PCMNUM = #{pcmNum}
+    </select>
+
+    <insert id="commentLikeInsert" parameterType="pcLike">
+        INSERT INTO PHOTOCOMMENTLIKET VALUES (PHOTOCOMMENTLIKETS.NEXTVAL, #{pcmNum}, #{memId})
+    </insert>
+
+    <delete id="commentLikeDelete" parameterType="pcLike">
+        DELETE FROM PHOTOCOMMENTLIKET WHERE PCMNUM = #{pcmNum} AND MEMID = #{memId}
+    </delete>
+
+    <delete id="commentDeleteForGalleryDelete" parameterType="int">
+        DELETE FROM PHOTOCOMMENTT WHERE PNUM = #{pNum}
+    </delete>
+
+    <select id="realAllComment" parameterType="int" resultType="int">
+        SELECT PCMNUM FROM PHOTOCOMMENTT WHERE PNUM = #{pNum}
+    </select>
+
+    <delete id="realCommentLikeDelete" parameterType="int">
+        DELETE FROM PHOTOCOMMENTLIKET WHERE PCMNUM = #{pcmNum}
+    </delete>
+
+    <delete id="galleryLikeDeleteForGalleryDelete" parameterType="int">
+        DELETE FROM PHOTOLIKET WHERE PNUM = #{pNum}
+    </delete>
+
+    <select id="collectContents" parameterType="int" resultType="String">
+        SELECT PCFILENAME FROM PHOTOCONTENTT WHERE PNUM = #{pNum}
+    </select>
+
+    <delete id="contentNameDelete" parameterType="String">
+        DELETE FROM PHOTOCONTENTT WHERE PCFILENAME = #{pcFileName}
+    </delete>
+
+    <select id="checkForCommentModifyAndDelete" parameterType="int" resultType="String">
+        SELECT MEMID FROM PHOTOCOMMENTT WHERE PCMNUM = #{pcmNum}
+    </select>
+
+</mapper>

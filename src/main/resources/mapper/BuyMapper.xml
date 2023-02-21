@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.first.project.dao.BuyDAO">
+
+    <select id="point" parameterType="String" resultType="int">
+        SELECT usablePoint FROM POINTT WHERE MEMID = #{memId}
+    </select>
+
+    <!-- 바다 이름으로 정보 가져오기 -->
+    <select id="buyScubaList" parameterType="String" resultType="scuba">
+        SELECT * FROM SCUBAPLACET WHERE SCUPNAME = #{buyObjectName}
+    </select>
+
+    <!-- 수영장 이름으로 정보 가져오기-->
+    <select id="buyPoolList" parameterType="String" resultType="pool">
+        SELECT * FROM POOLT WHERE PONAME = #{buyObjectName}
+    </select>
+
+    <!-- 바다 예약자 DB에 저장 -->
+    <insert id="buyScuba" parameterType="kakaoBuy">
+        INSERT INTO BUY VALUES(BUYS.nextval, #{memId}, #{buyPay}, #{rePeople}, #{reDateTime}, SYSDATE, 1, #{scubaName})
+    </insert>
+
+    <!-- 수영장 예약자 DB에 저장-->
+    <insert id="buyPool" parameterType="kakaoBuy">
+        INSERT INTO BUY VALUES(BUYS.nextval, #{memId}, #{buyPay}, #{rePeople}, #{reDateTime}, SYSDATE, 2, #{poolName})
+    </insert>
+
+    <!-- 장비 구매자 DB에 저장-->
+    <insert id="buyEquipment" parameterType="kakaoBuy">
+        INSERT INTO BUY VALUES(BUYS.nextval, #{memId}, #{buyPay}, 0, SYSDATE, SYSDATE, 0, #{equitmentName})
+    </insert>
+
+    <update id="usePoint" parameterType="kakaoBuy">
+        update POINTT SET USABLEPOINT = (USABLEPOINT - #{usePoint}) WHERE MEMID = #{memId}
+    </update>
+
+
+</mapper>

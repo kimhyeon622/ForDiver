@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Document Title
+    =============================================
+    -->
+    <title>Titan | Multipurpose HTML5 Template</title>
+    <!--
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        .imgs:hover{
+            border: black 1px solid;
+        }
+    </style>
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+
+
+    <header data-th-include="./header.html"></header>
+
+    <div class="main">
+        <section class="module">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '올림픽 수영장 다이빙풀'}">
+                        <img src="/images/oce/올림픽수영장1.jpeg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/올림픽수영장2.jpg" alt="Single Product"/></li>
+                            <li><img src="/images/oce/올림픽수영장3.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '잠실 스킨스쿠버 다이빙'}">
+                        <img src="/images/oce/잠실1.jpg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/잠실2.jpg" alt="Single Product"/></li>
+                            <li><img src="/images/oce/잠실3.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '다이브라이프'}">
+                        <img src="/images/oce/다이브라이프1.jpg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/다이브라이프2.jpg" alt="Single Product"/></li>
+                            <li><img src="/images/oce/다이브라이프3.jpg" alt="Single Product"/></li>
+                            <li><img src="/images/oce/다이브라이프4.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq 'K-26 다이빙풀'}">
+                        <img src="/images/oce/K_26_Dive_pool1.jpg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/K_26_Dive_pool2.jpg" alt="Single Product"/></li>
+                            <li><img src="/images/oce/K_26_Dive_pool3.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '딥스테이션'}">
+                        <img src="/images/oce/딥스테이션1.jpg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/딥스테이션2.jpg" alt="Single Product"/></a></li>
+                            <li><img src="/images/oce/딥스테이션3.jpg" alt="Single Product"/></a></li>
+                            <li><img src="/images/oce/딥스테이션4.jpg" alt="Single Product"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '아쿠아라인'}">
+                        <img src="/images/oce/아쿠아라인1.png" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/아쿠아라인2.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 mb-sm-40"  th:if="${PoolList.PoName eq '월드컵 스킨스쿠버 다이빙풀'}">
+                        <img src="/images/oce/월드컵스킨스쿠버다이빙풀.jpg" alt="Single Product Image"/>
+                        <ul class="product-gallery">
+                            <li><img src="/images/oce/월드컵스킨스쿠버다이빙풀2.JPG" alt="Single Product"/></li>
+                            <li><img src="/images/oce/월드컵스킨스쿠버다이빙풀3.jpg" alt="Single Product"/></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 class="product-title font-alt">[[${PoolList.PoName}]] 여행 패키지</h1>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-20">
+                            <div class="col-sm-12">
+                                <h3>예약 정보</h3>
+                                <hr/>
+                                <div class="price font-alt">
+                                    <h4 class="comment-form-title font-alt">가격 : [[${PoolList.PoPrice} * ${Rese.rePeople}]] 원</h4>
+                                </div>
+                                <div><h4 class="comment-form-title font-alt">예약일 : [[${Rese.reDateTime}]]</h4></div>
+                                <div><h4 class="comment-form-title font-alt">인원 : [[${Rese.rePeople}]]</h4></div>
+                                <p> * 당일 00시부터는 환불 불가이오니 이용 시 주의 요망</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-20">
+                            <div class="col-sm-12">
+                                <h3>포인트</h3>
+                                <hr/>
+                                <div class="price font-alt"><h4 class="comment-form-title font-alt">남은 포인트 : [[${point}]]P</h4></div>
+                                <div class="price font-alt"><h4 class="comment-form-title font-alt">사용할 포인트 :
+
+                                    <input class="input-lg" type="number" id="point" name="point" value="0" max="10000" step="1000" min="0" onchange="usePoint()" style="text-align: right; font-size: 20px"/>
+
+                                    P</h4>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-20">
+                            <div class="col-sm-12">
+                                <h3>결제 방법</h3>
+                                <hr/>
+                                <a href="#"><img class="imgs" src="images/KG.jpg" onclick="pay()" ></a>
+                                <br/><br/>
+                                <input type="hidden" id="ScupPrice" th:value="${PoolList.PoPrice} * ${Rese.rePeople}">
+                                <input type="hidden" id="maxPoint" th:value="${point}">
+                                <form method="post" action="buyPool" id="success">
+                                    <input type="hidden" id="memId" name="memId" th:value="${session.loginId}">
+                                    <input type="hidden" id="buyPay" name="buyPay" value="0">
+                                    <input type="hidden" id="usePoint" name="usePoint" value="0">
+                                    <input type="hidden" id="reDateTime" name="reDateTime" th:value="${Rese.reDateTime}">
+                                    <input type="hidden" id="rePeople" name="rePeople" th:value="${Rese.rePeople}">
+                                    <input type="hidden" id="PoName" name="poolName" th:value="${PoolList.PoName}">
+                                    <a href="#"><img class="imgs" src="images/kakaopay.PNG" width="200px" onclick="requestPay()"></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer data-th-include="./footer.html"></footer>
+    </div>
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+<!--
+JavaScripts
+=============================================
+-->
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/wow/dist/wow.js"></script>
+<script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="/lib/flexslider/jquery.flexslider.js"></script>
+<script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/lib/smoothscroll.js"></script>
+<script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    let buyname = document.getElementById("PoName").value;
+    let buyprice = document.getElementById("PoPrice").value;
+    let pay = document.getElementById("buyPay").value;
+    let maxpoint = parseInt(document.getElementById("maxPoint").value);
+
+    var buypay = buyprice - pay;
+
+    function usePoint(){
+        let point = parseInt(document.getElementById("point").value);
+        if (maxpoint < point){
+            point = maxpoint;
+            document.getElementById("point").value = point;
+        }else if(point <= 0){
+            point = 0;
+            document.getElementById("point").value = 0;
+        }else{
+            document.getElementById("point").value = point;
+        }
+
+        document.getElementById("usePoint").value = point;
+        buypay = buyprice - point;
+        document.getElementById("buyPay").value = buypay;
+    }
+
+    function requestPay() {
+        var IMP = window.IMP; // 생략가능
+        IMP.init('imp75130024');
+        // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+        // ''안에 띄어쓰기 없이 가맹점 식별코드를 붙여넣어주세요. 안그러면 결제창이 안뜹니다.
+        IMP.request_pay({
+            pg: 'kakaopay',
+            pay_method: 'card',
+            merchant_uid: 'merchant_' + new Date().getTime(),
+            /*
+             *  merchant_uid에 경우
+             *  https://docs.iamport.kr/implementation/payment
+             *  위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+             */
+            name: buyname,
+            // 결제창에서 보여질 이름
+            // name: '주문명 : ${auction.a_title}',
+            // 위와같이 model에 담은 정보를 넣어 쓸수도 있습니다.
+            quantity: 1,
+            // 결제 수량
+            // Type : integer
+            amount : buypay,
+            // amount: ${bid.b_bid},
+            // 가격
+            buyer_name: '이름',
+            // 구매자 이름, 구매자 정보도 model값으로 바꿀 수 있습니다.
+            // 구매자 정보에 여러가지도 있으므로, 자세한 내용은 맨 위 링크를 참고해주세요.
+            buyer_postcode: '123-456',
+
+        }, function (rsp) {
+            console.log(rsp);
+            if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '총 금액 : ' + buypay;
+                success.submit();
+                // 결제 성공 시 정보를 넘겨줘야한다면 body에 form을 만든 뒤 위의 코드를 사용하는 방법이 있습니다.
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러코드 : ' + rsp.error_code;
+                msg += '에러내용 : ' + rsp.error_msg;
+            }
+            alert(msg);
+        });
+    };
+
+</script>
+
+
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script>
+    function pay() {
+        var IMP = window.IMP;
+        IMP.init("imp75130024");
+
+        IMP.request_pay({
+            pg: 'html5_inicis',  // 실제 계약 후에는 실제 상점아이디로 변경
+            pay_method: 'card', // 'card'만 지원됩니다.
+            merchant_uid: 'merchant_' + new Date().getTime(), // 상점에서 관리하는 주문 번호
+            name: buyname,
+            amount: buypay, // 결제창에 표시될 금액. 실제 승인이 이뤄지지는 않습니다.
+            buyer_email: 'iamport@siot.do',
+            buyer_name: '구매자이름',
+            buyer_tel: '010-1234-5678',
+            buyer_addr: '서울특별시 강남구 삼성동',
+            buyer_postcode: '123-456',
+            m_redirect_url: 'https://www.myservice.com/payments/complete/mobile'
+        }, function (rsp) {
+            if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;
+                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                msg += '결제 금액 : ' + rsp.paid_amount;
+                msg += '카드 승인번호 : ' + rsp.apply_num;
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '실패 사유 : ' + rsp.error_msg;
+            }
+            alert(msg);
+        });
+    }
+</script>
+</body>
+</html>

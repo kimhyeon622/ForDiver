@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+  Document Title
+  =============================================
+  -->
+  <title>Titan | Multipurpose HTML5 Template</title>
+  <!--
+  Favicons
+  =============================================
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!--
+  Stylesheets
+  =============================================
+
+  -->
+  <!-- Default stylesheets-->
+  <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Template specific stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  <link href="/lib/animate.css/animate.css" rel="stylesheet">
+  <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+  <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+  <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+  <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+  <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+  <!-- Main stylesheet and color file-->
+  <link href="/css/style.css" rel="stylesheet">
+  <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+  <style>
+    .dividewidth30{
+      width:30%;
+      margin:0px;
+      float:left;
+    }
+    .dividewidth40{
+      width:40%;
+      margin:0px;
+      float:left;
+    }
+    .dividewidth33{
+      width:33%;
+      margin:0px;
+      float:left;
+    }
+    .marginfor{
+      margin:auto;
+    }
+    .clearfor{
+      clear: both;
+    }
+    .form-control.form-control2{
+      width:80%;
+    }
+    .marginfor .upload-name {
+      display: inline-block;
+      height: 40px;
+      padding: 0px;
+      vertical-align: middle;
+      border: 1px solid #dddddd;
+      width: 60%;
+      color: #999999;
+    }
+    .marginfor label {
+      display: inline-block;
+      padding: 6px 5px 0px 5px;
+      color: #fff;
+      vertical-align: middle;
+      background-color: #999999;
+      cursor: pointer;
+      height: 36px;
+      margin:0px 0px 0px 10px;
+    }
+    .marginfor input[type="file"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+
+  </style>
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+
+  <header data-th-include="./header.html"></header>
+
+  <div class="main">
+
+    <section class="module">
+      <div class="container" style="text-align: center; width: 40vw;">
+        <div class="row" style="text-align: center; display: contents;">
+
+          <div class="col-sm-4" style="text-align: center; display: contents;">
+            <h3 class="font-alt">회원가입</h3>
+            <hr class="divider-w mb-10">
+            <form action="mJoin" method="post" name="joinForm" class="form" enctype="multipart/form-data">
+              <div class="form-group" style="text-align: left;">
+                <input class="form-control" style="text-transform: initial;" id="memId" type="text" name="memId" placeholder="아이디 입력" onblur="idCheck()"/>
+                <span id="checkId"></span>
+              </div>
+              <div class="form-group" style="text-align: left;">
+                <input class="form-control" style="text-transform: initial;" id="memPw" type="password" name="memPw" placeholder="비밀번호 입력" onkeydown="pwRegexp()" onchange="pwCheck()"/>
+                <span id="pwResult1"></span>
+              </div>
+              <div class="form-group" style="text-align: left;">
+                <input class="form-control" style="text-transform: initial;" id="checkPw" type="password" name="checkPw" placeholder="비밀번호 확인" onkeyup="pwCheck()" />
+                <span id="pwResult2"></span>
+              </div>
+              <div class="form-group">
+                <input class="form-control" style="text-transform: initial;" id="memName" type="text" name="memName" placeholder="이름 입력"/>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" id="memPhone" type="text" name="memPhone" placeholder="연락처 입력"/>
+              </div>
+              <div class="form-group">
+                <div class="dividewidth30">
+                  <div class="marginfor">
+                    <span>생일</span> <input id="memBirth" type="date" name="memBirth" />
+                  </div>
+                </div>
+                <div class="dividewidth30">
+                  <div class="marginfor">
+                    <span>성별 : </span>
+                    <span>남성</span><input type="radio" name="memGender" value="남" checked />
+                    <span>여성</span><input type="radio" name="memGender" value="여" />
+                  </div>
+                </div>
+                <div class="dividewidth40">
+                  <div class="marginfor">
+                    <input class="upload-name" value="프로필 사진" placeholder="프로필 사진">
+                    <label for="file">파일찾기</label>
+                    <input type="file" id="file" name="memProfile">
+                  </div>
+                </div>
+                <div class="clearfor"></div>
+              </div>
+              <hr>
+
+              <div class="form-group" style="display: flex; text-align: left;">
+                <input class="form-control" id="sample6_postcode" type="text" name="memAddr1" placeholder="우편번호" style="width: 100vw; text-transform: initial;"/>
+                <input type="button" class="btn btn-block btn-round btn-b" value="우편번호 찾기" onclick="sample6_execDaumPostcode()"><br/>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" id="sample6_address"       placeholder="주소" name="memAddr2"><br>
+                <input class="form-control" type="text" id="sample6_detailAddress" placeholder="상세주소" name="memAddr3">
+              </div>
+              <div class="form-group" style="display: flex; text-align: left;">
+                <input class="form-control" id="memEmail" type="email" placeholder="이메일 입력" style="width: 100vw; text-transform: initial;"/>
+                <input type="button" class="btn btn-block btn-round btn-b" value="인증번호 전송" onclick="mEmailCheck()">
+              </div>
+              <div class="form-group" style="text-align: left;" id="emailDiv" onfocusout='emailCheck()'>
+              </div>
+              <div class="form-group">
+
+              </div>
+
+              <input class="form-control" id="memIs" type="hidden" name="memIs" value="1"/>
+
+              <div class="form-group">
+                <input type="button" onclick="checkConfirm()" class="btn btn-block btn-round btn-b" value="작성완료">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer data-th-include="./footer.html"></footer>
+  </div>
+  <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+<!--
+JavaScripts
+=============================================
+-->
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+<script>
+
+  let confI = false;
+  let confP = false;
+  let confP2 = false;
+  let confE = false;
+  let uuid0 = "";
+
+  $("#file").on('change',function(){
+    var fileValue = $("#file").val().split("\\");
+    var fileName = fileValue[fileValue.length-1];
+    $(".upload-name").val(fileName);
+  });
+  function idCheck(){
+    let memId = document.getElementById("memId").value;
+    let checkId = document.getElementById("checkId");
+    let memId0 = document.getElementById("memId");
+
+    let spe = memId.search(/[`~!@#$%^&*|\\\'\":;\/?]/);
+    let spc = memId.search(/[\s/]/);
+
+    $.ajax({
+      type : "POST",
+      url : "idoverlap",
+      data : {
+        "memId" : memId
+      },
+      async : false,
+      dataType : "text",
+      success : function(result){
+        if(result == "OK"){
+          if(memId == null || memId == ""){
+            checkId.innerHTML = "필수입력 항목입니다.";
+            checkId.style.color = "#FF0000";
+            memId0.style.border = "solid 2px rgba(255,0,0,0.73)";
+            confI = false;
+          }else if(spc != -1){
+            checkId.innerHTML =  "아이디는 공백없이 입력해주세요.";
+            checkId.style.color = "#FF0000";
+            memId0.style.border = "solid 2px rgba(255,0,0,0.73)";
+            confI = false;
+          }else if(spe >= 0 ){
+            checkId.innerHTML =  "특수문자는 입력할 수 없습니다.";
+            checkId.style.color = "#FF0000";
+            memId0.style.border = "solid 2px rgba(255,0,0,0.73)";
+            confI = false;
+          }else{  // 사용할 수 있는 아이디일 경우 실행
+            checkId.innerHTML =  memId + "는 사용할 수 있는 아이디입니다.";
+            checkId.style.color =  "#1C92C9";
+            memId0.style.border = "solid 2px #1C92C9";
+            confI = true;
+          }
+        }
+        else{
+          // 사용할 수 없는 아이디일 경우 실행
+          checkId.innerHTML = memId + "는 사용중인 아이디입니다.";
+          checkId.style.color = "#FF0000";
+          memId0.style.border = "solid 2px rgba(255,0,0,0.73)";
+          confI = false;
+        }
+      },
+      error : function(){
+        alert("idoverlap 함수 통신실패!");
+        confI = false;
+      }
+    });
+
+  }
+
+  function pwRegexp(){
+    let memPw = document.getElementById("memPw").value;
+    let pwResult1 = document.getElementById("pwResult1");
+    let memPw0 = document.getElementById("memPw");
+
+    let num = memPw.search(/[0-9]/);
+    let eng = memPw.search(/[a-z]/);
+    let spe = memPw.search(/[`~!@#$%^&*|\\\'\":;\/?]/);
+    let spc = memPw.search(/[\s/]/);
+
+    // search 의 리턴 값은 없으면(false) -1, 있으면(true) 0이상의 양수가 (1개의 정수형 리턴값) 나온다.
+
+    if(memPw.length < 8 || memPw.length > 16){
+      pwResult1.style.color = "#ff0000";
+      pwResult1.innerHTML = "비밀번호는 8자리에서 16자리 이내로 입력해주세요.";
+      memPw0.style.border = "solid 2px #ff0000";
+      confP = false;
+    }else if(spc != -1){
+      pwResult1.style.color = "#ff0000";
+      pwResult1.innerHTML = "비밀번호는 공백없이 입력해주세요.";
+      memPw0.style.border = "solid 2px #ff0000";
+      confP = false;
+    }else if(num < 0 || eng < 0 || spe < 0 ){
+      pwResult1.style.color = "#ff0000";
+      pwResult1.innerHTML = "영문자,숫자, 특수기호를 혼합하여 입력해주세요.";
+      memPw0.style.border = "solid 2px #ff0000";
+      confP = false;
+    }else{
+      pwResult1.style.color = "#1C92C9";
+      pwResult1.innerHTML = "사용가능한 비밀번호 입니다.";
+      memPw0.style.border = "solid 2px #1C92C9";
+      confP = true;
+    }
+  }
+
+  function pwCheck(){
+    let memPw = document.getElementById("memPw").value;
+    let checkPw = document.getElementById("checkPw").value;
+    let pwResult2 = document.getElementById("pwResult2");
+    let checkPw0 = document.getElementById("checkPw");
+
+    if(checkPw == null || checkPw == ""){
+      confP2= false;
+    }else if(memPw == checkPw){
+      pwResult2.style.color = "#1C92C9";
+      pwResult2.innerHTML = "비밀번호가 일치합니다.";
+      checkPw0.style.border = "solid 2px #1C92C9";
+      confP2 = true;
+    }else{
+      pwResult2.style.color = "#ff0000";
+      pwResult2.innerHTML = "비밀번호가 일치하지 않습니다.";
+      checkPw0.style.border = "solid 2px #ff0000";
+      confP2 = false;
+    }
+  }
+
+  function mEmailCheck(){
+
+    let memEmail = $("#memEmail").val();
+    let emailDiv = document.getElementById('emailDiv');
+
+    $.ajax({
+      type : "POST",
+      url : "mEmailCheck",
+      data : {
+        "memEmail" : memEmail
+      },
+      dataType : "text" ,
+      success : function(uuid){
+        emailDiv.innerHTML= '<input class="form-control" style="text-transform: initial;" id="emailCheck" type="text" name="emailCheck" placeholder="인증번호 입력" />'
+                + '<span id="emailResult"></span>'
+                + "<input type='hidden' name='memEmail' value='" + memEmail + "' id='memEmail'/>";
+        uuid0 = uuid;
+      },
+      error : function(){
+        alert("이메일인증 통신 실패!");
+      }
+    });
+  }
+
+  function emailCheck(){
+
+    if($("#emailCheck").val() == null || $("#emailCheck").val()== ""){
+      $("#emailResult").css({color : "#ff0000"});
+      $("#emailResult").html("필수 입력 항목입니다.");
+      $("#emailCheck").css({border : "solid 2px #ff0000"});
+      confE = false;
+    }else if($("#emailCheck").val() == uuid0){
+      $("#emailResult").css({color : "#1C92C9"});
+      $("#emailResult").html("이메일 인증 완료");
+      $("#emailCheck").css({border : "solid 2px #1C92C9"});
+      confE = true;
+    }else{
+      $("#emailResult").css({color : "#ff0000"});
+      $("#emailResult").html("인증번호가 일치하지 않습니다.");
+      $("#emailCheck").css({border : "solid 2px #ff0000"});
+      confE = false;
+    }
+  }
+
+
+
+
+  function checkConfirm(){
+
+    if($("#memName").val()=="" || $("#memBirth").val()=="" || $("#memPhone").val()==""){
+      alert('입력하지 않은 항목이 있습니다.');
+      return;
+    }
+
+
+    if(confI &&  confP && confP2 && confE ){
+      // submit이 되도록
+      joinForm.submit();
+
+    }else if(!confI){
+      alert('아이디 중복체크를 확인해주세요!');
+    } else if(!confP){
+      alert('비밀번호를 확인하세요!');
+    } else if(!confP2){
+      alert('비밀번호 확인을 해주세요!');
+    }
+    else{
+      alert('이메일 인증을 확인하세요!');
+    }
+  }
+</script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script>
+  function sample6_execDaumPostcode() {
+    new daum.Postcode({
+      oncomplete: function(data) {
+        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+        var addr = ''; // 주소 변수
+        var extraAddr = ''; // 참고항목 변수
+
+        //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+          addr = data.roadAddress;
+        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+          addr = data.jibunAddress;
+        }
+        // 우편번호와 주소 정보를 해당 필드에 넣는다.
+        document.getElementById('sample6_postcode').value = data.zonecode;
+        document.getElementById("sample6_address").value = addr;
+        // 커서를 상세주소 필드로 이동한다.
+        document.getElementById("sample6_detailAddress").focus();
+      }
+    }).open();
+  }
+</script>
+
+
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/lib/wow/dist/wow.js"></script>
+<script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="/lib/flexslider/jquery.flexslider.js"></script>
+<script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/lib/smoothscroll.js"></script>
+<script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

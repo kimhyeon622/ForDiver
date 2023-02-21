@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="nickName">
+    <meta name="date" content="">
+    <meta name="description" content="">
+
+    <!--자동 슬라이드 위한 css-->
+    <link rel="stylesheet" href="/css/autoSlider.css">
+
+    <link rel="shortcut icon" href="/favicon/favicon.png" type="image/x-icon">
+    <title>미디어 포토 갤러리_상세보기</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* 12 */
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+            7px 7px 20px 0px rgba(0,0,0,.1),
+            4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+        }
+        .btn-12{
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+            border:none;
+            box-shadow: none;
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            -webkit-perspective: 230px;
+            perspective: 230px;
+        }
+        .btn-12 span {
+            background: rgb(0,172,238);
+            background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+            7px 7px 20px 0px rgba(0,0,0,.1),
+            4px 4px 5px 0px rgba(0,0,0,.1);
+            border-radius: 5px;
+            margin:0;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+        .btn-12 span:nth-child(1) {
+            box-shadow:
+                    -7px -7px 20px 0px #fff9,
+                    -4px -4px 5px 0px #fff9,
+                    7px 7px 20px 0px #0002,
+                    4px 4px 5px 0px #0001;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+        .btn-12 span:nth-child(2) {
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+        .btn-12:hover span:nth-child(1) {
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+            7px 7px 20px 0px rgba(0,0,0,.1),
+            4px 4px 5px 0px rgba(0,0,0,.1);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+        .btn-12:hover span:nth-child(2) {
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+            7px 7px 20px 0px rgba(0,0,0,.1),
+            4px 4px 5px 0px rgba(0,0,0,.1);
+            color: transparent;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+    </style>
+
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+    <style>
+        span {
+            font-size: 16px;
+        }
+
+        #viewInfo1{
+            font-size: 14px;
+        }
+
+        button {
+            background: rgb(0,172,238);
+            background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Adobe 고딕 Std B";
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        .obut:hover{
+            background: lightskyblue;
+        }
+
+        hr{
+            border: solid 2px;
+        }
+
+    </style>
+
+</head>
+<body>
+<main>
+
+    <header data-th-include="./header.html"></header>
+    <section>
+        <div style="height: 100px"></div>
+        <!--아이디-->
+        <input th:if="${session.loginId ne null}" type="hidden" name="memId" id="memId" th:value="${session.loginId}">
+        <br/>
+        <button style="margin-left: 100px;" onclick="goList()" class="custom-btn btn-12"><span>돌아가기</span><span>갤러리게시판으로</span></button>
+                    <script>
+                        function goList(){
+                            location.href = "galleryList";
+                        }
+                    </script>
+                    <br/>
+                    <br/>
+
+                        <div id="viewInfo1" style="margin-left: 100px;">
+
+                            게시글 번호 [[${view.pNum}]] | 작성자 [[${view.memId}]] | 작성시간 <span th:text="${#temporals.format(view.pDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                            <h3>[[${view.pTitle}]]&nbsp;<button th:if="${session.loginId ne null && (view.memId eq session.loginId || session.loginId eq 'admin')}" type="button" onclick="galleryLike()">좋아요<span id="likeCount"></span><span id="likeIcon"></span></button> <button th:if="${session.loginId ne null && (view.memId eq session.loginId || session.loginId eq 'admin')}" class="obut" type="button" onclick="galleryDelete()">삭제하기</button></h3>
+                        </div>
+                        <hr/>
+                        <!--게시글 이미지와 영상을 슬라이더에 담음-->
+                        <!--photo:${photo}-->
+                        <!--th:if photo.pcPhoto=1이면 이미지로, 0이면 video로-->
+                        <!--"@{/profile/{varName}(varName=${session.login.profileName})}"-->
+
+                            <div class="slide slide_wrap" style="text-align: center;">
+
+                                <div class="slide_item" th:each="photo:${photo}">
+                                    <img th:if="${photo.pcPhoto==1}" th:src="@{/photos/{name}(name=${photo.pcFileName})}" width="1500px" height="600px"/>
+                                    <video class="videos" controls th:if="${photo.pcPhoto==0}" width="1500px" height="600px">
+                                        <source th:src="@{/photos/{name}(name=${photo.pcFileName})}" type="video/mp4"/>
+                                    </video>
+                                </div>
+
+                                <div class="slide_prev_button slide_button"> ◀ </div>
+                                <div class="slide_next_button slide_button"> ▶ </div>
+                                <ul class="slide_pagination"></ul>
+                            </div>
+
+                        <!--button type="button" onclick="galleryModify()">수정하기</button-->
+
+                        <hr/>
+        <div style="margin-left: 100px; margin-right: 100px;">
+                        <h3><i class="icon-chat"></i> 게시물 댓글</h3>
+            <br/>
+            <br/>
+                        <!--댓글 작성창-->
+            <div th:if="${session.loginId ne null}" th:id="commentWriteZone">
+                <hr/>
+                <h4>댓글 추가<button class="obut" type="button" onclick="commentWrite()">작성완료</button></h4>
+                <textarea th:id="comment" cols="100" rows="5"></textarea>
+            </div>
+            <div th:if="${session.loginId eq null}" th:id="commentWriteZone">
+                <hr/>
+                <h4 style="text-align: center">로그인 후에 이용하실 수 있습니다.</h4>
+            </div>
+                        <hr/>
+
+                        <div id="commentListZone">
+
+                        </div>
+
+        </div>
+        </section>
+        <footer data-th-include="./footer.html"></footer>
+
+
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+
+</main>
+
+</body>
+<script th:inline="javascript">
+
+    //영상 소리 제거 해제
+    let videos = document.getElementsByClassName('videos');
+
+    function unMute(){
+        for(let i = 0; i < videos.length; i++){
+            videos[i].muted = false;
+        }
+    }
+
+    unMute();
+
+
+    //자동 슬라이드를 위한 script문
+    // 슬라이크 전체 크기(width 구하기)
+    const slide = document.querySelector(".slide");
+    let slideWidth = slide.clientWidth;
+
+    // 버튼 엘리먼트 선택하기
+    const prevBtn = document.querySelector(".slide_prev_button");
+    const nextBtn = document.querySelector(".slide_next_button");
+
+    // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
+    let slideItems = document.querySelectorAll(".slide_item");
+    // 현재 슬라이드 위치가 슬라이드 개수를 넘기지 않게 하기 위한 변수
+    const maxSlide = slideItems.length;
+
+    // 버튼 클릭할 때 마다 현재 슬라이드가 어디인지 알려주기 위한 변수
+    let currSlide = 1;
+
+    // 페이지네이션 생성
+    const pagination = document.querySelector(".slide_pagination");
+
+    for (let i = 0; i < maxSlide; i++) {
+        if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
+        else pagination.innerHTML += `<li>•</li>`;
+    }
+
+    const paginationItems = document.querySelectorAll(".slide_pagination > li");
+
+    // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
+    const startSlide = slideItems[0];
+    const endSlide = slideItems[slideItems.length - 1];
+    const startElem = document.createElement("div");
+    const endElem = document.createElement("div");
+
+    endSlide.classList.forEach((c) => endElem.classList.add(c));
+    endElem.innerHTML = endSlide.innerHTML;
+
+    startSlide.classList.forEach((c) => startElem.classList.add(c));
+    startElem.innerHTML = startSlide.innerHTML;
+
+    // 각 복제한 엘리먼트 추가하기
+    slideItems[0].before(endElem);
+    slideItems[slideItems.length - 1].after(startElem);
+
+    // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
+    slideItems = document.querySelectorAll(".slide_item");
+    //
+    let offset = slideWidth + currSlide;
+    slideItems.forEach((i) => {
+        i.setAttribute("style", `left: ${-offset}px`);
+    });
+
+    function nextMove() {
+        currSlide++;
+        // 마지막 슬라이드 이상으로 넘어가지 않게 하기 위해서
+        if (currSlide <= maxSlide) {
+            // 슬라이드를 이동시키기 위한 offset 계산
+            const offset = slideWidth * currSlide;
+            // 각 슬라이드 아이템의 left에 offset 적용
+            slideItems.forEach((i) => {
+                i.setAttribute("style", `left: ${-offset}px`);
+            });
+            // 슬라이드 이동 시 현재 활성화된 pagination 변경
+            paginationItems.forEach((i) => i.classList.remove("active"));
+            paginationItems[currSlide - 1].classList.add("active");
+        } else {
+            // 무한 슬라이드 기능 - currSlide 값만 변경해줘도 되지만 시각적으로 자연스럽게 하기 위해 아래 코드 작성
+            currSlide = 0;
+            let offset = slideWidth * currSlide;
+            slideItems.forEach((i) => {
+                i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+            });
+            currSlide++;
+            offset = slideWidth * currSlide;
+            // 각 슬라이드 아이템의 left에 offset 적용
+            setTimeout(() => {
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                    i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+                });
+            }, 0);
+            // // 슬라이드 이동 시 현재 활성화된 pagination 변경
+            paginationItems.forEach((i) => i.classList.remove("active"));
+            paginationItems[currSlide - 1].classList.add("active");
+        }
+    }
+    function prevMove() {
+        currSlide--;
+        // 1번째 슬라이드 이하로 넘어가지 않게 하기 위해서
+        if (currSlide > 0) {
+            // 슬라이드를 이동시키기 위한 offset 계산
+            const offset = slideWidth * currSlide;
+            // 각 슬라이드 아이템의 left에 offset 적용
+            slideItems.forEach((i) => {
+                i.setAttribute("style", `left: ${-offset}px`);
+            });
+            // 슬라이드 이동 시 현재 활성화된 pagination 변경
+            paginationItems.forEach((i) => i.classList.remove("active"));
+            paginationItems[currSlide - 1].classList.add("active");
+        } else {
+            // 무한 슬라이드 기능 - currSlide 값만 변경해줘도 되지만 시각적으로 자연스럽게 하기 위해 아래 코드 작성
+            currSlide = maxSlide + 1;
+            let offset = slideWidth * currSlide;
+            // 각 슬라이드 아이템의 left에 offset 적용
+            slideItems.forEach((i) => {
+                i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+            });
+            currSlide--;
+            offset = slideWidth * currSlide;
+            setTimeout(() => {
+                // 각 슬라이드 아이템의 left에 offset 적용
+                slideItems.forEach((i) => {
+                    // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+                    i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+                });
+            }, 0);
+            // 슬라이드 이동 시 현재 활성화된 pagination 변경
+            paginationItems.forEach((i) => i.classList.remove("active"));
+            paginationItems[currSlide - 1].classList.add("active");
+        }
+    }
+
+    // 버튼 엘리먼트에 클릭 이벤트 추가하기
+    nextBtn.addEventListener("click", () => {
+        // 이후 버튼 누를 경우 현재 슬라이드를 변경
+        nextMove();
+    });
+    // 버튼 엘리먼트에 클릭 이벤트 추가하기
+    prevBtn.addEventListener("click", () => {
+        // 이전 버튼 누를 경우 현재 슬라이드를 변경
+        prevMove();
+    });
+
+    // 브라우저 화면이 조정될 때 마다 slideWidth를 변경하기 위해
+    window.addEventListener("resize", () => {
+        slideWidth = slide.clientWidth;
+    });
+
+    // 각 페이지네이션 클릭 시 해당 슬라이드로 이동하기
+    for (let i = 0; i < maxSlide; i++) {
+        // 각 페이지네이션마다 클릭 이벤트 추가하기
+        paginationItems[i].addEventListener("click", () => {
+            // 클릭한 페이지네이션에 따라 현재 슬라이드 변경해주기(currSlide는 시작 위치가 1이기 때문에 + 1)
+            currSlide = i + 1;
+            // 슬라이드를 이동시키기 위한 offset 계산
+            const offset = slideWidth * currSlide;
+            // 각 슬라이드 아이템의 left에 offset 적용
+            slideItems.forEach((i) => {
+                i.setAttribute("style", `left: ${-offset}px`);
+            });
+            // 슬라이드 이동 시 현재 활성화된 pagination 변경
+            paginationItems.forEach((i) => i.classList.remove("active"));
+            paginationItems[currSlide - 1].classList.add("active");
+        });
+    }
+
+    // 드래그(스와이프) 이벤트를 위한 변수 초기화
+    let startPoint = 0;
+    let endPoint = 0;
+
+    // PC 클릭 이벤트 (드래그)
+    slide.addEventListener("mousedown", (e) => {
+        startPoint = e.pageX; // 마우스 드래그 시작 위치 저장
+    });
+
+    slide.addEventListener("mouseup", (e) => {
+        endPoint = e.pageX; // 마우스 드래그 끝 위치 저장
+        if (startPoint < endPoint) {
+            // 마우스가 오른쪽으로 드래그 된 경우
+            prevMove();
+        } else if (startPoint > endPoint) {
+            // 마우스가 왼쪽으로 드래그 된 경우
+            nextMove();
+        }
+    });
+
+    // 모바일 터치 이벤트 (스와이프)
+    slide.addEventListener("touchstart", (e) => {
+        startPoint = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+    });
+    slide.addEventListener("touchend", (e) => {
+        endPoint = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+        if (startPoint < endPoint) {
+            // 오른쪽으로 스와이프 된 경우
+            prevMove();
+        } else if (startPoint > endPoint) {
+            // 왼쪽으로 스와이프 된 경우
+            nextMove();
+        }
+    });
+
+    // 기본적으로 슬라이드 루프 시작하기
+    let loopInterval = setInterval(() => {
+        nextMove();
+    }, 3000);
+
+    // 슬라이드에 마우스가 올라간 경우 루프 멈추기
+    slide.addEventListener("mouseover", () => {
+        clearInterval(loopInterval);
+    });
+
+    // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+    slide.addEventListener("mouseout", () => {
+        loopInterval = setInterval(() => {
+            nextMove();
+        }, 3000);
+    });
+
+    //자동 슬라이드 script 끝
+
+    //여기서부터 기존의 summer 게시판 스크립트 수정
+
+    let pNum = [[${view.pNum}]];
+
+    //위치 선정 이슈로 그냥 여기에 게시글 삭제 함수 작성함
+    //삭제
+    function galleryDelete() {
+        let conf = confirm("정말로 삭제하시겠습니까?")
+
+        if (conf == true) {
+            alert("삭제되었습니다.")
+            location.href = "galleryDelete?pNum=" + [[${view.pNum}]];
+        } else {
+            alert("취소하셨습니다.")
+        }
+
+    }
+
+    // 최초 게시글 좋아요 수 출력
+    $.ajax({
+        type : "POST",
+        url : "galleryLikeCount",
+        data : {
+            "pNum" : pNum
+        },
+        dataType : "text",
+        success : function(count){
+            console.log(count);
+            document.getElementById("likeCount").innerHTML = count;
+        },
+        error : function(){
+            alert("galleryLikeCount 통신 실패");
+        }
+
+    });
+
+    //게시글 좋아요 수 출력 메소드
+    function galleryLikeCount(){
+        $.ajax({
+            type : "POST",
+            url : "galleryLikeCount",
+            data : {
+                "pNum" : pNum
+            },
+            dataType : "text",
+            success : function(count){
+                console.log(count);
+                document.getElementById("likeCount").innerHTML = count;
+            },
+            error : function(){
+                alert("galleryLikeCount 통신 실패");
+            }
+
+        });
+    }
+
+    galleryLikeCount();
+
+    //회원이 좋아요를 눌렀는지 확인
+    //"loginId" : [[${loginId}]],"pNum" : [[${view.pNum}]] 또는 pNum
+    //지금은 다른 거랑 마찬가지로 임시로 로그인 아이디 대신 고정된 회원 아이디로
+    $.ajax({
+        type : "POST",
+        url : "galleryLikeCheck",
+        data :{
+            "memId" : document.getElementById('memId').value,
+            "pNum" : pNum
+        },
+        dataType : "text",
+        async : false,
+        success : function(response){
+
+            if(response == "NO"){
+                // 이미 있음. 임시 아이콘 - 채운 하트
+                $('#likeIcon').html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart-fill' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'/></svg>");
+
+            }else{
+                // 없음. 임시 아이콘 - 빈 하트
+                $('#likeIcon').html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart' viewBox='0 0 16 16'><path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/></svg>");
+            }
+        },
+        error : function(){
+            alert('galleryLikeCheck 통신 실패!');
+        }
+
+    });
+
+    //좋아요 업다운 메소드 : 로그인 아이디와 게시글 번호 보내서 좋아요 눌렀는지 확인하고 없으면 좋아요 테이블에 추가. 있으면 삭제
+    //그 후에 좋아요 버튼들도 수정
+    function galleryLike(){
+        let memId = document.getElementById('memId').value
+
+        $.ajax({
+            type : "POST",
+            url : "galleryLikeCheck",
+            data :{
+                "memId" : memId,
+                "pNum" : pNum
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+
+                if(response == "NO"){
+                    //좋아요를 감소시키는 함수를 실행 = 좋아요 테이블에서 삭제
+                    galleryLikeDelete(pNum,memId);
+                    // 빈 하트로
+                    $('#likeIcon').html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart' viewBox='0 0 16 16'><path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/></svg>");
+                    // 갯수 다시 세기
+                    galleryLikeCount();
+                }else{
+                    //좋아요를 증가시키는 함수를 실행 = 좋아요 테이블에 추가
+                    galleryLikeInsert(pNum,memId);
+                    // 채운 하트로
+                    $('#likeIcon').html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart-fill' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'/></svg>");
+
+                    //갯수 다시 세기
+                    galleryLikeCount();
+                }
+            },
+            error : function(){
+                alert('galleryLikeCheck 통신 실패!');
+            }
+
+        });
+    }
+
+    //좋아요 추가
+    function galleryLikeInsert(cnum, id){
+        $.ajax({
+            type : "POST",
+            url : "galleryLikeInsert",
+            data :{
+                "memId" : id,
+                "pNum" : cnum
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+                if(response=="OK"){
+                    console.log('좋아요 증가 성공')
+                }
+
+            },
+            error : function(){
+                console.log('galleryLikeInsert 함수 통신 실패')
+            }
+
+        });
+    }
+
+    //좋아요 삭제
+    function galleryLikeDelete(cnum, id){
+        $.ajax({
+            type : "POST",
+            url : "galleryLikeDelete",
+            data :{
+                "memId" : id,
+                "pNum" : cnum
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+                if(response=="OK"){
+                    console.log('좋아요 감소 성공')
+                }
+
+            },
+            error : function(){
+                console.log('galleryLikeDelete 함수 통신 실패')
+            }
+
+        });
+    }
+
+    //여기서부터는 댓답글
+    //댓글 작성하기
+    function commentWrite(){
+        let comment = document.getElementById('comment').value;
+        let memId = document.getElementById('memId').value;
+
+        //ajax
+        $.ajax({
+            url: "pcommentWrite",
+            type: "POST",
+            data:{
+                "pNum" : pNum,
+                "memId" : memId,
+                "pcmContent" : comment
+            },
+            dataType : "text",
+            success: function(result){
+                if(result=='OK'){
+                    let output1 = ""
+
+                    output1 += "<h4>댓글 추가<button class='obut' type='button' onclick='commentWrite()'>작성완료</button></h4>"
+
+                    output1 += "<textarea id ='comment' cols ='100' rows ='5'></textarea>"
+
+                    document.getElementById('commentWriteZone').innerHTML = output1;
+                    commentList();
+                    commentLikeList();
+
+                } else {
+                    console.log('작성 실패')
+                }
+            },
+            error: console.log('commentWrite 함수 통신 실패')
+        });
+
+    }
+
+    //댓글 목록 불러오기
+    //parent = 0인 걸 전부 작성
+    function commentList(){
+        let commentZone = document.getElementById('commentListZone');
+
+        //parent 0인 댓글 가져오기
+        //ajax
+        $.ajax({
+            url: "pcommentList",
+            type: "POST",
+            data:{
+                "pNum" : pNum
+            },
+            async:false,
+            success: function (data){
+
+                //불러온 댓글들 먼저 작성
+                let output2 = ""
+
+                output2 += "<div>";
+
+                //댓글의 번호도 this로 잘 들어갔다.
+                //수정 삭제 버튼은 꼭 로그인 아이디 조건 넣어주기. 한 번에 되면 좋고
+                $(data).each(function (){
+
+                    let date = this.pcmDate;
+                    let formattedDate = date.replace('T', ' ').replace(/\..*/, '');
+
+                    if(this.pcmBool == 1){
+                        output2 += "<span>";
+                        output2 += "작성자  " + this.memId + " | ";
+                        output2 += "작성시간  " + formattedDate;
+                        output2 += "<br/>";
+                        output2 += "<br/>";
+                        output2 += this.pcmContent;
+                        output2 += "<br/>";
+                        output2 += "<br/>";
+                        output2 += "<button class='obut' type='button' onclick='commentLike(" + this.pcmNum + ")'>좋아요<span id='commentLikeIcon" + this.pcmNum + "'></span> <span id='commentLikeCount" + this.pcmNum + "'></span></button>";
+                        output2 += "<button class='obut' type='button' onclick='childComment(" + this.pcmNum + ")'>답글</button>";
+                        output2 += "<button class='obut' type='button' onclick='commentModify(" + this.pcmNum +")'>수정</button>";
+                        output2 += "<button class='obut' type='button' onclick='commentDelete(" + this.pcmNum + ")'>삭제</button>";
+                        output2 += "</span>";
+                        output2 += "<hr/>";
+                        output2 += "<div id='modiComment" + this.pcmNum + "'>";
+                        output2 += "</div>";
+                        output2 += "<div id='childComment" + this.pcmNum + "'>";
+                        output2 += "</div>";
+                    } else {
+                        output2 += "<span>";
+                        output2 += "삭제된 댓글입니다.";
+                        output2 += "</span>";
+                        output2 += "<hr/>";
+                        output2 += "<div id='childCommentWriteZone" + this.pcmNum + "'></div>"
+                        output2 += "<div id='childComment" + this.pcmNum + "'>";
+                        output2 += "</div>";
+                    }
+
+
+                });
+
+                output2 += "</div>";
+
+                commentZone.innerHTML = output2;
+
+                //답글들 불러오는 메소드 적는 곳(임시)
+                childList();
+
+            },
+            error: console.log('commentList 함수 통신 실패'),
+        });
+
+    }
+
+    //답글 목록 불러오기
+    function childList(){
+
+        //parent 0이 아닌 답글들 가져오기
+        //ajax
+        $.ajax({
+            url: "pchildList",
+            type: "POST",
+            data: {
+                "pNum": pNum
+            },
+            async : false,
+            success: function (data) {
+
+                $(data).each(function () {
+
+                    //해당 답글 데이터의 부모 pcmParent를 확인해 해당 위치에 답글을 작성
+                    let id = "childComment" + this.pcmParent;
+
+                    //새롭게 부모 번호 하나에 해당하는 답글을 모아 작성해보자
+                    let collectChildNum = this.pcmParent;
+
+                    let commentZone = document.getElementById(id);
+
+                    $.ajax({
+                        url:"pcollectChild",
+                        type:"POST",
+                        data:{
+                            "pNum" : pNum,
+                            "pcmParent" : collectChildNum
+                        },
+                        async : false,
+                        success : function (childs){
+
+                            let output2 = "";
+
+                            $(childs).each(function (){
+
+                                if(this.pcmBool == 0){
+                                    output2 += "<span>";
+                                    output2 += "삭제된 답글입니다.";
+                                    output2 += "</span>";
+                                    output2 += "<hr/>";
+                                    output2 += "<div id='modiComment" + this.pcmNum + "'>";
+                                    output2 += "</div>";
+                                    output2 += "<div id='childComment" + this.pcmNum + "'>";
+                                    output2 += "</div>";
+                                } else {
+
+                                    let date = this.pcmDate;
+                                    let formattedDate = date.replace('T', ' ').replace(/\..*/, '');
+
+                                    output2 += "<span>";
+                                    output2 += "<i class='icon-attachment'></i> 작성자  " + this.memId + " | ";
+                                    output2 += "작성시간  " + formattedDate;
+                                    output2 += "<br/>";
+                                    output2 += "<br/>";
+                                    output2 += this.pcmContent;
+                                    output2 += "<br/>";
+                                    output2 += "<br/>";
+                                    output2 += "<button class='obut' type='button' onclick='commentLike(" + this.pcmNum + ")'>좋아요<span id='commentLikeIcon" + this.pcmNum + "'></span> <span id='commentLikeCount" + this.pcmNum + "'></span></button>";
+                                    output2 += "<button class='obut' type='button' onclick='childComment(" + this.pcmNum + ")'>답글</button>";
+                                    output2 += "<button class='obut' type='button' onclick='commentModify(" + this.pcmNum + ")'>수정</button>";
+                                    output2 += "<button class='obut' type='button' onclick='commentDelete(" + this.pcmNum + ")'>삭제</button>";
+                                    output2 += "</span>";
+                                    output2 += "<hr/>";
+                                    output2 += "<div id='modiComment" + this.pcmNum + "'>";
+                                    output2 += "</div>";
+                                    output2 += "<div id='childComment" + this.pcmNum + "'>";
+                                    output2 += "</div>";
+                                }
+
+                            });
+
+                            commentZone.innerHTML = output2;
+                        }
+
+                    });
+
+                });
+            }
+        });
+    }
+
+    //답글 작성 창 생성
+    //childComment + 부모 댓글의 번호가 아이디인 div에는 commentList처럼 해당 댓글의 답글들이 나열됨
+    function childComment(parent){
+
+        //답글 작성창이 작성될 div의 아이디 찾기 위한 선언
+        let id1 = 'childComment' + parent;
+        //답글 작성 메소드를 실행시키기 위한 내용의 아이디
+        let id2 = 'child' + parent;
+
+        //답글 작성창이 작성될 div의 아이디
+        let childWriteZone = document.getElementById(id1);
+
+        //답글 작성창 형태
+        let output = "";
+
+        output += "<input size='100' type='text' id='" + id2 + "'>";
+        output += "<button class='obut' type='button' onclick='childCancel(" + parent + ")'>취소</button>"
+        output += "<button class='obut' type='button' onclick='childWrite(" + parent + ")'>작성완료</button>";
+
+        childWriteZone.innerHTML = output;
+
+    }
+
+    //답글 작성 취소
+    function childCancel(parent){
+        //답글 작성창이 작성될 div의 아이디 찾기 위한 선언
+        let id1 = 'childComment' + parent;
+        //답글 작성창이 작성될 div의 아이디
+        let childWriteZone = document.getElementById(id1);
+        //답글 작성창 제거
+        childWriteZone.innerHTML = "";
+
+        commentList();
+        commentLikeList();
+
+    }
+
+    //답글 작성
+    function childWrite(parent){
+
+        //게시글 번호, 작성자, 부모 번호, 내용 중 작성자는 임시로 써야하고, 부모 번호는 parent, 내용은 id 지정해서 찾아야함
+        //회원 아이디 임시
+        let memId = document.getElementById('memId').value;
+
+        //원하는 답글 내용 찾기용 id 선언
+        let id = 'child' + parent;
+        //답글 내용
+        let comment = document.getElementById(id).value;
+
+        //작성한 답글 테이블에 저장하고 리스트 새로 생성
+        $.ajax({
+            url:"pchildWrite",
+            type:"POST",
+            data:{
+                "pNum" : pNum,
+                "memId" : memId,
+                "pcmContent" : comment,
+                "pcmParent" : parent
+            },
+            async:false,
+            success:console.log('댓글 작성 성공'),
+            error:console.log('childWrite 함수 통신 실패')
+
+        });
+
+        commentList();
+        commentLikeList();
+
+    }
+
+    //수정
+    function commentModify(num){
+
+        let memId = document.getElementById('memId').value;
+
+        $.ajax({
+            url:"pcheckForCommentModifyAndDelete",
+            type:"POST",
+            data:{
+                "pcmNum":num
+            },
+            dataType:"text",
+            async:false,
+            success:function (theId){
+                if(theId !== memId && memId !== 'admin'){
+
+                    alert('다른 사람의 댓글은 수정할 수 없습니다!');
+
+                } else {
+
+                    let id = "modiComment" + num;
+                    let modiComment = document.getElementById(id);
+
+                    let output = "<input size='100' type='text' id='modi'>";
+                    output += "<button class='obut' type='button' onclick='commentModifying(" + num + ")'>수정완료</button>";
+                    output += "<button class='obut' type='button' onclick='cancelModifying(" + num + ")'>취소</button>";
+                    output += "<br/>"
+
+                    modiComment.innerHTML = output;
+                }
+            },
+            error:console.log('checkForCommentModifyAndDelete 함수 통신 실패')
+
+        });
+    }
+
+    //수정 진행
+    function commentModifying(num){
+        let pcmContent = document.getElementById('modi').value;
+
+        $.ajax({
+            url:"pcommentModify",
+            type:"POST",
+            data:{
+                "pcmNum" : num,
+                "pcmContent" : pcmContent
+            },
+            async:false,
+            dataType:"text",
+            success:function (result){
+                if(result=="OK"){
+                    commentList();
+                    commentLikeList();
+                } else {
+                    console.log('수정 실패!')
+                }
+            },
+            error:console.log('pcommentModify 함수 통신 실패')
+
+        });
+
+    }
+
+    function cancelModifying(num){
+        let id = "modiComment" + num;
+        let modiComment = document.getElementById(id);
+
+        modiComment.innerHTML = "";
+
+        commentList();
+        commentLikeList();
+    }
+
+    function commentDelete(num) {
+
+        let memId = document.getElementById('memId').value;
+
+        let conf = confirm('삭제하시겠습니까?');
+
+        if (conf) {
+
+            $.ajax({
+                url: "pcheckForCommentModifyAndDelete",
+                type: "POST",
+                data:{
+                    "pcmNum":num
+                },
+                dataType:"text",
+                async: false,
+                success: function (theId) {
+                    if (theId !== memId && memId !== 'admin') {
+
+                        alert('다른 회원의 댓글은 삭제할 수 없습니다!');
+
+                    } else {
+
+                        $.ajax({
+                            url: "pcommentDelete",
+                            type: "POST",
+                            data: {
+                                "pcmNum": num
+                            },
+                            async: false,
+                            dataType: "text",
+                            success: function (result) {
+                                if (result == "OK") {
+                                    commentList();
+                                    commentLikeList();
+                                } else {
+                                    console.log('삭제 실패!')
+                                }
+                            },
+                            error: console.log('commentDelete 함수 통신 실패')
+
+                        }); //end commentDelete
+
+                    } //end success
+
+                },
+
+                error: console.log('checkForCommentModifyAndDelete 함수 통신 실패')
+
+            }); //end checkForCommentModifyAndDelete
+
+        } else {
+            alert('취소하셨습니다.');
+        } //end conf
+
+    }
+
+    //댓글 좋아요 파트
+    //최초 댓글 좋아요 아이콘 부여
+    function commentLikeList(){
+
+        //먼저 게시글 번호로 모든 댓글 조회. 단 pcmbool이 1인 것만
+        $.ajax({
+            url:"pallComment",
+            type:"POST",
+            data:{
+                "pNum" : pNum
+            },
+            async:false,
+            success:function(data){
+
+                $(data).each(function (){
+
+                    let id = "commentLikeIcon" + this.pcmNum;
+                    let likeIcon = document.getElementById(id);
+
+                    $.ajax({
+                        url:"pcommentLikeCheck",
+                        type:"POST",
+                        data: {
+                            "pcmNum" : this.pcmNum,
+                            "memId" : document.getElementById('memId').value
+                        },
+                        dataType:"text",
+                        success:function (response){
+
+                            if(response == "NO"){
+                                // 이미 있음. 임시 아이콘 - 채운 하트
+                                $(likeIcon).html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart-fill' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'/></svg>");
+
+                            }else{
+                                // 없음. 임시 아이콘 - 빈 하트
+                                $(likeIcon).html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart' viewBox='0 0 16 16'><path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/></svg>");
+                            }
+                        }
+                    });
+
+                    commentLikeCount(this.pcmNum);
+
+                });
+            }
+        });
+    }
+
+    //댓답글 좋아요 확인. 클릭 했을 때 확인해서 증감 실행
+    //현재 테이블에 값을 입력/제거하는 건 잘 되지만 숫자나 아이콘 변경이 일어나지 않음.
+    function commentLike(num){
+        let memId = document.getElementById('memId').value;
+        let id = "commentLikeIcon" + num;
+        let icon = document.getElementById(id);
+
+        $.ajax({
+            type : "POST",
+            url : "pcommentLikeCheck",
+            data :{
+                "memId" : memId,
+                "pcmNum" : num
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+
+                if(response == "NO"){
+                    //좋아요를 감소시키는 함수를 실행 = 좋아요 테이블에서 삭제
+                    commentLikeDelete(num,memId);
+                    // 빈 하트로
+                    $(icon).html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart' viewBox='0 0 16 16'><path d='m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z'/></svg>");
+
+                    // 갯수 다시 세기
+                    commentLikeCount(num);
+                }else{
+                    //좋아요를 증가시키는 함수를 실행 = 좋아요 테이블에 추가
+                    commentLikeInsert(num,memId);
+                    // 채운 하트로
+                    $(icon).html("<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-heart-fill' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z'/></svg>");
+                    //갯수 다시 세기
+                    commentLikeCount(num);
+                }
+            },
+            error : function(){
+                alert('pcommentLikeCheck 통신 실패!');
+            }
+
+        });
+    }
+
+    //댓답글 좋아요 증가
+    function commentLikeInsert(num, id){
+        $.ajax({
+            type : "POST",
+            url : "pcommentLikeInsert",
+            data :{
+                "memId" : id,
+                "pcmNum" : num
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+                if(response=="OK"){
+                    console.log('좋아요 증가 성공')
+                }
+
+            },
+            error : function(){
+                console.log('pcommentLikeInsert 함수 통신 실패')
+            }
+
+        });
+    }
+
+
+    //댓답글 좋아요 감소
+    function commentLikeDelete(num, id){
+        $.ajax({
+            type : "POST",
+            url : "pcommentLikeDelete",
+            data :{
+                "memId" : id,
+                "pcmNum" : num
+            },
+            dataType : "text",
+            async : false,
+            success : function(response){
+                if(response=="OK"){
+                    console.log('좋아요 감소 성공')
+                }
+
+            },
+            error : function(){
+                console.log('pcommentLikeDelete 함수 통신 실패')
+            }
+
+        });
+    }
+
+    //각각의 좋아요 갯수 세기. 이거 check에 이어서 하면?
+    //pcmNum을 받아 갯수를 세고 commentLikeCount + this.pcmNum에 표시
+    function commentLikeCount(num){
+
+        let id = "commentLikeCount" + num;
+        let likeCount = document.getElementById(id);
+
+        $.ajax({
+            url:"pcommentLikeCount",
+            type:"POST",
+            data:{
+                "pcmNum":num
+            },
+            async:false,
+            success:function (count){
+                likeCount.innerHTML = count;
+            }
+        })
+    }
+
+    $(document).ready(commentList(), commentLikeList());
+
+</script>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  
+    Document Title
+    =============================================
+    -->
+    <title>For Diver | 다이버들을 위한 웹 페이지, For Diver에 오신 걸 환영합니다.</title>
+    <!--  
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  
+    Stylesheets
+    =============================================
+    
+    -->
+    <!-- Default stylesheets-->
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owl.carousel/dist//owl.theme.default.min.css" rel="stylesheet">
+    <link href="/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+
+    <!--이미지 분류 페이지를 위한 스타일-->
+    <style>
+      .imgStyle{
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+
+      <header data-th-include="./header.html"></header>
+
+      <!--영상 배너-->
+      <section class="home-section home-full-height bg-dark-30" id="home" data-background="/images/indexPhoto2.png">
+        <div class="video-player" data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+        <div class="video-controls-box">
+          <div class="container">
+            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
+          </div>
+        </div>
+        <div class="titan-caption">
+          <div class="caption-content">
+            <div class="font-alt mb-30 titan-title-size-1">전국에 다이버들을 위한 통합 웹 사이트</div>
+            <div class="font-alt mb-40 titan-title-size-4">For Diver</div><a class="section-scroll btn btn-border-w btn-round" href="#about">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!--Main Div-->
+      <div class="main">
+        <!--웹 페이지 소개 about-->
+        <section class="module" id="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">For Diver는</h2>
+                <div class="module-subtitle font-serif">전국에서 다이빙을 즐기고 싶은 다이버들을 위해 등장한 통합 웹 사이트입니다.</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="icon-tools-2"></span></div>
+                  <h3 class="alt-features-title font-alt">다이빙 코스 설계</h3>저희는 수많은 협력자들과 함께 회원님들께서 국내에서 언제든 최고의 경험을 할 수 있도록 회원님의 요청에 맞는 다이빙 코스를 곧장 준비해드립니다.
+                </div>
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="icon-target"></span></div>
+                  <h3 class="alt-features-title font-alt">목표</h3>For Diver는 국내 다이버들에게 필요한 정보와 상품을 수집하여 제공하고 회원님들의 커뮤니티를 통한 다이버들의 체험을 충분히 공유할 수 있도록 하여 다이빙 체험에 대한 지속적인 관심을 갖게 하는 것을 목표로 합니다.
+                </div>
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="icon-tools"></span></div>
+                  <h3 class="alt-features-title font-alt">지속적인 관리</h3>24시간 문의사항 등의 메뉴를 통해 지속적으로 최선을 다해 회원님을 응대합니다.
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <div class="align-center"><img src="/images/indexPhoto1.png" alt="Feature Image" style="height: 700px"></div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="icon-camera"></span></div>
+                  <h3 class="alt-features-title font-alt">커뮤니티</h3>스킨/스쿠버 다이빙의 묘미하면 겉으로는 볼 수 없었던 바다의 아름다운 장면을 눈에 담는 것입니다. 단순히 상품만 정렬해둔 타 사이트와는 달리 회원님들의 다양한 다이빙 체험을 사진, 영상, 또는 글로 공유하고 자유롭게 의견을 이야기할 수 있는 커뮤니티 메뉴를 준비했습니다.
+                </div>
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="fa fa-leaf"></span></div>
+                  <h3 class="alt-features-title font-alt">친환경 기업</h3>지속가능한 다이빙 체험에는 아름답고 깨끗한 환경을 지켜야할 필요가 있습니다. WWF, Green Peace 등 여러 환경단체와 협력하여 아름답고 깨끗한 환경을 유지하는 일에 동참하고 있습니다.
+                </div>
+                <div class="alt-features-item">
+                  <div class="alt-features-icon"><span class="icon-basket"></span></div>
+                  <h3 class="alt-features-title font-alt">다양한 상품</h3>트레이닝 코스, 다이빙 스팟, 다이버 장비 등 다이버들에게 필요한 정보를 전부 다루지 않아 정보 습득이 불편했던 점을 개선하여 다이빙을 즐길 수 있는 상품들을 마련했습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="divider-w">
+        <!--서비스 소개 및 링크-->
+        <section class="module" id="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">서비스</h2>
+                <div class="module-subtitle font-serif">저희 홈페이지에서는 다음과 같은 서비스를 이용하실 수 있습니다.</div>
+              </div>
+            </div>
+            <div class="row multi-columns-row">
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="features-item">
+                  <div class="features-icon"><span class="icon-lightbulb"></span></div>
+                  <h3 class="features-title font-alt">다이빙 이모저모</h3>
+                  <p>스킨/스쿠버 다이빙에 관한 간단한 지식, 국내 다이빙 명소, 국내 다이빙 클럽에 대해 알아볼 수 있습니다.</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="features-item">
+                  <div class="features-icon"><span class="icon-basket"></span></div>
+                  <h3 class="features-title font-alt">다이버 샵</h3>
+                  <p>다양한 다이빙 장비를 구매할 수 있는 다이빙 장비샵, 원하는 시간에 원하는 장소에서 다이빙 체험을 예약할 수 있는 커스텀 예약을 이용하실 수 있습니다.</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="features-item">
+                  <div class="features-icon"><span class="fa fa-leaf"></span></div>
+                  <h3 class="features-title font-alt">환경운동</h3>
+                  <p>다이빙을 즐길 수 있는 아름다운 바다를 유지하기 위해 노력하는 환경단체 사이트로 이동할 수 있으며 해양위기 정보를 알아가실 수 있습니다.</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="features-item">
+                  <div class="features-icon"><span class="icon-pencil"></span></div>
+                  <h3 class="features-title font-alt">커뮤니티</h3>
+                  <p>주제 상관없이 자유롭게 글을 올릴 수 있는 자유게시판, 사진과 영상만을 올려 슬라이더로 공유할 수 있는 갤러리 게시판, 그리고 원활한 웹 페이지 이용을 위한 공지사항</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="features-item">
+                  <div class="features-icon"><span class="fa fa-star-o"></span></div>
+                  <h3 class="features-title font-alt">이벤트</h3>
+                  <p>회원이라면 누구든 참여하고 결제에 사용할 수 있는 포인트를 획득할 수 있는 이벤트 메뉴.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <hr class="divider-w">
+        <!--협력 단체&스폰서-->
+        <section class="module pb-0" id="works">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">협력단체 및 스폰서</h2>
+                <div class="module-subtitle font-serif"></div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <!--분류 a 태그 리스트-->
+                <ul class="filter font-alt" id="filters">
+                  <li><a class="current wow fadeInUp" href="#" data-filter="*">전체</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter=".illustration" data-wow-delay="0.2s">스폰서</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter=".marketing" data-wow-delay="0.4s">환경단체</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ul class="works-grid works-grid-gut works-grid-3 works-hover-w" id="works-grid">
+            <!--Sponser-->
+            <li class="work-item illustration photography"><a href="https://www.padi.com/ko">
+              <div class="work-image"><img src="/images/indexSponsor/PADI.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">PADI</h3>
+                <div class="work-descr">PADI는 세계에서 가장 인지도 높은 스킨/스쿠버 다이빙 트레이닝 단체입니다.</div>
+              </div></a></li>
+            <li class="work-item illustration photography"><a href="https://www.divessi.com/kr/home">
+              <div class="work-image"><img src="/images/indexSponsor/SSI.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">SSI</h3>
+                <div class="work-descr">SSI는 체계적이고 다양한 트레이닝 코스로 학생과 교육자 모두 높은 만족도를 표현하고 있습니다.</div>
+              </div></a></li>
+            <li class="work-item illustration photography"><a href="https://www.dongwon.com/">
+              <div class="work-image"><img src="/images/indexSponsor/동원.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">동원그룹</h3>
+                <div class="work-descr">국내에서 동원참치로 유명한 동원은 국내의 대표적인 해양수산업 기업입니다.</div>
+              </div></a></li>
+            <li class="work-item illustration photography"><a href="https://www.suhyup.co.kr/suhyup/index.do#section1">
+              <div class="work-image"><img src="/images/indexSponsor/수협.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">수협</h3>
+                <div class="work-descr">수협은 국내 수산업 중심체로써 지속가능한 어업과 풍요로운 수산업을 목표로 하는 국내의 대표적인 해양수산업 기업입니다.</div>
+              </div></a></li>
+            <li class="work-item illustration photography"><a href="http://www.hdhy.co.kr/">
+              <div class="work-image"><img src="/images/indexSponsor/현대해양.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">현대해양</h3>
+                <div class="work-descr">현대그룹 산하의 현대해양은 국내 해양운송업 대표 기업입니다.</div>
+              </div></a></li>
+            <li class="work-item illustration photography"><a href="https://www.kia.com/kr?utm_source=google_SA&utm_medium=AD202302&utm_campaign=KiaSales2023_brand&utm_content=keyword_pc&utm_term=KIA&gclid=Cj0KCQiAi8KfBhCuARIsADp-A561SQRBX7sXGWdGirZZRWL3sZD8F39mA5rd6f1MCzp6CIPej7zEe64aAmvTEALw_wcB">
+              <div class="work-image"><img src="/images/indexSponsor/KIA.png" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">기아 KIA</h3>
+                <div class="work-descr">KIA는 국내 유명 자동차 브랜드로 해양 생태계 보전을 위해 힘쓰는 오션 클린업의 공식 파트너입니다.</div>
+              </div></a></li>
+            <!--환경단체-->
+            <li class="work-item marketing webdesign"><a href="https://www.wwfkorea.or.kr/support_plastic_free.php">
+              <div class="work-image"><img src="/images/wwf.jpg" alt="wwf" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">세계 자연기금(WWF)</h3>
+                <div class="work-descr">세계 최대 비영리 자연보전기관 WWF(세계자연기금, WORLD WIDE FUND FOR NATURE)는 1961년에 설립되었으며, 국제본부는 스위스 글랑에 위치해 있습니다.</div>
+              </div></a></li>
+            <li class="work-item marketing webdesign"><a href="https://www.mof.go.kr/article/view.do?articleKey=4083&searchSelect=title&boardKey=16&currentPageNo=9">
+              <div class="work-image"><img src="/images/해양수산부.png" alt="GREEN" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">해양수산부</h3>
+                <div class="work-descr">1. 국제물류산업 글로벌 경쟁력 강화<br/>2. 수출형 블루푸드산업 육성 <br/>3. 해양모빌리티산업 주도권 확보을 위하는 국가기관</div>
+              </div></a></li>
+            <li class="work-item marketing webdesign"><a href="https://oceana.org/">
+              <div class="work-image"><img src="/images/OCEANA.png" alt="OCEANA" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">OCEANA 해양캠페인</h3>
+                <div class="work-descr">Oceana는 세계적인 규모로 세계 해양을 보호하고 복원하는 데 전념하고 있습니다.</div>
+              </div></a></li>
+            <li class="work-item marketing webdesign"><a href="https://earthplogging.com/29/">
+              <div class="work-image"><img src="/images/지구쓰담.png" alt="지구쓰담" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">지구 쓰담 환경제단!</h3>
+                <div class="work-descr">지구쓰담 캠페인은 심각한 플라스틱 쓰레기 문제를 알리고 국내 환경 단체와 함꼐 환경 회복을 위한 정화 활동을 진행합니다.</div>
+              </div></a></li>
+            <li class="work-item marketing webdesign"><a href="https://www.greenpeace.org/korea/project-ocean/">
+              <div class="work-image"><img src="/images/GREENPEACE.jpg" alt="GREEN" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">GREEN PEACE기금</h3>
+                <div class="work-descr">바다를 지속가능한 공간으로 보호하기 위해 한국을 포함한 UN회원국에 해양조약 제정을 요구해, 국제적 구속력을 갖는 ‘해양보호구역’을 지정하고자 합니다.</div>
+              </div></a></li>
+            <li class="work-item marketing webdesign"><a href="http://kfem.or.kr/?gclid=EAIaIQobChMIiovs_7rL_AIVclcPAh0qKwLSEAMYAiAAEgIuV_D_BwE">
+              <div class="work-image"><img src="/images/환경운동연합.png" alt="환경운동연합" class="imgStyle"/></div>
+              <div class="work-caption font-alt">
+                <h3 class="work-title">환경 운동연합!</h3>
+                <div class="work-descr">환경운동연합은생명·평화·생태·참여를 중심가치로,감시와 견제의 역할에서 한 걸음 나아가 아름답고 건강한 미래를 위해 중장기적인 비전과 대안을 수립하고 실현하기 위한 활동을 전개하고 있습니다.</div>
+              </div></a></li>
+          </ul>
+
+        </section>
+        <hr class="divider-w">
+        <!--팀 소개-->
+        <section class="module" id="team">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">팀 소개</h2>
+                <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
+                <div class="team-item">
+                  <div class="team-image"><img src="/images/team-1.jpg" alt="Member Photo"/>
+                    <div class="team-detail">
+                      <h5 class="font-alt">Hi all</h5>
+                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
+                      <div class="team-social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="team-descr font-alt">
+                    <div class="team-name">Jim Stone</div>
+                    <div class="team-role">Art Director</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
+                <div class="team-item">
+                  <div class="team-image"><img src="/images/team-2.jpg" alt="Member Photo"/>
+                    <div class="team-detail">
+                      <h5 class="font-alt">Good day</h5>
+                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
+                      <div class="team-social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="team-descr font-alt">
+                    <div class="team-name">Andy River</div>
+                    <div class="team-role">Creative director</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
+                <div class="team-item">
+                  <div class="team-image"><img src="/images/team-3.jpg" alt="Member Photo"/>
+                    <div class="team-detail">
+                      <h5 class="font-alt">Hello</h5>
+                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
+                      <div class="team-social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="team-descr font-alt">
+                    <div class="team-name">Adele Snow</div>
+                    <div class="team-role">Account manager</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" onclick="wow fadeInUp">
+                <div class="team-item">
+                  <div class="team-image"><img src="/images/team-4.jpg" alt="Member Photo"/>
+                    <div class="team-detail">
+                      <h5 class="font-alt">Yes, it's me</h5>
+                      <p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&amp;nbsp;iaculis diam.</p>
+                      <div class="team-social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="team-descr font-alt">
+                    <div class="team-name">Dylan Woods</div>
+                    <div class="team-role">Developer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="divider-w">
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer data-th-include="./footer.html"></footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    <!--  
+    JavaScripts
+    =============================================
+    -->
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/lib/wow/dist/wow.js"></script>
+    <script src="/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="/lib/smoothscroll.js"></script>
+    <script src="/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+  </body>
+
+</html>

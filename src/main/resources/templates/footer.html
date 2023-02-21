@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="changmin">
+    <meta name="date" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <title></title>
+    <style>
+        .widget{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="module-small bg-dark" style="background-color: #1C92C9;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h5 class="widget-title font-alt">About For Diver</h5>
+                    <!--여기에 로고 추가할 예정-->
+                    <h5>Phone : 032-876-3332</h5>
+                    <h5>Email : iciaTeam1@google.com</h5>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="widget">
+                    <!--유용한 링크-->
+                    <h5 class="widget-title font-alt">Useful Link</h5>
+                    <ul class="icon-list">
+                        <li th:if="${session.loginId eq null}">회원가입 <a href="mJoinForm">Sign Up</a></li>
+                        <li th:if="${session.loginId eq null}">로그인 <a href="mLogin">Sign In</a></li>
+                        <li>문의하기 <a href="mQuestWriteForm">Contact to Quest</a></li>
+                        <li>공지사항 <a href="mNoticeList">Notice</a></li>
+                        <li>메인으로 <a href="index">Go to Main</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="widget">
+                    <!--팀 소개-->
+                    <h5 class="widget-title font-alt">Made By...</h5>
+                    <ul>
+                        <li>Web Design - All Member</li>
+                        <li>Leader - Kuraken</li>
+                        <li>Illustration - 12</li>
+                        <li>Marketing - 1</li>
+                        <li>Wordpress - 16</li>
+                        <li>Wordpress - 16</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="divider-d" style="background-color: white;">
+
+<footer class="footer bg-dark" style="background-color: #1C92C9;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="copyright font-alt">&copy; 2023&nbsp;<a href="index">ICIA Team1 </a>, All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

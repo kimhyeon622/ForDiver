@@ -1,0 +1,42 @@
+label {
+    font-size: 20px;
+    padding: 0.2em 0.4em;
+    text-align: center;
+}
+
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(5px, 0.1em) solid gold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transition: border 0.5s ease-in-out;
+}
+
+[type="radio"]:checked {
+    border: 0.4em solid white;
+}
+
+[type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted white;
+}
+
+[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    cursor: pointer;
+}
+
+[type="radio"]:disabled {
+    background-color: lightgray;
+    box-shadow: none;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
