@@ -1453,7 +1453,7 @@ General Styles - Owlcarousel
 
 /* Blog Page Header */
 .blog-page-header {
-  background-position: 50% 24%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -1911,7 +1911,7 @@ Google map
 .work-image img {
   display: block;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
 }
 
 .work-image:after {
@@ -1919,13 +1919,13 @@ Google map
   display: block;
   content: "";
   height: 100%;
-  width: 100%;
+  width: 80%;
   top: 0;
   left: 0;
 }
 
 .work-caption {
-  width: 100%;
+  width: 80%;
   padding: 0 20px;
   opacity: 0;
   position: absolute;

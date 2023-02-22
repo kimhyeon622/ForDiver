@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<html lang="en-US" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Titan | Multipurpose HTML5 Template</title>
-
+  <!--
+  Document Title
+  =============================================
+  -->
+  <title>For Diver | 회원복구신청내역</title>
+  <!--
+  Favicons
+  =============================================
+  -->
   <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
@@ -48,199 +54,270 @@
   <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
   <style>
 
-    @media(min-width: 1200px){
-      .container{
-        width:1200px;
-      }
-    }
     .module.mformain{
-      min-height: 600px;
+      min-height: 500px;
+      padding-top:49px;
     }
-    .mypage{
-      float:left;
-      min-height:700px;
+    #mySidebar{
+      height:100%;
     }
-    .mypage.mypage_menu{
-      width:30%;
-      border: 1px solid black;
+    .material-symbols-outlinedab {
+      font-variation-settings:
+              'FILL' 0,
+              'wght' 600,
+              'GRAD' 0,
+              'opsz' 150
     }
-    .mypage.mypage_view{
-      width:70%;
-      border: 1px solid black;
+    @font-face {
+      font-family: 'Material Symbols Outlinedab';
+      font-style: normal;
+      font-weight: 100 700;
+      src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v83/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
     }
 
-    /* 머리글 */
-    .numHeader{
-      background-color: #F4B084;
-      min-width:70px;
+    .material-symbols-outlinedab {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
     }
-    .titleHeader{
-      background-color: #FFD966;
-      min-width:70px;
+    .forbuttonbar{
+      width:100%;
+      padding-left: 90%;
     }
-    .writerHeader{
-      background-color: #A9D08E;
-      min-width:70px;
+    tbody>tr{
+      border-bottom: solid 0.5px #CBC8C8E8;
+      height: 45px;
     }
-    .dateHeader{
-      background-color: #9BC2E6;
-      min-width:70px;
+    .container2{
+      min-height:1000px;
     }
+    .forfaqtable {
+      width: 90%;
+    }
+    .titlefor{
+      background-color: rgba(196, 194, 194, 0.72);
+      color:black;
+    }
+    .titlefor>td{
+      text-align: center;
+    }
+    tfoot>tr{
+      height:60px;
+    }
+
+
+    .table1{
+      width:15%;
+    }
+    .table2{
+      width:25%;
+    }
+    .table3{
+      width:15%;
+    }
+    .table4{
+      width:20%;
+    }
+    .table5{
+      width:20%;
+    }
+    .tableformiddle{
+      margin:auto;
+      width: 30%;
+    }
+    table{
+      font-size: 20px;
+    }
+    .btn.btn-primary.btn-circle{
+      font-size: 20px;
+    }
+    tr,td,th{
+      padding-left:20px;
+    }
+    .buttonmiddle{
+      width:45%;
+    }
+    .btn {
+      padding:8px 0px;
+    }
+    .div-page-header{
+      background-color: #E33821FF;
+    }
+
+    @media (min-width: 1200px){
+      .container {
+        width: 1170px;
+      }
+      table,tr,th,td,btn{
+        font-size: 20px;
+      }
+    }
+    @media (min-width: 1400px){
+      .container {
+        width: 1370px;
+      }
+    }
+    @media (min-width: 1500px){
+      .container {
+        width: 1470px;
+      }
+    }
+
+
   </style>
+  <!--보안 3 : 관리자만 이용 가능-->
+  <script th:if="${session.loginId ne 'admin'}">
+    alert('관리자 외에는 이용하실 수 없습니다!');
+    location.href = "index";
+  </script>
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>
   <header data-th-include="./header.html"></header>
   <div class="main">
-    <section class="module mformain">
-      <div class="container">
-        <div class="mypage mypage_menu">
-          <table>
-            <tr>
-              <th>
-                <a href="javascript:void(0)" onclick="mlistFun()" style="color: deepskyblue;">회원리스트</a>
-                <form class="form" action="mlist" method="get" name="mlistform2">
-                </form>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <a href="javascript:void(0)" onclick="mRestroreListFun()" style="color: deepskyblue;">회원복구리스트</a>
-                <form class="form" action="mRestroreList" method="get" name="mRestroreListform">
-                </form>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <a href="javascript:void(0)" onclick="mQuestListFun()" style="color: deepskyblue;">전체문의내역</a>
-                <form class="form" action="mQuestList" method="get" name="mQuestListform">
-                </form>
-              </th>
-            </tr>
-            <tr>
-              <th>
-                <a href="javascript:void(0)" onclick="mSendAllFormFun()" style="color: deepskyblue;">전체 메일</a>
-                <form class="form" action="mSendAllForm" method="get" name="mSendAllFormform">
-                </form>
-              </th>
-            </tr>
-          </table>
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+      <header data-th-include="./adminpagesidebar.html"></header>
+    </div>
+    <div id="main">
+      <section class="module bg-dark-20 div-page-header" data-background="/해저.png">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <h2 class="module-title font-alt">회원복구신청 리스트</h2>
+              <div class="module-subtitle font-serif"></div>
+            </div>
+          </div>
         </div>
-        <div class="mypage mypage_view">
-          <button onclick="writefor()">문의하기</button>
-          <table>
-            <caption>페이징 목록</caption>
-            <tr>
-              <td th:text="'총'+${paging.maxPage}+'페이지'"></td>
-              <td></td>
-              <td></td>
-              <td>
-                <select onchange="changelimit(this.value)">
-                  <option th:value="${paging.limit}">[[${paging.limit}]]개씩보기</option>
-                  <option th:if="${paging.limit ne 5}" value="5">5개씩보기</option>
-                  <option th:if="${paging.limit ne 10}" value="10">10개씩보기</option>
-                  <option th:if="${paging.limit ne 20}" value="20">20개씩보기</option>
-                </select>
-                <script th:inline="javascript">
-                  let page=[[${paging.page}]];
-                  let search=[[${paging.search}]];
-                  let ca2egory=[[${paging.category}]];
-                  let QuestList = [[${QuestList}]];
-                  function changelimit(limit){
-                    location.href='mRestroreList?page='+page+'&limit='+limit+'&search='+search+'&category='+ca2egory;
-                  }
-                </script>
-              </td>
-            </tr>
-            <tr>
-              <th class="numHeader">회원아이디</th>
-              <th class="titleHeader">회원이름</th>
-              <th class="writerHeader">회원이메일</th>
-              <th class="dateHeader">연락처</th>
-              <th class="dateHeader">탈퇴/블랙리스트</th>
-            </tr>
-            <tr th:each="list : ${RestroreList}">
-              <td>[[${list.RESNUM}]]</td>
-              <td>
-                <a href="javascript:mViewFun();" th:text="${list.MEMID}"></a>
-                <form class="form" action="mView" method="post" name="mviewform2">
-                  <input type="hidden" th:value="${list.MEMID}" name="memId"/>
-                </form>
-              </td>
-              <td>[[${list.RESREASON}]]</td>
-              <td>[[${list.RESSENDDATE}]]</td>
-              <td>
-                <button onclick="">탈퇴시키기</button>
-                <button onclick="">블랙리스트</button>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="5">
-                <span th:if="${paging.page<=1}">&lt;&lt;</span>
-                <span th:if="${paging.page>1}"> <a th:href="@{/mRestroreList(page=1,limit=${paging.limit},search=${paging.search},category=${paging.category})}">&lt;&lt;</a> </span>
-                <span>&nbsp;</span>
+      </section>
+      <section class="module mformain">
+        <div class="container container2">
+          <div>
+            <table class="forfaqtable">
+              <thead>
+              <tr>
+                <td th:text="'총'+${paging.maxPage}+'페이지'"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <select onchange="changelimit(this.value)">
+                    <option th:value="${paging.limit}">[[${paging.limit}]]개씩보기</option>
+                    <option th:if="${paging.limit ne 5}" value="5">5개씩보기</option>
+                    <option th:if="${paging.limit ne 10}" value="10">10개씩보기</option>
+                    <option th:if="${paging.limit ne 20}" value="20">20개씩보기</option>
+                  </select>
+                  <script th:inline="javascript">
+                    let page=[[${paging.page}]];
+                    let search=[[${paging.search}]];
+                    let ca2egory=[[${paging.category}]];
+                    let QuestList = [[${QuestList}]];
+                    function changelimit(limit){
+                      location.href='mRestroreList?page='+page+'&limit='+limit+'&search='+search+'&category='+ca2egory;
+                    }
+                  </script>
+                </td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="titlefor">
+                <th class="table1">복구번호</th>
+                <th class="table2">아이디</th>
+                <th class="table3">복구사유</th>
+                <th class="table4">복구신청일자</th>
+                <th class="table5">복구</th>
+              </tr>
+              <tr th:each="list : ${pagingList}">
+                <td>[[${list.RESNUM}]]</td>
+                <td>
+                  <a href="javascript:mViewFun();" th:text="${list.MEMID}"></a>
+                  <form class="form" action="mView" method="get" name="mviewform2">
+                    <input type="hidden" th:value="${list.MEMID}" name="memId"/>
+                  </form>
+                </td>
+                <td>[[${list.RESREASON}]]</td>
+                <td>[[${list.RESSENDDATE}]]</td>
+                <td>
+                  <button class="btn btn-success btn-circle buttonmiddle" type="button" onclick="mRestroreformfun()">회원복구</button>
+                  <form action="mRestore" method="post" name="mRestoreform">
+                    <input type="hidden" name="memId" th:value="${list.MEMID}">
+                  </form>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="4">
+                  <div class="tableformiddle">
+                    <span th:if="${paging.page<=1}">&lt;&lt;</span>
+                    <span th:if="${paging.page>1}"> <a th:href="@{/mRestroreList(page=1,limit=${paging.limit},search=${paging.search},category=${paging.category})}">&lt;&lt;</a> </span>
+                    <span>&nbsp;</span>
 
-                <span th:if="${paging.page<=1}">&lt;</span>
-                <span th:if="${paging.page>1}"> <a th:href="@{/mRestroreList(page=${paging.page -1},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&lt;</a> </span>
-                <span>&nbsp;</span>
+                    <span th:if="${paging.page<=1}">&lt;</span>
+                    <span th:if="${paging.page>1}"> <a th:href="@{/mRestroreList(page=${paging.page -1},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&lt;</a> </span>
+                    <span>&nbsp;</span>
 
 
-                <span th:each="i : ${#numbers.sequence(paging.startPage,paging.endPage)}">
+                    <span th:each="i : ${#numbers.sequence(paging.startPage,paging.endPage)}">
                   <span th:if="${paging.page==i}" th:text="'['+${i}+']'"></span>
                   <a th:unless="${paging.page==i}" th:text="${i}"
                      th:href="@{/mRestroreList(page=${i},limit=${paging.limit},search=${paging.search},category=${paging.category})}"></a>
                 </span>
-                <span>&nbsp;</span>
+                    <span>&nbsp;</span>
 
 
-                <span th:if="${paging.page>=paging.maxPage}">&gt;</span>
-                <span th:if="${paging.page<paging.maxPage}"> <a th:href="@{/mRestroreList(page=${paging.page+1},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&gt;</a> </span>
-                <span>&nbsp;</span>
+                    <span th:if="${paging.page>=paging.maxPage}">&gt;</span>
+                    <span th:if="${paging.page<paging.maxPage}"> <a th:href="@{/mRestroreList(page=${paging.page+1},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&gt;</a> </span>
+                    <span>&nbsp;</span>
 
 
-                <span th:if="${paging.page>=paging.maxPage}">&gt;&gt;</span>
-                <span th:if="${paging.page<paging.maxPage}"> <a th:href="@{/mRestroreList(page=${paging.maxPage},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&gt;&gt;</a> </span>
-              </td>
-            </tr>
-            <tr>
-              <form action="mRestroreList" method="get">
-                <td>검색</td>
-                <td colspan="3"><input type="text" name="search"/></td>
-                <td><input type="submit" value="검색하기"/></td>
-              </form>
-            </tr>
-
-
-          </table>
+                    <span th:if="${paging.page>=paging.maxPage}">&gt;&gt;</span>
+                    <span th:if="${paging.page<paging.maxPage}"> <a th:href="@{/mRestroreList(page=${paging.maxPage},limit=${paging.limit},search=${paging.search},category=${paging.category})}">&gt;&gt;</a> </span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <form action="mRestroreList" method="get">
+                  <td></td>
+                  <td><input style="width:90%;" type="text" name="search"/></td>
+                  <td><input type="submit" value="검색하기"/></td>
+                  <td></td>
+                </form>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
-      </div>
-    </section>
-    <footer data-th-include="./footer.html"></footer>
+      </section>
+
+    </div>
+
   </div>
+  <footer class="footer" data-th-include="./footer.html"></footer>
   <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
 </main>
-
+<!--
+JavaScripts
+=============================================
+-->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script>
-  function mlistFun(){
-    mlistform2.submit();
-  }
-  function mRestroreListFun(){
-    mRestroreListform.submit();
-  }
-  function mQuestListFun(){
-    mQuestListform.submit();
-  }
-  function mSendAllFormFun(){
-    mSendAllFormform.submit();
-  }
+
   function mViewFun(){
     mviewform2.submit();
   }
-  function writefor(){
-    console.log('write');
-    location.href='mQuestWriteForm';
+  function mRestroreformfun(){
+    mRestoreform.submit();
   }
 </script>
 <script src="/lib/jquery/dist/jquery.js"></script>

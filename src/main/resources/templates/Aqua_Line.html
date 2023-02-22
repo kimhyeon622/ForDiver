@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 아쿠아라인</title>
   <!--
   Favicons
   =============================================
@@ -361,6 +361,12 @@ JavaScripts
 </script>
 
 <script>
+  /* 코스 변경시 예약 인원수 및 가격 초기화 */
+  $("input:radio[name=cos]").click(function()
+  {
+    dateChange()
+  })
+
   setInterval( function(){
     let cos = $('input[name=cos]:checked').val();
     if(cos == "스쿠버다이빙"){

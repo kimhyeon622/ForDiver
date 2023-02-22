@@ -56,14 +56,14 @@
 }
 
 .slide_prev_button {
-    left: 10px;
+    left: 10%;
     text-align: center;
     font-size: 40px;
     color: white;
     background: #19B5FE;
 }
 .slide_next_button {
-    right: 10px;
+    right: 0%;
     text-align: center;
     font-size: 40px;
     color: white;

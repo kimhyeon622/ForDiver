@@ -146,10 +146,6 @@ public class ProjectController {
         return "World_Cup_Skin_Scuba_Diving_Pool";
     }
 
-    // 이벤트 목록
-    @GetMapping("/eventList")
-    public String eventList(){ return "EventList";}
-
     // 모달 로그인창
     @GetMapping("/Loginmodel")
     public String Loginmodel(){ return "Loginmodel";}

@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 공지 수정</title>
   <!--
   Favicons
   =============================================
@@ -52,6 +52,11 @@
   <!-- Main stylesheet and color file-->
   <link href="/css/style.css" rel="stylesheet">
   <link id="color-scheme" href="/css/colors/default.css" rel="stylesheet">
+  <!--보안 3 : 관리자만 이용 가능-->
+  <script th:if="${session.loginId ne 'admin'}">
+    alert('관리자 외에는 이용하실 수 없습니다!');
+    location.href = "index";
+  </script>
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>
@@ -64,7 +69,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
-            <h2 class="module-title font-alt">문의 작성 페이지</h2>
+            <h2 class="module-title font-alt">공지 수정 페이지</h2>
             <div class="module-subtitle font-serif"><span>회원은 이메일, 전화, 대면 등의 방법으로 회사 상담원, 회사 운영관련자 등 회사 근로자, 회사와 위탁관계를 맺어 고객 응대 업무를 하는 자, 경비담당 인력, 기타 직원(이하 총괄하여 ‘직원 등’이라고 함)에 대하여 다음과 같은 행위(이를 ‘고객 응대 근로자에 대한 폭언 등’이라고 합니다)를 하여서는 아니됩니다.</span></div>
           </div>
         </div>

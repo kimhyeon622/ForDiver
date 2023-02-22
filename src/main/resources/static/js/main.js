@@ -940,14 +940,11 @@ function dateClick(){
 
     document.getElementById("date").setAttribute('min', dt);
 }
+
 /* 날짜 변경시 예약 인원수 및 가격 초기화 */
 function dateChange(){
     document.getElementById("people").value = null;
     onch();
 }
-/* 코스 변경시 예약 인원수 및 가격 초기화 */
-$("input:radio[name=cos]").click(function()
-{
-    dateChange()
-})
+
 

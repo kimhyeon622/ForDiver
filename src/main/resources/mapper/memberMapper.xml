@@ -89,13 +89,17 @@
     <!-- 검색된 회원복구 페이징 처리 -->
     <select id="mRestroreList" parameterType="paging" resultType="restore">
         SELECT * FROM (
-                          SELECT ROWNUM num, RESTORET.* FROM RESTORET WHERE ${category} LIKE '%'||#{search}||'%'
+                          SELECT ROWNUM num, E.* FROM (SELECT * FROM RESTORET WHERE ${category} LIKE '%'||#{search}||'%' ORDER BY RESSENDDATE DESC)E
                       ) WHERE num BETWEEN #{startRow} and #{endRow}
     </select>
 
     <update id="mRestore" parameterType="member">
         UPDATE MEMBERT SET MEMIS=1 WHERE MEMID=#{memId}
     </update>
+
+    <delete id="mRestore2" parameterType="member">
+        delete from restoret WHERE MEMID=#{memId}
+    </delete>
 
     <update id="mOut" parameterType="member">
         UPDATE MEMBERT SET MEMIS=0 WHERE MEMID=#{memId}
@@ -160,8 +164,8 @@
         UPDATE NOTICET SET NOTITLE=#{NOTITLE}, NOCONTENT=#{NOCONTENT} WHERE NONUM=#{NONUM}
     </update>
 
-    <delete id="mNoticeDelete" parameterType="String">
-        DELETE FROM NOTICET WHERE NONUM=#{NONUM}
+    <delete id="mNoticeDelete" parameterType="int">
+        DELETE FROM NOTICET WHERE NONUM=#{nonum}
     </delete>
 
     <select id="msearchEmail" parameterType="String" resultType="String" >

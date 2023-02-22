@@ -581,8 +581,13 @@ public class MemberServicelmpl implements MemberService {
         // 검색
         List<RESTOREDTO> RestroreList = mdao.mRestroreList(paging);
 
+        for(int i=0;i<RestroreList.size();i++){
+            RESTOREDTO Restroresample = RestroreList.get(i);
+            Restroresample.setRESSENDDATE(Restroresample.getRESSENDDATE().substring(0, 10));
+            RestroreList.set(i,Restroresample);
+        }
         // MODEL
-        mav.addObject("RestroreList", RestroreList);
+        mav.addObject("pagingList", RestroreList);
         mav.addObject("paging", paging);
         // VIEW
         mav.setViewName("mRestroreList");
@@ -594,10 +599,14 @@ public class MemberServicelmpl implements MemberService {
     @Override
     public ModelAndView mRestore(String memId, int page, int limit, String search, String category) {
         int result=mdao.mRestore(memId);
+        int result2=0;
+        if(result>0){
+            result2=mdao.mRestore2(memId);
+        }
         // MODEL
         mav.addObject("memId", memId);
         // (6) 이동
-        if (result > 0) {
+        if (result2 > 0) {
             mav.setViewName("mRestoreResult");
         } else {
             StringBuilder stringBuilder = new StringBuilder();
@@ -751,16 +760,20 @@ public class MemberServicelmpl implements MemberService {
     }
 
 
-    //ajax로 Update 통해 블랙리스트 회원으로 처리. MEMIS = 2
+    //관리자가 Update 통해 블랙리스트 회원으로 처리. MEMIS = 2
     @Override
-    public String mAddBlackList(String memId) {
-        int result = mdao.mAddBlackList(memId);
+    public ModelAndView mAddBlackList(String memId) {
+        mdao.mAddBlackList(memId);
+        mav.setViewName("redirect:mlist");
+        return mav;
+    }
 
-        if (result > 0) {
-            return "OK";
-        } else {
-            return "NO";
-        }
+    //mOutadmin : 관리자가 Update 통해 탈퇴한 회원으로 처리. MEMIS = 0
+    @Override
+    public ModelAndView mOutadmin(String memId) {
+        mdao.mOut(memId);
+        mav.setViewName("redirect:mlist");
+        return mav;
     }
 
     @Override
@@ -959,11 +972,8 @@ public class MemberServicelmpl implements MemberService {
     @Override
     public ModelAndView mNoticeDelete(int nonum) {
         int result = mdao.mNoticeDelete(nonum);
-        if (result > 0) {
-            mav.setViewName("mNoticeList");
-        } else {
-            mav.setViewName("mNoticeModify");
-        }
+        mav.setViewName("redirect:mNoticeList");
+
         return mav;
     }
 
@@ -1105,6 +1115,5 @@ public class MemberServicelmpl implements MemberService {
         // mav객체 안에 Mview.jsp에서 사용할 member의 이름을 "view"라고 선언해서 저장한다.
         return mav;
     }
-
 
 }

@@ -42,6 +42,8 @@ public interface MemberDAO {
 
     int mRestore(String memId);
 
+    int mRestore2(String memId);
+
     int mOut(String memId);
 
     int mAddBlackList(String memId);
@@ -77,4 +79,6 @@ public interface MemberDAO {
     int myBuyListCount(PageDTO paging);
 
     List<BUYDTO> myBuyList(PageDTO paging);
+
+
 }

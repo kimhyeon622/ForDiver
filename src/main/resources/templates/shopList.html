@@ -8,7 +8,7 @@
     Document Title
     =============================================
     -->
-    <title>Titan | Multipurpose HTML5 Template</title>
+    <title>For Diver | 스킨 스쿠버 다이빙 장비 샵</title>
     <!--  
     Favicons
     =============================================
@@ -55,7 +55,16 @@
     <script src="/summernote/summernote-lite.js"></script>
     <script src="/summernote/lang/summernote-ko-KR.js"></script>
     <link rel="stylesheet" href="/summernote/summernote-lite.css">
-
+    <style>
+    div, ul, li {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0}
+    a {text-decoration:none;}
+    .quickmenu {position:absolute;width:90px;top:10%;margin-top:-50px;right:10px;background:#fff;}
+    .quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
+    .quickmenu ul li {float:left;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
+    .quickmenu ul li a {position:relative;float:left;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
+    .quickmenu ul li a:hover {color:#000;}
+    .quickmenu ul li:last-child {border-bottom:0;}
+    </style>
     <style>
 
       /* 초기버튼 스타일 */
@@ -162,7 +171,7 @@
       .eq_box {
         width: 400px;
         height: 700px;
-        left: 1250px;
+        left: 72.5%;
         top: 70px;
         position: absolute;
         border: outset 7px rgba(71, 114, 224, 0.438);
@@ -176,7 +185,7 @@
       .eq_skin {
         width: 190px;
         height: 50px;
-        left: 1250px;
+        left: 72.5%;
         top: 10px;
         position: absolute;
         border-radius: 5px;
@@ -191,7 +200,7 @@
       .eq_scub {
         width: 190px;
         height: 50px;
-        left: 1470px;
+        left: 84.2%;
         top: 10px;
         position: absolute;
         border-radius: 5px;
@@ -251,7 +260,7 @@
       }
       .eqSpan1{
         float: left;
-        left: -10%;
+        left: 0%;
         top:-32%;
         position: relative;
         font-weight: bolder;
@@ -268,8 +277,8 @@
       }
       .eqSpan2{
         float: left;
-        left: -10%;
-        top: 10%;
+        left: 25%;
+        top: 1%;
         position: relative;
         font-weight: bolder;
         font-size: 25px;
@@ -285,7 +294,7 @@
       }
       .eqSpan3{
         float: left;
-        left: 0%;
+        left: 13%;
         top:-23%;
         position: relative;
         font-weight: bolder;
@@ -382,9 +391,9 @@
           <!-- 버튼 목록 -->
           <div class="container" style="padding: 2px; height: 40vh;  overflow: hidden; padding-left: 1vw; ">
 
-            <button th:if="${session.loginId ne null}" id="cusView" onclick="btnCustomList()" style="border: 0px; position: absolute; left: 1430px; top: 12px; width: 120px; height: 150px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</h3></button>
+            <button th:if="${session.loginId ne null}" id="cusView" onclick="btnCustomList()" style="border: 0px; position: absolute; left: 80.5%; top: 12px; width: 120px; height: 172px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</h3></button>
 
-            <button th:if="${session.loginId ne null}" id="cusMake" onclick="btnCustom(0)" style=" border: 0px; position: absolute; left: 1430px; top: 222px; width: 120px; height: 150px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</br>만들기</h3></button>
+            <button th:if="${session.loginId ne null}" id="cusMake" onclick="btnCustom(0)" style=" border: 0px; position: absolute; left: 80.5%; top: 195px; width: 120px; height: 172px;" class="equip equip-Main3"><h3 >버튼</br>즐겨찾기</br>만들기</h3></button>
 
             <div id="btnList" style="position: initial; display: initial; box-sizing: initial; height: 40vh;">
 
@@ -436,7 +445,7 @@
           </div>
 
         </section>
-        <hr class="divider-w" style="width: 73%;">
+        <hr class="divider-w" style="width: 70%;">
         <section class="module-small">
 
           <!-- 장비 품목 리스트 -->
@@ -541,6 +550,13 @@
             </div>
           </div>
         </section>
+        <div class="quickmenu">
+          <ul style="margin: 0">
+            <li th:if="${session.loginId ne null}"><a href="shopCheckout">장바구니</a></li>
+            <li><a href="mQuestWriteForm">문의</a></li>
+            <li><a href="index">메인페이지</a></li>
+          </ul>
+        </div>
         <footer data-th-include="./footer.html"></footer>
       </div>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
@@ -1792,5 +1808,14 @@
     <script src="/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+        var currentPosition = parseInt($(".quickmenu").css("top"));
+        $(window).scroll(function() {
+          var position = $(window).scrollTop();
+          $(".quickmenu").stop().animate({"top":position+currentPosition+"px"},1000);
+        });
+      });
+    </script>
   </body>
 </html>

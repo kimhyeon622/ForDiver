@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 회원목록</title>
   <!--
   Favicons
   =============================================
@@ -172,11 +172,15 @@
         width: 1470px;
       }
     }
-
-
   </style>
+  <!--보안 3 : 관리자만 이용 가능-->
+  <script th:if="${session.loginId ne 'admin'}">
+    alert('관리자 외에는 이용하실 수 없습니다!');
+    location.href = "index";
+  </script>
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+
 <main>
   <header data-th-include="./header.html"></header>
   <div class="main">
@@ -242,10 +246,18 @@
                 <td>[[${list.memEmail}]]</td>
                 <td>[[${list.memPhone}]]</td>
                 <td>
-                  <button class="btn btn-success btn-circle buttonmiddle" type="button">탈퇴시키기</button>
-                  <button class="btn btn-danger btn-circle buttonmiddle" type="button">블랙리스트</button>
+                  <th:block th:if="${list.memIs eq '1' && list.memId ne 'admin'}">
+                    <button class="btn btn-success btn-circle buttonmiddle" type="button" th:onclick="moutforadminfun( [[${list.memId}]] )">탈퇴시키기</button>
+                    <button class="btn btn-danger btn-circle buttonmiddle" type="button" th:onclick="mAddBlackListfun( [[${list.memId}]] )">블랙리스트</button>
+                  </th:block>
                 </td>
               </tr>
+              <form action="mOutadmin" method="post" name="mOutadminform">
+                <input type="hidden" name="memId" id="mOutadminfor"/>
+              </form>
+              <form action="mAddBlackList" method="post" name="mAddBlackListform">
+                <input type="hidden" name="memId" id="mAddBlackListfor"/>
+              </form>
               </tbody>
               <tfoot>
               <tr>
@@ -308,6 +320,13 @@ JavaScripts
 
   function mViewFun(){
     mviewform2.submit();
+  }
+  function moutforadminfun(text){
+    document.getElementById("mOutadminfor").value=text;
+    mOutadminform.submit();
+  }function mAddBlackListfun(text){
+    document.getElementById("mAddBlackListfor").value=text;
+    mAddBlackListform.submit();
   }
 </script>
 <script src="/lib/jquery/dist/jquery.js"></script>

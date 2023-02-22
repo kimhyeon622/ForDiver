@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 다이브라이프</title>
   <!--
   Favicons
   =============================================
@@ -165,7 +165,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="icon-calendar"></i></div>
-                    <input class="form-control input-lg" id="date" type="date" name="reDate" onclick="dateClick()" placeholder="dd/mm/yyyy" required/>
+                    <input class="form-control input-lg" id="date" type="date" name="reDate" onclick="dateClick()" onchange="dateChange()" placeholder="dd/mm/yyyy" required/>
                   </div>
                 </div>
                 <div class="form-group">
@@ -345,6 +345,18 @@ JavaScripts
 
 </script>
 <script>
+  /* 날짜 변경시 예약 인원수 및 가격 초기화 */
+  function dateChange(){
+    document.getElementById("people").value = null;
+    onch();
+  }
+
+  /* 코스 변경시 예약 인원수 및 가격 초기화 */
+  $("input:radio[name=cos]").click(function()
+  {
+    dateChange()
+  })
+
   setInterval( function(){
     let cos = $('input[name=cos]:checked').val();
     if(cos == "스쿠버 오픈워터 강습"){

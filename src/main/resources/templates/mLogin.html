@@ -90,10 +90,10 @@
                 <hr class="divider-w mb-10">
                 <form class="form" action="mLogin" method="post" name="loginForm">
                   <div class="form-group">
-                    <input style="text-transform: initial;" class="form-control" id="memId" type="text" name="memId" placeholder="아이디 입력"/>
+                    <input style="text-transform: initial;" class="form-control" id="memId" type="text" name="memId" onkeyup="loginenter(event)" placeholder="아이디 입력"/>
                   </div>
                   <div class="form-group">
-                    <input style="text-transform: initial;" class="form-control" id="memPw" type="password" name="memPw" placeholder="비밀번호 입력"/>
+                    <input style="text-transform: initial;" class="form-control" id="memPw" type="password" name="memPw" onkeyup="loginenter(event)" placeholder="비밀번호 입력"/>
                   </div>
                   <div class="form-group">
                     <input type="button" class="btn btn-round btn-b" value="로그인" onclick="loginCheck()">
@@ -135,6 +135,12 @@
           alert("아이디를 입력해주세요");
         }
 
+      }
+
+      function loginenter(e){
+        if(e.keyCode==13){
+          loginCheck();
+        }
       }
     </script>
 

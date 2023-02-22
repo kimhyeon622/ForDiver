@@ -291,8 +291,14 @@ public class MemberController {
 
     //mAddBlackList : ajax로 Update 통해 블랙리스트 회원으로 처리. MEMIS = 2
     @RequestMapping(value = "/mAddBlackList", method = RequestMethod.POST)
-    public @ResponseBody String mAddBlackList(@RequestParam("memId") String memId) {
+    public ModelAndView mAddBlackList(@RequestParam("memId") String memId) {
         return msvc.mAddBlackList(memId);
+    }
+
+    //mOutadmin : 관리자가 Update 통해 탈퇴한 회원으로 처리. MEMIS = 0
+    @RequestMapping(value = "/mOutadmin", method = RequestMethod.POST)
+    public ModelAndView mOutadmin(@RequestParam("memId") String memId) {
+        return msvc.mOutadmin(memId);
     }
 
     //myQuestList : 내 문의내역

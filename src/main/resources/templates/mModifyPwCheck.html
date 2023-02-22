@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 회원수정</title>
   <!--
   Favicons
   =============================================
@@ -106,8 +106,12 @@
     .form-group.left{
       width:200px;
     }
-
   </style>
+  <!--보안 1 : 비회원과 회원구분-->
+  <script th:if="${session.loginId eq null}">
+    alert('로그인 후에 이용해주세요!');
+    location.href = "mLogin";
+  </script>
 </head>
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>

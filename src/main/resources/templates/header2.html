@@ -139,35 +139,4 @@
 
 </script>
 
-<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-
-
-<script th:if="${session.loginId ne null}"  th:inline="javascript">
-
-    let username = [[${session.loginId}]];
-    let userPro = [[${session.loginm.memPROFILENAME}]];
-    if(userPro == null || userPro == ""){
-        userPro = "기본사진.png";
-    }
-
-    const websocket = new WebSocket("ws://192.168.0.55:9090/ws/index");
-
-    websocket.onopen = onOpen;
-
-    function onOpen() {  //
-
-        if(username==null || username==""){
-            return;
-        }else{
-            try{
-                var str = [username,  userPro , sessionStorage.getItem("curCategory").toString()];
-            }catch{
-                var str = [username,  userPro , 6];
-            }
-            websocket.send(str);
-        }
-
-    }
-
-</script>
 </html>

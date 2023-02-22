@@ -19,13 +19,14 @@ public interface MemberService {
 
     ModelAndView mLogin(MemberDTO member);
 
-
-
     ModelAndView mDelete(String memId);
 
     String idoverlap(String memId);
+
     ModelAndView m_plist(int page, int limit, String search, String category);
+
     ModelAndView m_insertmember();
+
     String mCheckEmail(String memEmail);
 
     ModelAndView mPwModifyEmail(String memId);
@@ -46,7 +47,9 @@ public interface MemberService {
 
     ModelAndView mOut(String memId, String memPw);
 
-    String mAddBlackList(String memId);
+    ModelAndView mAddBlackList(String memId);
+
+    ModelAndView mOutadmin(String memId);
 
     ModelAndView mQuestList(int page, int limit, String search, String category);
 
@@ -72,7 +75,6 @@ public interface MemberService {
 
     String mPwcheck(String memId, String memPw);
 
-
     ModelAndView mNoticeView(int nonum);
 
     ModelAndView mNoticeModifyForm(int nonum);
@@ -84,4 +86,6 @@ public interface MemberService {
     ModelAndView myBuyList(String memId, int page, int limit, String search, String category, String stringkeyword1);
 
     ModelAndView popUpmLogin(MemberDTO member);
+
+
 }

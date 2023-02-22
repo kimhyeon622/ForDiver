@@ -8,7 +8,7 @@
   Document Title
   =============================================
   -->
-  <title>Titan | Multipurpose HTML5 Template</title>
+  <title>For Diver | 공지</title>
   <!--
   Favicons
   =============================================
@@ -237,8 +237,11 @@
       <section class="module mformain">
         <div class="container container2">
           <div th:if="${session.loginId eq 'admin'}"class="forbuttonbar">
-            <button class="btn btn-primary btn-circle" type="button" onclick="writefor()">수정하기</button>
+            <button class="btn btn-primary btn-circle" type="button" onclick="writefor()">삭제하기</button>
           </div>
+          <form action="mNoticeDelete" method="post" name="deletenoticeform">
+            <input type="hidden" name="NONUM" th:value="${noview.NONUM}"/>
+          </form>
           <div>
             <div>
               <div class="questtitle">
@@ -280,8 +283,7 @@ JavaScripts
   document.getElementById("viewZone").innerHTML = testcc;         // HTML 문 출력
 
   function writefor(){
-    console.log('write');
-    location.href='mQuestWriteForm';
+    deletenoticeform.submit();
   }
 </script>
 <script src="/lib/jquery/dist/jquery.js"></script>

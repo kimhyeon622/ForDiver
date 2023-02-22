@@ -142,9 +142,13 @@
     <span class="material-icons">question_mark</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;전체 문의내역</span></a>
 <form class="form" action="mQuestList" method="get" name="mQuestListform">
 </form>
+<a class="w3-bar-item styleabc" href="javascript:void(0)" onclick="mRestroreListFormFun()" style="color: white;">
+    <span class="material-icons">settings_backup_restore</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;회원 복구 신청내역</span></a>
+<form class="form" action="mRestroreList" method="get" name="mRestroreListform">
+</form>
 <a class="w3-bar-item styleabc" href="javascript:void(0)" onclick="mSendAllFormFun()" style="color: white;">
     <span class="material-icons">send</span><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;공지메일 작성</span></a>
-<form class="form" action="mSendAllForm" method="post" name="mSendAllFormform">
+<form class="form" action="mSendAllForm" method="get" name="mSendAllFormform">
 </form>
 </body>
 <script>
@@ -159,6 +163,9 @@
     }
     function mSendAllFormFun(){
         mSendAllFormform.submit();
+    }
+    function mRestroreListFormFun(){
+        mRestroreListform.submit();
     }
     let mini = true;
     function toggleSidebar() {
