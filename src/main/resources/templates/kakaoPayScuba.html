@@ -68,7 +68,7 @@
     <div class="main">
         <section class="module">
             <div class="container">
-
+                // 해당 이름에 따른 사진 불러오기
                 <div class="row">
                     <div class="col-sm-6 mb-sm-40"  th:if="${ScubaList.ScupName eq '범섬'}">
                         <img src="/images/oce/Tiger%20Island.jpg" alt="Single Product Image"/>
@@ -308,10 +308,7 @@ JavaScripts
         }, function (rsp) {
             if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                msg += '고유ID : ' + rsp.imp_uid;
-                msg += '상점 거래ID : ' + rsp.merchant_uid;
-                msg += '결제 금액 : ' + rsp.paid_amount;
-                msg += '카드 승인번호 : ' + rsp.apply_num;
+                success.submit();
             } else {
                 var msg = '결제에 실패하였습니다.';
                 msg += '실패 사유 : ' + rsp.error_msg;
