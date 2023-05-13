@@ -10,10 +10,10 @@
 개발 팀원 : 총 5명
 <table>
  <tr>
-  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c3d458e1-bcb6-499b-bfba-d646b5d27189" width="400" height="500"></td>
-  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c4a84783-fe76-4d7c-867c-64bbbf7eeef3" width="400" height="300"></td>
-  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/3ae78422-0469-4aed-bce0-c5696df3b79d" width="400" height="300"></td>
-  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/243257a9-d0ec-4b25-9051-8ebd42c9da9d" width="400" height="300"></td>
+  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c3d458e1-bcb6-499b-bfba-d646b5d27189" width="300" height="400"></td>
+  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c4a84783-fe76-4d7c-867c-64bbbf7eeef3" width="300" height="300"></td>
+  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/3ae78422-0469-4aed-bce0-c5696df3b79d" width="300" height="200"></td>
+  <td><img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/243257a9-d0ec-4b25-9051-8ebd42c9da9d" width="300" height="200"></td>
  </tr>
  <tr>
   <td>오주현</td>
@@ -24,19 +24,21 @@
 </table>
 
 #### 중간에 나간 팀원
- - 팀원4 : 신대철 - 다이빙 장비 데이터 수집, 스킨/스쿠버 개요, 다이빙 명소, 다이빙 클럽
+ - 신대철 - 다이빙 장비 데이터 수집, 스킨/스쿠버 개요, 다이빙 명소, 다이빙 클럽
 
 ### 기획 단계
- - 팀장 : 오주현 - 기획안 작성, Job List 작성, DB 설계 및 수정, 스토리보드 작성, 발표문 및 PPT 작성
- - 팀원1 : 김현 - ERD 작성 및 수정, DB 수정, 해양 생물 애니메이션 제작
- - 팀원2 : 정창민 - 다이빙 장비 데이터 수집, 템플릿 선정 및 배포, 멘치마킹 사이트 검색, 웹 디자인 검색
- - 팀원3 : 강동근 - Job List 작성, DB 설계 및 수정, ERD 작성, 스토리보드 작성, PPT 제작
+ - 오주현(팀장) - 기획안 작성, Job List 작성, DB 설계 및 수정, 스토리보드 작성, 발표문 및 PPT 작성
+ - 강동근 - Job List 작성, DB 설계 및 수정, ERD 작성, 스토리보드 작성, PPT 제작
+ - 김현 - ERD 작성 및 수정, DB 수정, 해양 생물 애니메이션 제작
+ - 정창민 - 다이빙 장비 데이터 수집, 템플릿 선정 및 배포, 멘치마킹 사이트 검색, 웹 디자인 검색
+
 
 ### 개발 단계
- - 팀장 : 오주현 - 자유/갤러리 게시판, index/header/footer 제작, 해양 위기정보, 해양 위기자가 진단, 나간 팀원이 만든 페이지 수정(스킨/스쿠버 개요, 다이빙 명소, 다이빙 클럽), 환경단체 목록, 프로젝트 초기 취합 
- - 팀원1 : 김현 - API를 이용한 결제 기능, 커스템 예약(바다 및 수영장 예약페이지, 결제페이지등등), 장바구니, 퀵메뉴, 다른 팀원이 만든 페이지 해상도에 맞게 재수정, 포토샵을 이용한 이미지 제작(거북이), 프로젝트 취합, 테스트 및 디버깅, 회의부터 발표전 까지의 개발 히스토리 제작 
- - 팀원2 : 정창민 - 다이빙 장비 샵, 장바구니, 웹소켓을 이용한 접속자 명당 애니메이션, Intro 페이지
- - 팀원3 : 강동근 - 회원 메뉴(회원가입, 로그인, 내 정보 보기, 문의하기 등). 관리자 메뉴(문의내역, 회원관리, 공지사항 작성등)
+ - 오주현(팀장) - 자유/갤러리 게시판, index/header/footer 제작, 해양 위기정보, 해양 위기자가 진단, 나간 팀원이 만든 페이지 수정(스킨/스쿠버 개요, 다이빙 명소, 다이빙 클럽), 환경단체 목록, 프로젝트 초기 취합 
+ - 강동근 - 회원 메뉴(회원가입, 로그인, 내 정보 보기, 문의하기 등). 관리자 메뉴(문의내역, 회원관리, 공지사항 작성등)
+ - 김현 - API를 이용한 결제 기능, 커스템 예약(바다 및 수영장 예약페이지, 결제페이지등등), 장바구니, 퀵메뉴, 다른 팀원이 만든 페이지 해상도에 맞게 재수정, 포토샵을 이용한 이미지 제작(거북이), 프로젝트 취합, 테스트 및 디버깅, 회의부터 발표전 까지의 개발 히스토리 제작 
+ - 정창민 - 다이빙 장비 샵, 장바구니, 웹소켓을 이용한 접속자 명당 애니메이션, Intro 페이지
+
 
 ## 개발 환경
  - `Java 11`
