@@ -1,5 +1,5 @@
 # ForDiver
-
+![indexPhoto1](https://github.com/kimhyeon622/ForDiver/assets/121088829/62bd7d26-dc92-4e7d-bc7a-10bdb7950645)
 ## For Diver
 인천일보아카데미 마지막 프로젝트(파이널프로젝트) <br/>
 개발 기간 : 2022.01.03 ~ 2022.02.24 (약 2달)
