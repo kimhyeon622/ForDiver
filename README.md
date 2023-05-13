@@ -11,7 +11,7 @@
 끝까지 같이한 인원 : 4명
 
 
-|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c3d458e1-bcb6-499b-bfba-d646b5d27189" width="300" height="400">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c4a84783-fe76-4d7c-867c-64bbbf7eeef3" width="300" height="300">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/3ae78422-0469-4aed-bce0-c5696df3b79d" width="300" height="200">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/243257a9-d0ec-4b25-9051-8ebd42c9da9d" width="300" height="200">
+|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c3d458e1-bcb6-499b-bfba-d646b5d27189" width="300" height="300">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/c4a84783-fe76-4d7c-867c-64bbbf7eeef3" width="300" height="300">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/3ae78422-0469-4aed-bce0-c5696df3b79d" width="300" height="200">|<img src="https://github.com/kimhyeon622/ForDiver/assets/121088829/243257a9-d0ec-4b25-9051-8ebd42c9da9d" width="300" height="200">
 |:----:|:----:|:----:|:----:|
 |오주현|강동근|김현|정창민|
 
