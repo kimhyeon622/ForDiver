@@ -142,5 +142,4 @@
   ### 프로젝트 후기
   https://blog.naver.com/kimhyeon622/223030097901
   ### 개발 일기
-  1일차 https://blog.naver.com/kimhyeon622/222980272993 <br/>
-  2일차 https://blog.naver.com/kimhyeon622/222974812507 <br/>
+  https://blog.naver.com/kimhyeon622
